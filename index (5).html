@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F45 성수 | Life Changing, Team Training</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+<style>
+:root {
+  --blue: #211551;
+  --red: #D6001C;
+  --bg: #f4f4f7;
+  --white: #FFFFFF;
+  --gray: #5a5a6e;
+  --light-blue: #eaedff;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Pretendard', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--blue);
+  overflow-x: hidden;
+  word-break: keep-all;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ───────────────────────────────────────────
+   STRIPE BAR
+─────────────────────────────────────────── */
+.stripe-bar {
+  display: flex;
+  height: 7px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.stripe-bar span:first-child { flex: 1; background: var(--blue); }
+.stripe-bar span:last-child  { flex: 1; background: var(--red); }
+
+/* ───────────────────────────────────────────
+   HERO
+─────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  background: var(--blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 56px 0;
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.32;
+  mix-blend-mode: luminosity;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(33,21,81,0.15) 0%,
+    rgba(33,21,81,0.55) 50%,
+    rgba(33,21,81,0.92) 100%
+  );
+}
+
+.hero-logo {
+  position: absolute;
+  top: 28px;
+  left: 20px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-logo-mark {
+  width: 36px;
+  height: 36px;
+  background: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-logo-mark svg { width: 22px; height: 22px; fill: white; }
+.hero-logo-text {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding: 0 20px;
+}
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.hero-kicker-line {
+  width: 32px;
+  height: 2px;
+  background: var(--red);
+}
+.hero-kicker span {
+  color: rgba(255,255,255,0.7);
+  font-size: clamp(11px, 3vw, 14px);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.hero-eyebrow {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(16px, 4.5vw, 22px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.hero-eyebrow .w1 { color: rgba(255,255,255,0.45); }
+.hero-eyebrow .w2 { color: var(--red); }
+.hero-eyebrow .w3 { color: rgba(255,255,255,0.3); }
+
+.hero-h1 {
+  font-size: clamp(46px, 13vw, 80px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.hero-h1 em {
+  font-style: normal;
+  color: var(--red);
+}
+
+.hero-sub {
+  color: rgba(255,255,255,0.65);
+  font-size: clamp(14px, 3.8vw, 17px);
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 340px;
+}
+
+.hero-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.hero-location-dot {
+  width: 8px; height: 8px;
+  background: var(--red);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.hero-location span {
+  color: rgba(255,255,255,0.6);
+  font-size: clamp(13px, 3.5vw, 15px);
+  font-weight: 600;
+}
+
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--red);
+  color: white;
+  padding: 18px 32px;
+  border-radius: 60px;
+  font-size: clamp(17px, 4.5vw, 20px);
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 8px 32px rgba(214,0,28,0.45);
+}
+.hero-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(214,0,28,0.5); }
+.hero-cta-arrow {
+  width: 22px; height: 22px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+}
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.hero-scroll-hint span {
+  color: rgba(255,255,255,0.35);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.scroll-arrow {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+  animation: scrollPulse 1.6s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%,100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.3); }
+}
+
+/* ───────────────────────────────────────────
+   MARQUEE — TEAM TRAINING / LIFE CHANGING
+─────────────────────────────────────────── */
+.marquee-hero-band {
+  background: var(--white);
+  overflow: hidden;
+  border-top: 3px solid var(--blue);
+  border-bottom: 3px solid var(--blue);
+  padding: 14px 0;
+}
+.marquee-hero-inner {
+  display: flex;
+  white-space: nowrap;
+  animation: scrollLeft 18s linear infinite;
+  gap: 0;
+}
+.marquee-hero-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding-right: 48px;
+}
+.marquee-hero-word {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(24px, 7vw, 38px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--blue);
+  paint-order: stroke fill;
+}
+.marquee-hero-word.red {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--red);
+}
+.marquee-dot {
+  display: inline-block;
+  width: 10px; height: 10px;
+  background: var(--red);
+  border-radius: 50%;
+  margin: 0 20px;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* ───────────────────────────────────────────
+   PRICING CARD
+─────────────────────────────────────────── */
+.pricing-section {
+  background: var(--blue);
+  padding: 52px 20px 56px;
+}
+.pricing-label {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+.pricing-title {
+  font-size: clamp(28px, 8vw, 44px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.pricing-title em { font-style: normal; color: var(--red); }
+.pricing-location {
+  font-size: clamp(14px, 3.8vw, 16px);
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+.pricing-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 32px 28px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--blue), var(--red));
+}
+.pricing-amount-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.pricing-currency {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(22px, 6vw, 28px);
+  font-weight: 900;
+  color: var(--red);
+}
+.pricing-amount {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(52px, 16vw, 80px);
+  font-weight: 900;
+  color: var(--red);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.pricing-unit {
+  font-size: clamp(18px, 5vw, 24px);
+  font-weight: 700;
+  color: var(--blue);
+}
+.pricing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--light-blue);
+  color: var(--blue);
+  font-size: clamp(13px, 3.5vw, 15px);
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 40px;
+  margin-bottom: 24px;
+}
+.pricing-badge-dot {
+  width: 6px; height: 6px;
+  background: var(--blue);
+  border-radius: 50%;
+}
+.btn-reserve {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: var(--blue);
+  color: white;
+  padding: 20px;
+  border-radius: 14px;
+  font-size: clamp(17px, 4.8vw, 20px);
+  font-weight: 900;
+  text-decoration: none;
+  transition: 0.25s;
+  letter-spacing: 0.02em;
+}
+.btn-reserve:hover { background: #2d1d6e; transform: translateY(-2px); }
+.btn-arrow {
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+.btn-reserve:hover .btn-arrow { transform: translateX(4px); }
+
+/* ───────────────────────────────────────────
+   SECTION SHARED
+─────────────────────────────────────────── */
+.sec {
+  padding: 64px 20px;
+}
+.sec-inner { max-width: 680px; margin: 0 auto; }
+
+.sec-label {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sec-label::before {
+  content: '';
+  display: inline-block;
+  width: 20px; height: 2px;
+  background: var(--red);
+}
+
+.sec-title {
+  font-size: clamp(28px, 8vw, 46px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+
+.sec-body {
+  font-size: clamp(16px, 4.2vw, 18px);
+  color: var(--gray);
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, var(--blue) 0%, transparent 100%);
+  opacity: 0.12;
+  margin: 0 20px;
+}
+
+/* ───────────────────────────────────────────
+   GLOBAL NETWORK — COUNTRIES MARQUEE
+─────────────────────────────────────────── */
+.network-section {
+  background: var(--blue);
+  padding: 52px 0 0;
+  overflow: hidden;
+}
+.network-top {
+  padding: 0 20px 36px;
+}
+.network-top .sec-label { color: rgba(255,255,255,0.45); }
+.network-top .sec-label::before { background: rgba(255,255,255,0.4); }
+.network-top .sec-title { color: var(--white); }
+.network-top .sec-body { color: rgba(255,255,255,0.6); }
+
+.network-stats {
+  display: flex;
+  gap: 0;
+  margin: 32px 0 0;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.stat-item {
+  flex: 1;
+  padding: 22px 0;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(26px, 7vw, 36px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stat-num span { color: var(--red); }
+.stat-sub {
+  font-size: clamp(10px, 2.8vw, 12px);
+  color: rgba(255,255,255,0.45);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.countries-marquee-wrapper {
+  background: rgba(255,255,255,0.04);
+  padding: 28px 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 0;
+}
+.countries-row {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.countries-row + .countries-row { margin-top: 10px; }
+.countries-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scrollLeft 28s linear infinite;
+}
+.countries-row:nth-child(2) .countries-track { animation-duration: 22s; animation-direction: reverse; }
+.countries-row:nth-child(3) .countries-track { animation-duration: 32s; }
+.country-item {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(13px, 3.5vw, 16px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.5);
+  padding: 0 18px;
+  flex-shrink: 0;
+}
+.country-item.highlight {
+  color: var(--red);
+}
+.country-sep {
+  color: rgba(255,255,255,0.18);
+  flex-shrink: 0;
+  font-size: 10px;
+}
+
+/* ───────────────────────────────────────────
+   WHY F45
+─────────────────────────────────────────── */
+.why-section { background: var(--bg); padding: 64px 20px; }
+.why-intro {
+  font-size: clamp(20px, 5.5vw, 26px);
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+.why-intro em { font-style: normal; color: var(--red); }
+
+.why-cards { display: flex; flex-direction: column; gap: 16px; }
+.why-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  border: 1px solid rgba(33,21,81,0.07);
+  box-shadow: 0 4px 20px rgba(33,21,81,0.05);
+  transition: transform 0.2s;
+}
+.why-card:hover { transform: translateY(-3px); }
+.why-num {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(36px, 9vw, 48px);
+  font-weight: 900;
+  color: var(--light-blue);
+  line-height: 1;
+  flex-shrink: 0;
+  letter-spacing: -0.04em;
+  min-width: 52px;
+}
+.why-card-body {}
+.why-card-title {
+  font-size: clamp(17px, 4.5vw, 20px);
+  font-weight: 900;
+  color: var(--blue);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.why-card-text {
+  font-size: clamp(14px, 3.8vw, 16px);
+  color: var(--gray);
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+/* ───────────────────────────────────────────
+   3 SYSTEM BANNERS
+─────────────────────────────────────────── */
+.systems-section { padding: 0; }
+.sys-banner {
+  position: relative;
+  min-height: 70vw;
+  max-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+@media (min-width: 600px) {
+  .sys-banner { min-height: 380px; }
+}
+.sys-banner + .sys-banner { border-top: 3px solid var(--bg); }
+.sys-overlay-grad {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(33,21,81,0.96) 0%, rgba(33,21,81,0.6) 45%, rgba(33,21,81,0.1) 100%);
+}
+.sys-content {
+  position: relative;
+  z-index: 2;
+  padding: 28px 24px 36px;
+  width: 100%;
+}
+.sys-num {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.sys-title {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(32px, 9vw, 52px);
+  font-weight: 900;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.sys-en {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(13px, 3.5vw, 16px);
+  font-weight: 700;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+}
+.sys-desc {
+  font-size: clamp(15px, 4vw, 17px);
+  color: rgba(255,255,255,0.8);
+  line-height: 1.65;
+  font-weight: 500;
+  max-width: 320px;
+}
+
+/* ───────────────────────────────────────────
+   ROUTINE
+─────────────────────────────────────────── */
+.routine-section { background: var(--blue); padding: 64px 0; overflow: hidden; }
+.routine-header {
+  padding: 0 20px 36px;
+}
+.routine-header .sec-label { color: rgba(255,255,255,0.45); }
+.routine-header .sec-label::before { background: rgba(255,255,255,0.4); }
+.routine-header .sec-title { color: var(--white); }
+
+.routine-cards { display: flex; flex-direction: column; }
+.r-card {
+  position: relative;
+  min-height: 56vw;
+  max-height: 320px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.r-card + .r-card { border-top: 3px solid var(--blue); }
+.r-overlay {
+  position: absolute; inset: 0;
+}
+.r-overlay.cardio   { background: linear-gradient(120deg, rgba(33,21,81,0.95) 0%, rgba(33,21,81,0.55) 100%); }
+.r-overlay.resist   { background: linear-gradient(120deg, rgba(214,0,28,0.88) 0%, rgba(214,0,28,0.4) 100%); }
+.r-overlay.hybrid   { background: linear-gradient(120deg, rgba(33,21,81,0.88) 0%, rgba(214,0,28,0.6) 100%); }
+.r-content {
+  position: relative; z-index: 2;
+  padding: 24px 24px 32px;
+  width: 100%;
+}
+.r-days {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.r-day-chip {
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: white;
+  font-size: clamp(12px, 3vw, 14px);
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 40px;
+  letter-spacing: 0.06em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.r-type-en {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(30px, 8.5vw, 48px);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.r-type-ko {
+  font-size: clamp(14px, 3.8vw, 16px);
+  color: rgba(255,255,255,0.65);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.r-desc {
+  font-size: clamp(14px, 3.8vw, 15px);
+  color: rgba(255,255,255,0.75);
+  line-height: 1.65;
+  font-weight: 500;
+  max-width: 300px;
+}
+
+/* ───────────────────────────────────────────
+   TIMETABLE
+─────────────────────────────────────────── */
+.timetable-section { background: var(--bg); padding: 64px 20px; }
+.tt-note {
+  font-size: clamp(13px, 3.5vw, 14px);
+  color: var(--gray);
+  font-weight: 600;
+  margin-bottom: 24px;
+  padding: 10px 16px;
+  background: rgba(33,21,81,0.05);
+  border-radius: 8px;
+  border-left: 3px solid var(--blue);
+}
+
+/* Mobile card timetable */
+.tt-mobile { display: flex; flex-direction: column; gap: 12px; }
+.tt-day-block {
+  background: var(--white);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(33,21,81,0.06);
+  border: 1px solid rgba(33,21,81,0.07);
+}
+.tt-day-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+}
+.tt-day-header.cardio  { background: var(--blue); }
+.tt-day-header.resist  { background: var(--red); }
+.tt-day-header.hybrid  {
+  background: linear-gradient(to right, var(--blue) 50%, var(--red) 100%);
+}
+.tt-day-name {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(14px, 4vw, 17px);
+  font-weight: 900;
+  color: white;
+  letter-spacing: 0.04em;
+}
+.tt-day-type {
+  font-size: clamp(11px, 3vw, 13px);
+  font-weight: 700;
+  color: rgba(255,255,255,0.72);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.tt-times {
+  padding: 14px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tt-time-chip {
+  font-size: clamp(13px, 3.5vw, 15px);
+  font-weight: 700;
+  color: var(--blue);
+  background: var(--bg);
+  padding: 6px 14px;
+  border-radius: 40px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.tt-time-chip.cardio { color: var(--blue); background: #E8F0FE; }
+.tt-time-chip.resist { color: var(--red); background: #FFE8EC; }
+.tt-time-chip.hybrid {
+  color: white;
+  background: linear-gradient(to right, var(--blue), var(--red));
+}
+
+.tt-legend {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.tt-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: clamp(12px, 3.3vw, 13px);
+  font-weight: 700;
+  color: var(--blue);
+}
+.legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ───────────────────────────────────────────
+   FAQ
+─────────────────────────────────────────── */
+.faq-section { background: var(--bg); padding: 64px 20px; }
+.faq-list { display: flex; flex-direction: column; gap: 0; }
+.faq-item {
+  border-bottom: 1px solid rgba(33,21,81,0.1);
+  padding: 22px 0;
+}
+.faq-item:first-child { border-top: 1px solid rgba(33,21,81,0.1); }
+.faq-q-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.faq-q-mark {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(16px, 4.2vw, 18px);
+  font-weight: 900;
+  color: var(--red);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.faq-q-text {
+  font-size: clamp(16px, 4.2vw, 18px);
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1.4;
+}
+.faq-a-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+.faq-a-gap { width: calc(clamp(16px, 4.2vw, 18px) + 12px); flex-shrink: 0; }
+.faq-a-text {
+  font-size: clamp(15px, 4vw, 16px);
+  color: var(--gray);
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+/* Highlighted FAQ */
+.faq-item.highlight-item {
+  background: var(--blue);
+  border-radius: 16px;
+  padding: 22px 20px;
+  border: none;
+  margin: 8px 0;
+}
+.faq-item.highlight-item .faq-q-text { color: var(--white); }
+.faq-item.highlight-item .faq-a-text { color: rgba(255,255,255,0.75); }
+.faq-item.highlight-item .faq-q-mark { color: var(--red); }
+
+.naver-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #03C75A;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: clamp(14px, 3.8vw, 16px);
+  font-weight: 800;
+  text-decoration: none;
+  margin-top: 14px;
+  letter-spacing: 0.02em;
+}
+
+/* ───────────────────────────────────────────
+   LOCATION
+─────────────────────────────────────────── */
+.location-section {
+  background: var(--blue);
+  padding: 64px 20px;
+}
+.location-section .sec-label { color: rgba(255,255,255,0.4); }
+.location-section .sec-label::before { background: rgba(255,255,255,0.35); }
+.location-section .sec-title { color: var(--white); margin-bottom: 28px; }
+
+.loc-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 24px 20px;
+  margin-bottom: 14px;
+}
+.loc-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 6px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.loc-card-text {
+  font-size: clamp(16px, 4.5vw, 20px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.4;
+}
+.loc-card-sub {
+  font-size: clamp(13px, 3.5vw, 14px);
+  color: rgba(255,255,255,0.45);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ───────────────────────────────────────────
+   REFUND POLICY
+─────────────────────────────────────────── */
+.refund-section { background: var(--bg); padding: 52px 20px; }
+.refund-title {
+  font-size: clamp(18px, 4.8vw, 22px);
+  font-weight: 900;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+.refund-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.refund-list li {
+  font-size: clamp(14px, 3.8vw, 15px);
+  color: var(--gray);
+  line-height: 1.7;
+  font-weight: 500;
+  padding-left: 16px;
+  position: relative;
+}
+.refund-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px; height: 5px;
+  background: var(--red);
+  border-radius: 50%;
+}
+
+/* ───────────────────────────────────────────
+   FOOTER
+─────────────────────────────────────────── */
+.footer {
+  background: var(--blue);
+  padding: 36px 20px 48px;
+  text-align: center;
+}
+.footer-stripe {
+  display: flex;
+  height: 4px;
+  margin-bottom: 28px;
+}
+.footer-stripe span:first-child { flex: 1; background: var(--blue); filter: brightness(2); }
+.footer-stripe span:last-child  { flex: 1; background: var(--red); }
+.footer-logo {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+.footer-logo span { color: var(--red); }
+.footer-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-bottom: 20px;
+}
+.footer-copy {
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+}
+
+/* ───────────────────────────────────────────
+   STICKY CTA
+─────────────────────────────────────────── */
+.sticky-cta {
+  position: fixed;
+  bottom: -140px;
+  left: 0; width: 100%;
+  z-index: 9000;
+  transition: bottom 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 0 0 env(safe-area-inset-bottom, 0px);
+  pointer-events: none;
+}
+.sticky-cta.show {
+  bottom: 0;
+  pointer-events: all;
+}
+.sticky-inner {
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(33,21,81,0.1);
+  box-shadow: 0 -8px 32px rgba(33,21,81,0.12);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sticky-info {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.sticky-name {
+  font-size: clamp(14px, 3.8vw, 16px);
+  font-weight: 800;
+  color: var(--blue);
+}
+.sticky-price {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(22px, 6vw, 26px);
+  font-weight: 900;
+  color: var(--red);
+  letter-spacing: -0.02em;
+}
+.sticky-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--blue);
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: clamp(16px, 4.5vw, 18px);
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+/* ───────────────────────────────────────────
+   ANIMATIONS
+─────────────────────────────────────────── */
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* fade-up on scroll */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ───────────────────────────────────────────
+   RESPONSIVE — desktop tweak
+─────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .hero { min-height: 90vh; }
+  .sys-banner { min-height: 420px; max-height: 520px; }
+  .r-card { min-height: 300px; max-height: 380px; }
+  .sec-inner { max-width: 720px; }
+  .why-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .tt-mobile { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .network-stats { display: flex; }
+}
+</style>
+</head>
+<body>
+
+<!-- STRIPE BAR -->
+<div class="stripe-bar"><span></span><span></span></div>
+
+<!-- ─────────────────── HERO ─────────────────── -->
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="hero-video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-logo">
+    <div class="hero-logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M3 3h7v7H3zm0 11h7v7H3zm11-11h7v7h-7zm0 11h7v7h-7z"/></svg>
+    </div>
+    <div class="hero-logo-text">F45<br>Seongsu</div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-kicker">
+      <div class="hero-kicker-line"></div>
+      <span>Team Training &middot; Life Changing</span>
+    </div>
+
+    <div class="hero-eyebrow">
+      <div class="w1">STRENGTH.</div>
+      <div class="w2">CARDIO.</div>
+      <div class="w3">RECOVERY.</div>
+    </div>
+
+    <h1 class="hero-h1">
+      45분으로<br><em>달라지는</em> 하루
+    </h1>
+
+    <p class="hero-sub">
+      전 세계 66개국 동일 프로그램<br>
+      기능성 그룹 트레이닝 F45
+    </p>
+
+    <div class="hero-location">
+      <div class="hero-location-dot"></div>
+      <span>성수역 4번 출구 도보 1분 &middot; 에스빌딩 B1</span>
+    </div>
+
+    <a href="#reservation" class="hero-cta-btn">
+      5회 체험 40,000원
+      <span class="hero-cta-arrow">&rarr;</span>
+    </a>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <div class="scroll-arrow"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- TEAM TRAINING / LIFE CHANGING MARQUEE -->
+<div class="marquee-hero-band">
+  <div class="marquee-hero-inner" id="marqueeHero">
+    <div class="marquee-hero-item">
+      <span class="marquee-hero-word">TEAM TRAINING</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-hero-word red">LIFE CHANGING</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-hero-word">FUNCTIONAL 45</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-hero-word red">TEAM TRAINING</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-hero-word">LIFE CHANGING</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-hero-word red">FUNCTIONAL 45</span>
+      <span class="marquee-dot"></span>
+    </div>
+    <div class="marquee-hero-item" aria-hidden="true">
+      <span class="marquee-hero-word">TEAM TRAINING</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-hero-word red">LIFE CHANGING</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-hero-word">FUNCTIONAL 45</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-hero-word red">TEAM TRAINING</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-hero-word">LIFE CHANGING</span>
+      <span class="marquee-dot"></span>
+      <span class="marquee-hero-word red">FUNCTIONAL 45</span>
+      <span class="marquee-dot"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────── PRICING ─────────────────── -->
+<section class="pricing-section" id="reservation">
+  <div class="sec-inner">
+    <p class="pricing-label">LIMITED OFFER &middot; 체험 프로그램</p>
+    <h2 class="pricing-title">F45 성수<br><em>5회</em> 체험권</h2>
+    <p class="pricing-location">성수역 4번 출구 도보 1분</p>
+
+    <div class="pricing-card">
+      <div class="pricing-amount-row">
+        <span class="pricing-currency">&#8361;</span>
+        <span class="pricing-amount">40,000</span>
+      </div>
+      <div class="pricing-badge">
+        <span class="pricing-badge-dot"></span>
+        7일 안에 5회 사용 가능
+      </div>
+      <a href="#" class="btn-reserve">
+        지금 예약하기
+        <span class="btn-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─────────────────── GLOBAL NETWORK ─────────────────── -->
+<section class="network-section">
+  <div class="network-top">
+    <p class="sec-label">Global Network</p>
+    <h2 class="sec-title" style="color:white;">전 세계에서<br>검증된 트레이닝</h2>
+    <p class="sec-body" style="color:rgba(255,255,255,0.6);">
+      F45는 호주에서 시작된 글로벌 피트니스입니다.<br>
+      뉴욕, 런던, 두바이, 시드니까지<br>
+      전 세계 66개국에서 동일한 프로그램이 진행됩니다.
+    </p>
+
+    <div class="network-stats">
+      <div class="stat-item">
+        <div class="stat-num">66<span>+</span></div>
+        <div class="stat-sub">Countries</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3K<span>+</span></div>
+        <div class="stat-sub">Studios</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">45<span>min</span></div>
+        <div class="stat-sub">Per Class</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="countries-marquee-wrapper">
+    <!-- Row 1 -->
+    <div class="countries-row">
+      <div class="countries-track" id="cTrack1"></div>
+    </div>
+    <!-- Row 2 -->
+    <div class="countries-row" style="margin-top:10px;">
+      <div class="countries-track" id="cTrack2"></div>
+    </div>
+    <!-- Row 3 -->
+    <div class="countries-row" style="margin-top:10px;">
+      <div class="countries-track" id="cTrack3"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────── WHY F45 ─────────────────── -->
+<section class="why-section sec">
+  <div class="sec-inner">
+    <p class="sec-label">Why F45</p>
+    <h2 class="sec-title">어떻게 체력이<br>늘까요?</h2>
+    <p class="why-intro">
+      답은 하나, <em>꾸준함</em>입니다.<br>
+      F45는 꾸준함을 만드는 3가지 시스템으로 설계된 45분입니다.
+    </p>
+
+    <div class="why-cards">
+      <div class="why-card fade-up">
+        <div class="why-num">01</div>
+        <div class="why-card-body">
+          <div class="why-card-title">재미가 있어야 옵니다</div>
+          <div class="why-card-text">매일 바뀌는 27가지 운동 조합, 팀원들과의 에너지가 혼자라서 포기했던 이유를 없앱니다.</div>
+        </div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-num">02</div>
+        <div class="why-card-body">
+          <div class="why-card-title">효과가 보여야 계속합니다</div>
+          <div class="why-card-text">단 45분으로 최대 750kcal 소모. EPOC 후연소 효과로 운동 후에도 칼로리가 계속 소비됩니다.</div>
+        </div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-num">03</div>
+        <div class="why-card-body">
+          <div class="why-card-title">코치가 있어야 안전합니다</div>
+          <div class="why-card-text">미국 전문 교육 수료 코치 2명의 밀착 케어. 1:1 피드백으로 부상 없이 정확하게 운동합니다.</div>
+        </div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-num">04</div>
+        <div class="why-card-body">
+          <div class="why-card-title">과학이 설계한 프로그램</div>
+          <div class="why-card-text">Science-Backed 설계로 유산소·근력·회복을 균형 있게 배치. 전신 밸런스를 체계적으로 맞춥니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─────────────────── 3 SYSTEM BANNERS ─────────────────── -->
+<section class="systems-section">
+  <!-- 01 FUN -->
+  <div class="sys-banner" style="background-image:url('banner-fun.jpg');">
+    <div class="sys-overlay-grad"></div>
+    <div class="sys-content">
+      <div class="sys-num">01 &mdash; SYSTEM</div>
+      <div class="sys-title">재미</div>
+      <div class="sys-en">FUN</div>
+      <p class="sys-desc">혼자라서 포기했던 운동, 이제는 팀원들과 함께 에너지를 나누며 웃으며 해냅니다.</p>
+    </div>
+  </div>
+
+  <!-- 02 EFFECT -->
+  <div class="sys-banner" style="background-image:url('banner-effect.jpg');">
+    <div class="sys-overlay-grad"></div>
+    <div class="sys-content">
+      <div class="sys-num">02 &mdash; SYSTEM</div>
+      <div class="sys-title">효과</div>
+      <div class="sys-en">750 KCAL</div>
+      <p class="sys-desc">단 45분으로 최대 750kcal 소모. 기능성 운동을 최적의 시간에 담았습니다.</p>
+    </div>
+  </div>
+
+  <!-- 03 COACH -->
+  <div class="sys-banner" style="background-image:url('banner-coach.jpg');">
+    <div class="sys-overlay-grad"></div>
+    <div class="sys-content">
+      <div class="sys-num">03 &mdash; SYSTEM</div>
+      <div class="sys-title">코칭</div>
+      <div class="sys-en">COACH</div>
+      <p class="sys-desc">미국 전문 교육 수료 코치 2명의 밀착 케어. 1:1 피드백으로 부상 없이 안전하게.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────── ROUTINE ─────────────────── -->
+<section class="routine-section">
+  <div class="routine-header">
+    <p class="sec-label">Weekly Schedule</p>
+    <h2 class="sec-title" style="color:white;">주간 트레이닝<br>루틴</h2>
+  </div>
+
+  <div class="routine-cards">
+    <!-- Cardio -->
+    <div class="r-card" style="background-image:url('routine-cardio.jpg');">
+      <div class="r-overlay cardio"></div>
+      <div class="r-content">
+        <div class="r-days">
+          <span class="r-day-chip">월</span>
+          <span class="r-day-chip">수</span>
+        </div>
+        <div class="r-type-en">CARDIO</div>
+        <div class="r-type-ko">유산소 클래스</div>
+        <p class="r-desc">심장과 근육을 자극하여 체지방 연소와 심폐지구력 향상에 탁월한 프로그램입니다.</p>
+      </div>
+    </div>
+
+    <!-- Resistance -->
+    <div class="r-card" style="background-image:url('routine-resistance.jpg');">
+      <div class="r-overlay resist"></div>
+      <div class="r-content">
+        <div class="r-days">
+          <span class="r-day-chip">화</span>
+          <span class="r-day-chip">목</span>
+        </div>
+        <div class="r-type-en">RESISTANCE</div>
+        <div class="r-type-ko">근력 클래스</div>
+        <p class="r-desc">상체와 하체를 번갈아 자극하여 탄탄한 근육 라인과 기초대사량을 높여줍니다.</p>
+      </div>
+    </div>
+
+    <!-- Hybrid -->
+    <div class="r-card" style="background-image:url('routine-hybrid.jpg');">
+      <div class="r-overlay hybrid"></div>
+      <div class="r-content">
+        <div class="r-days">
+          <span class="r-day-chip">금</span>
+          <span class="r-day-chip">토</span>
+        </div>
+        <div class="r-type-en">HYBRID</div>
+        <div class="r-type-ko">하이브리드 클래스</div>
+        <p class="r-desc">유산소와 근력 운동의 장점만 모아 전신 밸런스를 맞춰주는 고강도 프로그램입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────── TIMETABLE ─────────────────── -->
+<section class="timetable-section">
+  <div class="sec-inner" style="max-width:100%;">
+    <p class="sec-label">Timetable</p>
+    <h2 class="sec-title">F45 성수<br>시간표</h2>
+    <p class="sec-body" style="margin-bottom:24px;">일요일 휴무</p>
+
+    <div class="tt-legend">
+      <div class="tt-legend-item">
+        <div class="legend-dot" style="background:var(--blue);"></div> 유산소 (월·수)
+      </div>
+      <div class="tt-legend-item">
+        <div class="legend-dot" style="background:var(--red);"></div> 근력 (화·목)
+      </div>
+      <div class="tt-legend-item">
+        <div class="legend-dot" style="background:linear-gradient(to right, var(--blue), var(--red)); width:18px; border-radius:4px; height:10px;"></div> 하이브리드 (금·토)
+      </div>
+    </div>
+
+    <div class="tt-note">바쁜 일상 속, 원하는 시간에 편하게 운동하세요.</div>
+
+    <div class="tt-mobile">
+      <!-- 월·수 -->
+      <div class="tt-day-block">
+        <div class="tt-day-header cardio">
+          <div class="tt-day-name">월요일 &middot; 수요일</div>
+          <div class="tt-day-type">Cardio</div>
+        </div>
+        <div class="tt-times">
+          <span class="tt-time-chip cardio">AM 06:30</span>
+          <span class="tt-time-chip cardio">AM 07:30</span>
+          <span class="tt-time-chip cardio">AM 08:30</span>
+          <span class="tt-time-chip cardio">PM 12:00</span>
+          <span class="tt-time-chip cardio">PM 18:30</span>
+          <span class="tt-time-chip cardio">PM 19:30</span>
+          <span class="tt-time-chip cardio">PM 20:30</span>
+        </div>
+      </div>
+
+      <!-- 화·목 -->
+      <div class="tt-day-block">
+        <div class="tt-day-header resist">
+          <div class="tt-day-name">화요일 &middot; 목요일</div>
+          <div class="tt-day-type">Resistance</div>
+        </div>
+        <div class="tt-times">
+          <span class="tt-time-chip resist">AM 06:30</span>
+          <span class="tt-time-chip resist">AM 07:30</span>
+          <span class="tt-time-chip resist">AM 08:30</span>
+          <span class="tt-time-chip resist">PM 12:00</span>
+          <span class="tt-time-chip resist">PM 18:30</span>
+          <span class="tt-time-chip resist">PM 19:30</span>
+          <span class="tt-time-chip resist">PM 20:30</span>
+        </div>
+      </div>
+
+      <!-- 금 -->
+      <div class="tt-day-block">
+        <div class="tt-day-header hybrid">
+          <div class="tt-day-name">금요일</div>
+          <div class="tt-day-type">Hybrid</div>
+        </div>
+        <div class="tt-times">
+          <span class="tt-time-chip hybrid">AM 06:30</span>
+          <span class="tt-time-chip hybrid">AM 07:30</span>
+          <span class="tt-time-chip hybrid">AM 08:30</span>
+          <span class="tt-time-chip hybrid">PM 12:00</span>
+          <span class="tt-time-chip hybrid">PM 18:30</span>
+          <span class="tt-time-chip hybrid">PM 19:30</span>
+          <span class="tt-time-chip hybrid">PM 20:30</span>
+        </div>
+      </div>
+
+      <!-- 토 -->
+      <div class="tt-day-block">
+        <div class="tt-day-header hybrid">
+          <div class="tt-day-name">토요일 &middot; 공휴일</div>
+          <div class="tt-day-type">Hybrid</div>
+        </div>
+        <div class="tt-times">
+          <span class="tt-time-chip hybrid">AM 09:00</span>
+          <span class="tt-time-chip hybrid">AM 10:00</span>
+          <span class="tt-time-chip hybrid">AM 11:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────── FAQ ─────────────────── -->
+<section class="faq-section">
+  <div class="sec-inner" style="max-width:100%;">
+    <p class="sec-label">FAQ</p>
+    <h2 class="sec-title">자주 묻는<br>질문</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q-row">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">운동이 완전 처음인데 할 수 있나요?</span>
+        </div>
+        <div class="faq-a-row">
+          <div class="faq-a-gap"></div>
+          <p class="faq-a-text">네, 남녀노소 누구나 할 수 있습니다. 코치 2명이 1:1 PT처럼 개인의 체력과 목적에 맞게 무게와 동작을 변형해 안전하게 지도합니다.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q-row">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">크로스핏과 어떤 차이가 있나요?</span>
+        </div>
+        <div class="faq-a-row">
+          <div class="faq-a-gap"></div>
+          <p class="faq-a-text">F45는 팀 트레이닝으로 경쟁보다는 협동을 중요시하며, 기능성 운동(Functional Training)을 기반으로 부상 없이 일상생활의 퍼포먼스를 높이는 데 목적이 있습니다.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q-row">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">샤워 시설 및 어메니티가 준비되어 있나요?</span>
+        </div>
+        <div class="faq-a-row">
+          <div class="faq-a-gap"></div>
+          <p class="faq-a-text">네, 개인 샤워실이 완비되어 있으며 샴푸, 바디워시, 수건 등이 모두 청결하게 준비되어 있습니다.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q-row">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">타 지점에서 체험권 사용 이력이 있는데 가능한가요?</span>
+        </div>
+        <div class="faq-a-row">
+          <div class="faq-a-gap"></div>
+          <p class="faq-a-text">F45 성수에서 체험권을 사용한 이력이 없으시다면 가능합니다. 다른 지점에서 체험하셨더라도 성수점은 별도로 운영되므로 체험 신청이 가능합니다.</p>
+        </div>
+      </div>
+
+      <div class="faq-item highlight-item">
+        <div class="faq-q-row">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">체험권은 어떻게 예약하나요?</span>
+        </div>
+        <div class="faq-a-row">
+          <div class="faq-a-gap"></div>
+          <div>
+            <p class="faq-a-text">하단 버튼을 눌러 네이버 예약으로 신청해 주시면 담당 매니저가 24시간 이내 연락드립니다.</p>
+            <a href="#" class="naver-btn">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect width="16" height="16" rx="3" fill="white"/><path d="M9.1 8.54L6.8 5H5v6h1.9V7.46L9.2 11H11V5H9.1v3.54z" fill="#03C75A"/></svg>
+              네이버 예약하기
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────── LOCATION ─────────────────── -->
+<section class="location-section">
+  <p class="sec-label">Location</p>
+  <h2 class="sec-title">오시는 길</h2>
+
+  <div class="loc-card">
+    <div class="loc-card-label">Address</div>
+    <div class="loc-card-text">서울 성동구 아차산로 92<br>에스빌딩 B1</div>
+  </div>
+
+  <div class="loc-card">
+    <div class="loc-card-label">Subway</div>
+    <div class="loc-card-text">성수역 4번 출구 도보 1분</div>
+  </div>
+
+  <div class="loc-card">
+    <div class="loc-card-label">Parking</div>
+    <div class="loc-card-text">성수동 유일 무료 주차</div>
+    <div class="loc-card-sub">1시간 무료 &middot; <span style="font-size:0.88em;">이후 15분당 1,000원 발생</span></div>
+  </div>
+</section>
+
+<!-- ─────────────────── REFUND ─────────────────── -->
+<section class="refund-section">
+  <div class="sec-inner" style="max-width:100%;">
+    <p class="sec-label">Policy</p>
+    <div class="refund-title">환불 정책</div>
+    <ul class="refund-list">
+      <li>체험권 구매 후 미사용 시: 전액 환불 가능</li>
+      <li>1회 이상 사용 시: 잔여 횟수 비례 환불 (위약금 없음)</li>
+      <li>7일 사용 기간 경과 후: 환불 불가</li>
+      <li>환불 신청은 담당 매니저에게 문의 주시기 바랍니다.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ─────────────────── FOOTER ─────────────────── -->
+<footer class="footer">
+  <div class="footer-stripe"><span></span><span></span></div>
+  <div class="footer-logo">F<span>45</span> SEONGSU</div>
+  <div class="footer-sub">Team Training &middot; Life Changing</div>
+  <p class="footer-copy">&copy; 2025 F45 Seongsu. All rights reserved.</p>
+</footer>
+
+<!-- ─────────────────── STICKY CTA ─────────────────── -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-inner">
+    <div class="sticky-info">
+      <span class="sticky-name">F45 성수 5회 체험권</span>
+      <span class="sticky-price">40,000원</span>
+    </div>
+    <a href="#reservation" class="sticky-btn">지금 예약하기 &rarr;</a>
+  </div>
+</div>
+
+<script>
+// ── Country marquee data ──
+const row1Data = [
+  'United States','Canada','Chile','Mexico','Dominican Republic','Brazil',
+  'Australia','New Zealand','China','Taiwan','Hong Kong','Indonesia',
+  'India','Japan','Singapore','Malaysia','Thailand','South Korea'
+];
+const row2Data = [
+  'Team Training','Life Changing','Functional 45','Team Training',
+  '66 Countries','3,000+ Studios','Life Changing','Science Backed','Team Training'
+];
+const row3Data = [
+  'United Kingdom','Switzerland','Germany','Spain','France','Italy',
+  'South Africa','UAE','Qatar','Kuwait','Saudi Arabia','Ireland',
+  'Sweden','Netherlands'
+];
+
+const highlights = ['Team Training','Life Changing','Science Backed','Functional 45'];
+
+function buildTrack(data, trackEl) {
+  const set = [...data, ...data];
+  let html = '';
+  set.forEach(item => {
+    const isHL = highlights.includes(item);
+    html += `<span class="country-item${isHL ? ' highlight' : ''}">${item}</span><span class="country-sep">|</span>`;
+  });
+  trackEl.innerHTML = html + trackEl.innerHTML;
+  // duplicate again for seamless loop
+  trackEl.innerHTML += trackEl.innerHTML;
+}
+
+buildTrack(row1Data, document.getElementById('cTrack1'));
+buildTrack(row2Data, document.getElementById('cTrack2'));
+buildTrack(row3Data, document.getElementById('cTrack3'));
+
+// ── Sticky CTA ──
+const pricingSection = document.getElementById('reservation');
+const stickyCta = document.getElementById('stickyCta');
+
+window.addEventListener('scroll', () => {
+  const rect = pricingSection.getBoundingClientRect();
+  if (rect.bottom < 0) {
+    stickyCta.classList.add('show');
+  } else {
+    stickyCta.classList.remove('show');
+  }
+}, { passive: true });
+
+// ── Fade up on scroll ──
+const fadeEls = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+fadeEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
