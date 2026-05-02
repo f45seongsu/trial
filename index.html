@@ -93,11 +93,12 @@ img{max-width:100%;display:block}
 /* Team Training · Life Changing (2줄) */
 .hero-tagline{
   font-family:var(--fn);
-  font-size:clamp(28px,7.5vw,68px);
-  font-weight:900;line-height:1.15;
-  letter-spacing:0.08em;text-transform:uppercase;
+  font-size:clamp(32px,8.5vw,76px);
+  font-weight:900;line-height:1.1;
+  letter-spacing:0.06em;text-transform:uppercase;
   color:rgba(255,255,255,0.38);
   margin-bottom:clamp(14px,3.5vw,24px);
+  -webkit-text-stroke:1.5px rgba(255,255,255,0.25);
 }
 
 /* STRENGTH · CARDIO · RECOVERY (키움, 검정/하얀색만) */
@@ -107,10 +108,11 @@ img{max-width:100%;display:block}
 }
 .en-line{
   font-family:var(--fn);
-  font-size:clamp(24px,6.5vw,56px);
+  font-size:clamp(28px,7.5vw,64px);
   font-weight:900;line-height:0.95;
   letter-spacing:-0.02em;text-transform:uppercase;
   display:block;
+  -webkit-text-stroke:1.5px currentColor;
 }
 .en-line.w{color:rgba(255,255,255,0.55)}
 .en-line.r{color:var(--red)}
@@ -166,8 +168,8 @@ img{max-width:100%;display:block}
 #initial-cta{background:var(--blue);padding:clamp(40px,9vw,80px) clamp(20px,5vw,48px)}
 .cta-wrap{max-width:540px;margin:0 auto}
 .cta-eyebrow{
-  font-family:var(--fn);font-size:clamp(10px,2.5vw,12px);font-weight:900;
-  letter-spacing:0.24em;text-transform:uppercase;color:var(--red);
+  font-family:var(--fn);font-size:clamp(13px,3.5vw,16px);font-weight:900;
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--red);
   display:block;margin-bottom:14px;
 }
 .cta-title{
@@ -550,7 +552,7 @@ img{max-width:100%;display:block}
 .loc-section .eyebrow-tag{color:rgba(255,255,255,0.3)}
 .loc-section .section-title{color:var(--white)}
 .loc-card{background:var(--white);border-radius:24px;overflow:hidden;margin-top:clamp(28px,6vw,44px);border-top:5px solid var(--red)}
-.loc-map{width:100%;height:clamp(200px,55vw,300px);background-color:var(--spatial);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--gray);letter-spacing:0.06em;text-transform:uppercase}
+.loc-map{width:100%;height:clamp(200px,55vw,300px);background:var(--spatial);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--gray);letter-spacing:0.06em;text-transform:uppercase}
 .loc-info{padding:clamp(28px,7vw,44px)}
 .loc-addr{font-size:clamp(20px,5.5vw,28px);font-weight:800;color:var(--blue);line-height:1.3;letter-spacing:-0.02em;margin-bottom:12px}
 .loc-access{font-size:clamp(15px,4vw,18px);font-weight:600;color:var(--gray);line-height:1.6;margin-bottom:18px}
@@ -558,7 +560,7 @@ img{max-width:100%;display:block}
 .parking-fine{font-size:clamp(12px,3vw,13px);font-weight:500;color:var(--gray);margin-top:8px;display:block}
 
 /* POLICY */
-.policy-section{background-color:var(--spatial);padding:clamp(40px,8vw,72px) clamp(20px,5vw,48px)}
+.policy-section{background:var(--spatial);padding:clamp(40px,8vw,72px) clamp(20px,5vw,48px)}
 .policy-box{background:var(--white);border-radius:22px;padding:clamp(28px,7vw,44px);border:1px solid rgba(33,21,81,0.08);margin-top:clamp(24px,5vw,36px)}
 .policy-title{font-size:clamp(15px,4vw,19px);font-weight:900;color:var(--blue);margin-bottom:18px;text-transform:uppercase}
 .policy-list{list-style:none;display:flex;flex-direction:column;gap:12px}
@@ -645,7 +647,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
   <div class="hero-overlay"></div>
 
   <div class="hero-topbar">
-    <img class="hero-logo" src="f45-logo.png" alt="F45 Seongsu">
+    <img class="hero-logo" src="성수로고3_png.png" alt="F45 Seongsu">
     <span class="hero-pill">성수역 4번 출구 바로 앞</span>
   </div>
 
@@ -731,13 +733,9 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
   <div class="global-overlay"></div>
   <div class="global-content">
     <span class="global-eyebrow">Proven Worldwide</span>
-    <h2 class="global-h">전 세계가 동시에 경험하는<br>가장 진보된 트레이닝</h2>
-    <p class="global-desc">
-        F45는 전 세계 운동 전문가들이 설계한 <strong>5,000여 개 이상의 혁신적인 동작</strong> 라이브러리를 보유하고 있습니다.<br>
-        매일 새롭게 조합되는 커리큘럼을 통해 뉴욕, 런던, 두바이 등 66개국 어디에서나<br>
-        수만 명의 멤버들과 동일한 열정, 동일한 프로그램을 공유하며 한계를 넘어보세요.
-    </p>
-</div>
+    <h2 class="global-h">전 세계에서<br>검증된 트레이닝</h2>
+    <p class="global-desc">F45는 호주에서 시작된 글로벌 피트니스입니다.<br>뉴욕, 런던, 두바이, 시드니까지 전 세계 66개국에서 동일한 프로그램이 진행됩니다.</p>
+  </div>
 </section>
 
 <div class="stripe-div"></div>
@@ -899,14 +897,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
           <div class="tt-cell"><span class="tt-icon dot-h"></span></div>
         </div>
         <div class="tt-row">
-          <div class="tt-time">AM 10:00</div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-          <div class="tt-cell"><span class="tt-icon dot-h"></span></div>
-        </div>
-        <div class="tt-row">
-          <div class="tt-time">AM 11:00</div>
+          <div class="tt-time">AM 10:30</div>
           <div class="tt-cell"><span class="tt-off">—</span></div>
           <div class="tt-cell"><span class="tt-off">—</span></div>
           <div class="tt-cell"><span class="tt-off">—</span></div>
@@ -993,7 +984,8 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
     <div class="faq-list">
       <div class="faq-item fu"><div class="faq-q"><span class="faq-qmark">Q.</span>운동이 완전 처음인데 할 수 있나요?</div><div class="faq-a">남녀노소 누구나 할 수 있습니다. 코치 2명이 개인의 체력과 목적에 맞게 무게와 동작을 변형해 안전하게 지도합니다.</div></div>
       <div class="faq-item fu"><div class="faq-q"><span class="faq-qmark">Q.</span>크로스핏과 어떤 차이가 있나요?</div><div class="faq-a">F45는 팀 트레이닝으로 경쟁보다는 협동을 중요시하며, 기능성 운동을 기반으로 부상 없이 일상생활의 퍼포먼스를 높이는 데 목적이 있습니다.</div></div>
-      <div class="faq-item fu"><div class="faq-q"><span class="faq-qmark">Q.</span>샤워 시설 및 어메니티가 준비되어 있나요?</div><div class="faq-a">네, 개인 샤워실이 완비되어 있으며 샴푸, 바디워시, 수건 등이 모두 청결하게 준비되어 있습니다.</div></div>
+      <div class="faq-item fu"><div class="faq-q"><span class="faq-qmark">Q.</span>샤워 시설 및 어메니티가 준비되어 있나요?</div><div class="faq-a">네, 샤워실이 완비되어 있으며 샴푸, 바디워시, 수건 등이 모두 청결하게 준비되어 있습니다.</div></div>
+      <div class="faq-item fu"><div class="faq-q"><span class="faq-qmark">Q.</span>준비물은 무엇인가요?</div><div class="faq-a">실내용 운동화, 운동복, 물통을 준비해 주세요. 운동복은 별도로 지급하지 않습니다.</div></div>
       <div class="faq-item fu"><div class="faq-q"><span class="faq-qmark">Q.</span>타 지점에서 체험권을 사용한 이력이 있는데 가능한가요?</div><div class="faq-a">F45 성수 지점에서 체험권 사용 이력이 없다면 가능합니다. 타 지점 이력은 무관합니다.</div></div>
       <div class="faq-item feat fu" id="naver-booking"><div class="faq-q"><span class="faq-qmark">Q.</span>체험권은 어떻게 예약하나요?</div><div class="faq-a">아래 네이버 예약 버튼을 눌러 예약해 주시면 담당 매니저가 24시간 이내 연락드립니다.<br><a href="https://booking.naver.com/booking/6/bizes/829021?theme=place&entry=pll&lang=ko&area=pll" class="naver-btn" target="_blank" rel="noopener" onclick="fbq('track', 'Contact');">네이버 예약하기</a></div></div>
     </div>
@@ -1010,7 +1002,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
       <h2 class="section-title">찾아오시는 길</h2>
     </div>
     <div class="loc-card fu">
-<div class="loc-map" style="background-image:url('map.jpg');background-size:cover;background-position:center;"></div>
+      <div class="loc-map">지도 이미지 (map.jpg)</div>
       <div class="loc-info">
         <div class="loc-addr">서울 성동구 아차산로 92<br>에스빌딩 B1</div>
         <div class="loc-access">지하철 2호선 성수역 4번 출구 바로 앞</div>
@@ -1044,7 +1036,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 <!-- FOOTER -->
 <div class="brand-stripe"></div>
 <footer>
-  <img class="footer-logo" src="f45-logo.png" alt="F45 Seongsu">
+  <img class="footer-logo" src="성수로고3_png.png" alt="F45 Seongsu">
   <p class="footer-tagline">Team Training · Life Changing</p>
   <p class="footer-copy">F45 Training Seongsu · Seoul, South Korea</p>
 </footer>
