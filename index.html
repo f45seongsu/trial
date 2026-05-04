@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>F45 성수 | Team Training. Life Changing.</title>
-<!-- 👇 이 부분에 아래 5줄을 추가해 주세요! 👇 -->
+
+<!-- OG 메타 태그 -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://f45seongsu.github.io/trial/">
 <meta property="og:title" content="F45 성수 | 1주일 무제한 체험권">
 <meta property="og:description" content="단 45분, 인생 운동을 만나보세요. 4만원으로 시작하는 일주일의 변화!">
 <meta property="og:image" content="https://f45seongsu.github.io/trial/og-image.jpg">
-<!-- 👆 여기까지 추가 완료 👆 -->
+
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -35,8 +36,9 @@ src="https://www.facebook.com/tr?id=26744340661896755&ev=PageView&noscript=1"
   --blue:#211551;--red:#D6001C;--white:#FFFFFF;
   --bg:#f4f4f7;--spatial:#E3E4E6;--gray:#5a5a6a;
   --light-blue:#eaedff;
-  --fn:"Helvetica Neue",Helvetica,Arial,sans-serif;
-  --fk:"Pretendard",sans-serif;
+  /* 👇 영문: 본사 스타일의 묵직한 폰트 / 한글: 프리미엄 900 굵기 적용 */
+  --fn: "Arial Black", "Impact", "Helvetica Neue", Helvetica, sans-serif;
+  --fk: "Pretendard", sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -84,7 +86,7 @@ img{max-width:100%;display:block}
 }
 .hero-pill{
   position:absolute;right:clamp(20px,5vw,48px);
-  font-family:var(--fn);font-size:clamp(9px,2.2vw,11px);font-weight:800;
+  font-family:var(--fn);font-size:clamp(9px,2.2vw,11px);font-weight:900;
   letter-spacing:0.18em;text-transform:uppercase;
   color:rgba(255,255,255,0.45);
   padding:6px 14px;border:1px solid rgba(255,255,255,0.2);border-radius:40px;
@@ -96,50 +98,50 @@ img{max-width:100%;display:block}
   padding:clamp(20px,5vw,44px) clamp(20px,5vw,56px);
 }
 
-/* Team Training · Life Changing (2줄) */
+/* 👇 영문: Stroke 제거 및 크기 대폭 확대 */
 .hero-tagline{
   font-family:var(--fn);
-  font-size:clamp(32px,8.5vw,76px);
-  font-weight:900;line-height:1.1;
-  letter-spacing:0.06em;text-transform:uppercase;
-  color:rgba(255,255,255,0.38);
-  margin-bottom:clamp(14px,3.5vw,24px);
-  -webkit-text-stroke:1.5px rgba(255,255,255,0.25);
+  font-size:clamp(38px,10vw,88px);
+  font-weight:900;line-height:1.0;
+  letter-spacing:0.02em;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);
+  margin-bottom:clamp(16px,4vw,28px);
+  -webkit-text-stroke: 0;
 }
 
-/* STRENGTH · CARDIO · RECOVERY (키움, 검정/하얀색만) */
 .hero-en{
   display:flex;flex-direction:column;gap:clamp(2px,0.5vw,4px);
   margin-bottom:clamp(14px,3.5vw,24px);
 }
+/* 👇 영문: Stroke 제거 및 굵기 강조 */
 .en-line{
   font-family:var(--fn);
-  font-size:clamp(28px,7.5vw,64px);
+  font-size:clamp(34px,9vw,76px);
   font-weight:900;line-height:0.95;
-  letter-spacing:-0.02em;text-transform:uppercase;
+  letter-spacing:-0.03em;text-transform:uppercase;
   display:block;
-  -webkit-text-stroke:1.5px currentColor;
+  -webkit-text-stroke: 0;
 }
-.en-line.w{color:rgba(255,255,255,0.55)}
+.en-line.w{color:rgba(255,255,255,0.7)}
 .en-line.r{color:var(--red)}
-.en-line.b{color:rgba(255,255,255,0.55)}
+.en-line.b{color:rgba(255,255,255,0.7)}
 
-/* 한국어 메인 */
+/* 👇 한글: 굵기 900 및 크기 확대, 자간 타이트하게 조정 */
 .hero-ko{
   font-family:var(--fk);
-  font-size:clamp(36px,10vw,88px);
-  font-weight:900;line-height:1.1;
-  letter-spacing:-0.04em;
+  font-size:clamp(42px,11vw,100px);
+  font-weight:900;line-height:1.05;
+  letter-spacing:-0.05em;
   color:var(--white);display:block;
 }
-.hero-ko em{font-style:normal;color:var(--red)}
+.hero-ko em{font-style:normal;color:var(--red); font-weight:900;}
 
 .hero-sub{
   margin-top:clamp(16px,4vw,28px);
   font-size:clamp(14px,3.8vw,18px);font-weight:600;
   color:rgba(255,255,255,0.5);line-height:1.6;
 }
-.hero-sub strong{color:rgba(255,255,255,0.85);font-weight:800}
+.hero-sub strong{color:rgba(255,255,255,0.85);font-weight:900}
 
 .hero-bottom{
   position:relative;z-index:2;
@@ -148,7 +150,7 @@ img{max-width:100%;display:block}
   gap:16px;flex-wrap:wrap;flex-shrink:0;
 }
 .hero-addr{font-size:clamp(12px,3vw,14px);font-weight:600;color:rgba(255,255,255,0.38);line-height:1.5}
-.hero-addr strong{color:rgba(255,255,255,0.75);font-weight:800;display:block;font-size:clamp(14px,3.5vw,16px)}
+.hero-addr strong{color:rgba(255,255,255,0.75);font-weight:900;display:block;font-size:clamp(14px,3.5vw,16px)}
 .hero-cta{
   background:var(--red);color:var(--white);
   font-family:var(--fk);font-size:clamp(15px,4.2vw,19px);font-weight:900;
@@ -180,11 +182,11 @@ img{max-width:100%;display:block}
 }
 .cta-title{
   font-family:var(--fk);
-  font-size:clamp(30px,8.5vw,64px);
-  font-weight:900;line-height:1.0;letter-spacing:-0.04em;
+  font-size:clamp(32px,9vw,68px);
+  font-weight:900;line-height:1.0;letter-spacing:-0.05em;
   color:var(--white);margin-bottom:6px;
 }
-.cta-title em{font-style:normal;color:var(--red)}
+.cta-title em{font-style:normal;color:var(--red); font-weight:900;}
 .cta-loc{font-size:clamp(13px,3.3vw,15px);font-weight:600;color:rgba(255,255,255,0.35);margin-bottom:28px}
 .price-box{
   background:var(--white);border-radius:20px;
@@ -214,7 +216,7 @@ img{max-width:100%;display:block}
 }
 .price-note{
   display:inline-block;
-  font-size:clamp(14px,3.8vw,17px);font-weight:700;
+  font-size:clamp(14px,3.8vw,17px);font-weight:900;
   color:var(--blue);background:var(--light-blue);
   padding:10px 18px;border-radius:10px;margin-bottom:28px;
 }
@@ -235,11 +237,11 @@ img{max-width:100%;display:block}
 .stripe-div{width:100%;height:5px;background:repeating-linear-gradient(90deg,var(--blue) 0,var(--blue) 50%,var(--red) 50%,var(--red) 100%);background-size:80px 5px}
 
 .mw{max-width:1100px;margin:0 auto}
-.eyebrow-tag{font-family:var(--fn);font-size:clamp(10px,2.5vw,12px);font-weight:900;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:12px}
+.eyebrow-tag{font-family:var(--fn);font-size:clamp(11px,2.5vw,13px);font-weight:900;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:12px}
 .section-title{
   font-family:var(--fk);
-  font-size:clamp(32px,9vw,64px);
-  font-weight:900;line-height:1.0;letter-spacing:-0.04em;
+  font-size:clamp(36px,9.5vw,68px);
+  font-weight:900;line-height:1.0;letter-spacing:-0.05em;
   color:var(--blue);text-transform:uppercase;
 }
 .section-header{margin-bottom:clamp(28px,6vw,48px)}
@@ -247,8 +249,8 @@ img{max-width:100%;display:block}
 /* STATS */
 .stats-section{background:var(--bg);padding:clamp(48px,10vw,80px) clamp(20px,5vw,48px)}
 .stats-title-wrap{text-align:center;margin-bottom:clamp(28px,7vw,48px)}
-.stats-eyebrow{font-family:var(--fn);font-size:clamp(10px,2.5vw,12px);font-weight:900;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:12px}
-.stats-h{font-family:var(--fk);font-size:clamp(28px,7.5vw,56px);font-weight:900;line-height:1.08;letter-spacing:-0.04em;color:var(--blue);text-transform:uppercase}
+.stats-eyebrow{font-family:var(--fn);font-size:clamp(11px,2.5vw,13px);font-weight:900;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:12px}
+.stats-h{font-family:var(--fk);font-size:clamp(32px,8vw,60px);font-weight:900;line-height:1.08;letter-spacing:-0.05em;color:var(--blue);text-transform:uppercase}
 .stats-grid{
   display:grid;grid-template-columns:repeat(3,1fr);
   border:1.5px solid var(--spatial);border-radius:20px;overflow:hidden;
@@ -258,11 +260,11 @@ img{max-width:100%;display:block}
 .stat-cell:last-child{border-right:none}
 .stat-num{
   font-family:var(--fn);
-  font-size:clamp(38px,11vw,68px);font-weight:900;
+  font-size:clamp(40px,11.5vw,72px);font-weight:900;
   color:var(--blue);letter-spacing:-0.05em;line-height:1;display:block;
 }
 .stat-num em{color:var(--red);font-style:normal}
-.stat-label{font-family:var(--fn);font-size:clamp(9px,2.2vw,12px);font-weight:800;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray);margin-top:6px;display:block}
+.stat-label{font-family:var(--fn);font-size:clamp(10px,2.2vw,13px);font-weight:900;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray);margin-top:6px;display:block}
 
 /* COUNTRY MARQUEE */
 .country-sec{background:var(--blue);padding:clamp(28px,6vw,52px) 0;overflow:hidden}
@@ -653,7 +655,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
   <div class="hero-overlay"></div>
 
   <div class="hero-topbar">
-    <img class="hero-logo" src="성수로고3_png.png" alt="F45 Seongsu">
+    <img class="hero-logo" src="f45-logo.png" alt="F45 Seongsu">
     <span class="hero-pill">성수역 4번 출구 바로 앞</span>
   </div>
 
@@ -666,7 +668,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
       <span class="en-line b">RECOVERY</span>
     </div>
     
-    <span class="hero-ko">인생운동을 만나는<br>가장 짧은 시간,<br><em>45분</em></span>
+    <span class="hero-ko">인생을 바꾸는<br>가장 짧은 시간,<br><em>45분</em></span>
     
     <p class="hero-sub">
       <strong>전 세계 66개국 동일 프로그램</strong><br>
@@ -740,7 +742,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
   <div class="global-content">
     <span class="global-eyebrow">Proven Worldwide</span>
     <h2 class="global-h">전 세계에서<br>검증된 트레이닝</h2>
-    <p class="global-desc">F45는 호주에서 시작된 글로벌 피트니스입니다.<br>뉴욕, 런던, 두바이, 시드니까지 전 세계 66개국에서 동일한 프로그램이 진행됩니다.</p>
+    <p class="global-desc">F45는 호주에서 시작된 글로벌 피트니스로, <br>뉴욕, 런던, 두바이, 시드니까지 전 세계 66개국에서 동일한 프로그램이 진행됩니다.</p>
   </div>
 </section>
 
@@ -761,7 +763,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
         <div class="why-content">
           <span class="why-num">01</span>
           <span class="why-title">재미</span>
-          <p class="why-desc">매일 바뀌는 27가지 조합. 지루할 틈이 없습니다. 팀 에너지가 혼자였다면 포기했을 순간을 넘기게 합니다.</p>
+          <p class="why-desc">매일 바뀌는 27가지 조합. <br>지루할 틈이 없습니다. <br>팀 에너지가 혼자였다면 포기했을 순간을 넘기게 합니다.</p>
         </div>
       </div>
 
@@ -771,7 +773,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
         <div class="why-content">
           <span class="why-num">02</span>
           <span class="why-title">효과</span>
-          <p class="why-desc">45분에 최대 750kcal 소모. 시간을 낭비하지 않습니다. 운동 후에도 계속 연소되는 EPOC 효과까지.</p>
+          <p class="why-desc">45분에 최대 750kcal 소모. <br>시간을 낭비하지 않습니다. <br>운동 후에도 계속 연소되는 EPOC 효과까지.</p>
           <span class="why-ref">* Buchheit &amp; Laursen, Journal of Sports Sciences (2018)</span>
         </div>
       </div>
@@ -782,7 +784,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
         <div class="why-content">
           <span class="why-num">03</span>
           <span class="why-title">코칭</span>
-          <p class="why-desc">전문 교육 수료 코치 2명의 1:1 피드백. 부상 없이 안전하게. 처음이어도, 당신에게 맞게 설계됩니다.</p>
+          <p class="why-desc">전문 교육 수료 코치 2명의 1:1 피드백. <br>부상 없이 안전하게. <br>처음이어도, 당신에게 맞게 설계됩니다.</p>
         </div>
       </div>
 
@@ -792,7 +794,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
         <div class="why-content">
           <span class="why-num">04</span>
           <span class="why-title">과학</span>
-          <p class="why-desc">스포츠 과학으로 설계된 프로그램. 유산소·근력·회복을 균형 있게 배치. 전신 밸런스를 체계적으로 완성합니다.</p>
+          <p class="why-desc">스포츠 과학으로 설계된 프로그램. <br>유산소·근력·회복을 균형 있게 배치. <br>전신 밸런스를 체계적으로 완성합니다.</p>
         </div>
       </div>
 
@@ -837,7 +839,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
         <div class="routine-content">
           <span class="routine-day">Fri / Sat</span>
           <span class="routine-name">하이브리드</span>
-          <p class="routine-desc">유산소와 근력을 함께. 한 주의 완성. 전신을 고르게 단련합니다.</p>
+          <p class="routine-desc">유산소와 근력을 함께. 한 주의 완성. <br>전신을 고르게 단련합니다.</p>
         </div>
       </div>
 
@@ -1008,7 +1010,9 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
       <h2 class="section-title">찾아오시는 길</h2>
     </div>
     <div class="loc-card fu">
-      <div class="loc-map">지도 이미지 (map.jpg)</div>
+<div class="loc-map">
+  <img src="map.png" alt="F45 성수 위치" style="width:100%; height:100%; object-fit:cover;">
+</div>
       <div class="loc-info">
         <div class="loc-addr">서울 성동구 아차산로 92<br>에스빌딩 B1</div>
         <div class="loc-access">지하철 2호선 성수역 4번 출구 바로 앞</div>
@@ -1042,7 +1046,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 <!-- FOOTER -->
 <div class="brand-stripe"></div>
 <footer>
-  <img class="footer-logo" src="성수로고3_png.png" alt="F45 Seongsu">
+  <img class="footer-logo" src="f45-logo.png" alt="F45 Seongsu">
   <p class="footer-tagline">Team Training · Life Changing</p>
   <p class="footer-copy">F45 Training Seongsu · Seoul, South Korea</p>
 </footer>
