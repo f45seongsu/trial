@@ -31,13 +31,14 @@ src="https://www.facebook.com/tr?id=26744340661896755&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --blue:#211551;--red:#D6001C;--white:#FFFFFF;
   --bg:#f4f4f7;--spatial:#E3E4E6;--gray:#5a5a6a;
   --light-blue:#eaedff;
-  /* 👇 영문: 본사 스타일의 묵직한 폰트 / 한글: 프리미엄 900 굵기 적용 */
-  --fn: "Arial Black", "Impact", "Helvetica Neue", Helvetica, sans-serif;
+  /* 본사 공식 폰트: Barlow Condensed (영문 헤딩) / Pretendard (한글) */
+  --fn: "Barlow Condensed", "Arial Black", sans-serif;
   --fk: "Pretendard", sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -165,10 +166,11 @@ img{max-width:100%;display:block}
 @keyframes scrollPulse{0%,100%{opacity:0.4}50%{opacity:1}}
 
 /* MARQUEE */
-.big-mq-wrap{background:var(--white);overflow:hidden;padding:clamp(10px,2.5vw,18px) 0;border-bottom:2px solid var(--spatial);border-top:2px solid var(--spatial)}
+.big-mq-wrap{background:var(--blue);overflow:hidden;padding:clamp(14px,3.5vw,22px) 0;border-top:2px solid var(--red);border-bottom:2px solid var(--red)}
 .big-mq-track{display:flex;white-space:nowrap;animation:mqScroll 11s linear infinite}
-.mq-word{font-family:var(--fn);font-size:clamp(44px,11.5vw,88px);font-weight:900;letter-spacing:-0.04em;text-transform:uppercase;padding:0 clamp(14px,3vw,28px);line-height:1;color:var(--blue);display:inline-block}
-.mq-word.fill{color:var(--red)}
+.mq-word{font-family:var(--fn);font-size:clamp(28px,7vw,56px);font-weight:900;letter-spacing:0.06em;text-transform:uppercase;padding:0 clamp(20px,4vw,40px);line-height:1;color:var(--white);display:inline-flex;align-items:center;gap:clamp(16px,3vw,32px)}
+.mq-word.fill{color:var(--white)}
+.mq-star{color:var(--red);font-size:0.7em;flex-shrink:0}
 .mq-sep{font-family:var(--fn);font-size:clamp(32px,8vw,64px);color:var(--red);padding:0 clamp(6px,1.5vw,14px);line-height:1;opacity:0.35;display:inline-block;font-weight:900}
 @keyframes mqScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
@@ -266,19 +268,17 @@ img{max-width:100%;display:block}
 .stat-num em{color:var(--red);font-style:normal}
 .stat-label{font-family:var(--fn);font-size:clamp(10px,2.2vw,13px);font-weight:900;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray);margin-top:6px;display:block}
 
-/* COUNTRY MARQUEE */
-.country-sec{background:var(--blue);padding:clamp(28px,6vw,52px) 0;overflow:hidden}
-.country-label{text-align:center;font-family:var(--fn);font-size:clamp(9px,2vw,11px);font-weight:900;letter-spacing:0.26em;text-transform:uppercase;color:rgba(255,255,255,0.22);margin-bottom:clamp(18px,4vw,32px)}
-.mq-rows{display:flex;flex-direction:column}
-.mq-row{overflow:hidden;padding:8px 0;border-top:1px solid rgba(255,255,255,0.06)}
-.mq-row:last-child{border-bottom:1px solid rgba(255,255,255,0.06)}
-.mq-inner{display:flex;white-space:nowrap;width:max-content}
-.mq-inner.r1{animation:mqLeft 42s linear infinite}
-.mq-inner.r2{animation:mqRight 35s linear infinite}
-.mq-inner.r3{animation:mqLeft 50s linear infinite}
-.mq-item{font-family:var(--fn);font-size:clamp(12px,2.8vw,16px);font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.4);padding:4px clamp(12px,2.5vw,20px)}
-.mq-item.hl{color:var(--red);font-weight:900}
-.mq-dot{display:inline-block;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.15);margin:0 clamp(8px,1.8vw,14px);flex-shrink:0;vertical-align:middle}
+/* COUNTRY MARQUEE - 3줄 슬림 */
+.country-sec{background:var(--blue);padding:clamp(6px,1.5vw,10px) 0;overflow:hidden;display:flex;flex-direction:column;gap:0;border-top:2px solid var(--red);border-bottom:2px solid var(--red)}
+.country-row{overflow:hidden;padding:clamp(4px,1vw,7px) 0}
+
+.country-track{display:flex;white-space:nowrap}
+.country-track.s1{animation:mqLeft 14s linear infinite}
+.country-track.s2{animation:mqRight 10s linear infinite}
+.country-track.s3{animation:mqLeft 18s linear infinite}
+.country-item{font-family:var(--fn);font-size:clamp(16px,3.8vw,28px);font-weight:900;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);padding:0 clamp(14px,3vw,28px);display:inline-flex;align-items:center;gap:clamp(10px,2vw,20px)}
+.country-item.hl{color:var(--red)}
+.country-star{color:var(--red);font-size:0.6em;opacity:0.7;flex-shrink:0}
 @keyframes mqLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes mqRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 
@@ -725,15 +725,10 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 
 <!-- COUNTRY MARQUEE -->
 <div class="country-sec">
-  <p class="country-label">F45 Global Network — 66 Countries Worldwide</p>
-  <div class="mq-rows">
-    <div class="mq-row"><div class="mq-inner r1" id="mq1"></div></div>
-    <div class="mq-row"><div class="mq-inner r2" id="mq2"></div></div>
-    <div class="mq-row"><div class="mq-inner r3" id="mq3"></div></div>
-  </div>
+  <div class="country-row"><div class="country-track s1" id="cMq1"></div></div>
+  <div class="country-row"><div class="country-track s2" id="cMq2"></div></div>
+  <div class="country-row"><div class="country-track s3" id="cMq3"></div></div>
 </div>
-
-<div class="stripe-div"></div>
 
 <!-- GLOBAL -->
 <section class="global-section fu">
@@ -1061,40 +1056,52 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 </div>
 
 <script>
-/* BIG MARQUEE */
+/* BIG MARQUEE - F45 Korea style */
 (function(){
-  var w=[
-    {t:"TEAM TRAINING"},{s:1},{t:"LIFE CHANGING",f:1},{s:1},
-    {t:"FUNCTIONAL 45"},{s:1},{t:"TEAM TRAINING",f:1},{s:1},
-    {t:"LIFE CHANGING"},{s:1},{t:"FUNCTIONAL 45",f:1},{s:1}
-  ];
-  var el=document.getElementById("bigMq");
-  var h="";
-  for(var p=0;p<2;p++){
-    w.forEach(function(x){
-      if(x.s)h+='<span class="mq-sep">·</span>';
-      else h+='<span class="mq-word'+(x.f?' fill':'')+'">'+(x.t)+'</span>';
+  var words = ["TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING"];
+  var el = document.getElementById("bigMq");
+  var h = "";
+  for(var p = 0; p < 2; p++){
+    words.forEach(function(w){
+      h += '<span class="mq-word">'+w+' <span class="mq-star">★</span></span>';
     });
   }
-  el.innerHTML=h;
+  el.innerHTML = h;
 })();
 
-/* COUNTRY MARQUEE */
-var R={
-  mq1:[{t:"United States"},{t:"Canada"},{t:"Australia"},{t:"New Zealand"},{t:"United Kingdom"},{t:"Germany"},{t:"France"},{t:"Spain"},{t:"Italy"},{t:"South Korea",h:1},{t:"Japan"},{t:"China"},{t:"Singapore"},{t:"UAE"},{t:"Brazil"}],
-  mq2:[{t:"TEAM TRAINING",h:1},{t:"LIFE CHANGING",h:1},{t:"FUNCTIONAL 45"},{t:"66 COUNTRIES"},{t:"3,000+ STUDIOS"},{t:"SCIENCE BACKED"},{t:"TEAM TRAINING",h:1},{t:"LIFE CHANGING",h:1},{t:"FUNCTIONAL 45"},{t:"66 COUNTRIES"},{t:"3,000+ STUDIOS"},{t:"SCIENCE BACKED"}],
-  mq3:[{t:"Switzerland"},{t:"Netherlands"},{t:"Sweden"},{t:"Ireland"},{t:"South Africa"},{t:"Qatar"},{t:"Kuwait"},{t:"Saudi Arabia"},{t:"Thailand"},{t:"Malaysia"},{t:"Indonesia"},{t:"India"},{t:"Chile"},{t:"Mexico"},{t:"Dominican Republic"}]
-};
-Object.keys(R).forEach(function(id){
-  var el=document.getElementById(id);if(!el)return;
-  var h="";
-  for(var p=0;p<2;p++){
-    R[id].forEach(function(x){
-      h+='<span class="mq-item'+(x.h?' hl':'')+'">'+x.t+'</span><span class="mq-dot"></span>';
-    });
+/* COUNTRY MARQUEE - 3줄 랜덤 국가 */
+(function(){
+  var all = [
+    "South Korea","United States","Australia","United Kingdom","Germany","France",
+    "Japan","Canada","Singapore","UAE","Brazil","New Zealand","Spain","Italy",
+    "Thailand","Malaysia","Netherlands","Sweden","Ireland","South Africa",
+    "Qatar","Saudi Arabia","Indonesia","India","Philippines","Vietnam",
+    "Turkey","Mexico","Chile","Colombia","Switzerland","Denmark","Norway",
+    "Belgium","Portugal","Greece","Poland","Czech Republic","Hungary","Romania",
+    "Kuwait","Bahrain","Egypt","South Africa","Taiwan","Hong Kong","Mongolia"
+  ];
+  function shuffle(arr){
+    var a=arr.slice();
+    for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}
+    return a;
   }
-  el.innerHTML=h;
-});
+  function build(id, highlight){
+    var el = document.getElementById(id);
+    if(!el) return;
+    var list = shuffle(all);
+    var h = "";
+    for(var p=0;p<2;p++){
+      list.forEach(function(c, i){
+        var isHl = highlight && (i % 8 === 0);
+        h += '<span class="country-item'+(isHl?' hl':'')+'">'+c+' <span class="country-star">★</span></span>';
+      });
+    }
+    el.innerHTML = h;
+  }
+  build("cMq1", false);
+  build("cMq2", true);
+  build("cMq3", false);
+})();
 
 /* STICKY */
 var ic=document.getElementById("initial-cta");
