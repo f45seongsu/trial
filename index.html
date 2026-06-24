@@ -524,6 +524,63 @@ img{max-width:100%;display:block}
 }
 
 /* FAQ */
+/* OBJECTIONS (망설임 깨기 아코디언) */
+.obj-section{background:var(--white);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
+.obj-list{margin-top:clamp(28px,6vw,44px);display:flex;flex-direction:column;gap:12px}
+.obj-item{
+  border:1.5px solid var(--spatial);border-radius:16px;
+  overflow:hidden;background:var(--white);
+  transition:border-color 0.2s,box-shadow 0.2s;
+}
+.obj-item.open{border-color:var(--blue);box-shadow:0 10px 30px rgba(33,21,81,0.1)}
+.obj-q{
+  display:flex;align-items:center;gap:14px;cursor:pointer;
+  padding:clamp(20px,5vw,26px) clamp(20px,5vw,28px);
+  user-select:none;
+}
+.obj-quote{
+  flex:1;font-family:var(--fk);
+  font-size:clamp(16px,4.4vw,20px);font-weight:800;
+  color:var(--blue);line-height:1.35;letter-spacing:-0.02em;
+}
+.obj-quote .qm{color:var(--red);margin-right:2px}
+.obj-toggle{
+  flex-shrink:0;width:30px;height:30px;border-radius:50%;
+  background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:700;color:var(--blue);
+  transition:transform 0.3s,background 0.2s;
+}
+.obj-item.open .obj-toggle{transform:rotate(45deg);background:var(--blue);color:var(--white)}
+.obj-a{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.35s ease;
+}
+.obj-item.open .obj-a{max-height:400px}
+.obj-a-inner{
+  padding:0 clamp(20px,5vw,28px) clamp(22px,5vw,28px);
+  font-size:clamp(15px,4vw,17px);color:var(--gray);
+  line-height:1.7;font-weight:500;
+}
+.obj-a-inner strong{color:var(--blue);font-weight:800}
+.obj-a-inner .obj-ref{
+  display:block;margin-top:12px;
+  font-family:var(--fn);font-size:clamp(10px,2.4vw,12px);font-weight:600;
+  color:#b0b0bb;letter-spacing:0.02em;
+}
+.obj-cta{
+  text-align:center;margin-top:clamp(28px,6vw,40px);
+}
+.obj-cta-btn{
+  display:inline-block;cursor:pointer;
+  background:var(--red);color:var(--white);
+  font-family:var(--fk);font-size:clamp(16px,4.5vw,20px);font-weight:900;
+  padding:clamp(15px,4vw,19px) clamp(32px,7vw,48px);border-radius:60px;
+  box-shadow:0 10px 28px rgba(214,0,28,0.4);
+  transition:transform 0.15s;
+}
+.obj-cta-btn:active{transform:scale(0.97)}
+
 .faq-section{background:var(--bg);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
 .faq-list{margin-top:clamp(28px,6vw,44px)}
 .faq-item{border-bottom:1px solid var(--spatial);padding:clamp(22px,5.5vw,32px) 0}
@@ -1121,6 +1178,87 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 
 <div class="stripe-div"></div>
 
+<!-- OBJECTIONS (망설임 깨기) -->
+<section class="obj-section">
+  <div class="mw">
+    <div class="section-header fu">
+      <span class="eyebrow-tag">Still Hesitating?</span>
+      <h2 class="section-title">F45가 나에게<br>맞을까요?</h2>
+      <p class="tt-notice" style="margin-top:14px">망설이는 분들을 위한 솔직한 답변</p>
+    </div>
+    <div class="obj-list">
+
+      <div class="obj-item fu" onclick="toggleObj(this)">
+        <div class="obj-q">
+          <span class="obj-quote"><span class="qm">"</span>저는 아직 체력이 부족해요<span class="qm">"</span></span>
+          <span class="obj-toggle">+</span>
+        </div>
+        <div class="obj-a"><div class="obj-a-inner">
+          지금 가장 열심히 하는 멤버들도 처음엔 "내가 따라갈 수 있을까" 똑같이 걱정했어요. 하지만 <strong>무게도 동작도 전부 내 몸에 맞게 바꿀 수 있고</strong>, 코치가 옆에서 페이스를 잡아드립니다. 걸을 수 있다면, 충분히 시작할 수 있어요!
+        </div></div>
+      </div>
+
+      <div class="obj-item fu" onclick="toggleObj(this)">
+        <div class="obj-q">
+          <span class="obj-quote"><span class="qm">"</span>운동할 시간이 없어요<span class="qm">"</span></span>
+          <span class="obj-toggle">+</span>
+        </div>
+        <div class="obj-a"><div class="obj-a-inner">
+          <strong>딱 45분이면 끝납니다!</strong> 오늘 뭘 할지 고민할 것도, 기구 앞에서 차례를 기다릴 것도 없어요. 문 열고 들어오면 프로그램도 코치도 이미 준비되어 있고, 타이머만 시작하면 됩니다. 하루 24시간 중 단 3%예요!
+        </div></div>
+      </div>
+
+      <div class="obj-item fu" onclick="toggleObj(this)">
+        <div class="obj-q">
+          <span class="obj-quote"><span class="qm">"</span>단체 수업이 불안해요<span class="qm">"</span></span>
+          <span class="obj-toggle">+</span>
+        </div>
+        <div class="obj-a"><div class="obj-a-inner">
+          처음엔 다들 어색해해요. 그런데 막상 시작되면 각자 자기 스테이션, 자기 횟수, 자기 타이머에만 빠져들어서 남 신경 쓸 틈이 없습니다! <strong>따라가야 한다는 압박도, 나를 비추는 거울도 없어요.</strong> 체력이 제각각인 사람들이 그저 각자의 운동을 할 뿐입니다.
+        </div></div>
+      </div>
+
+      <div class="obj-item fu" onclick="toggleObj(this)">
+        <div class="obj-q">
+          <span class="obj-quote"><span class="qm">"</span>MBTI가 'I'라서 망설여져요<span class="qm">"</span></span>
+          <span class="obj-toggle">+</span>
+        </div>
+        <div class="obj-a"><div class="obj-a-inner">
+          F45 성수에도 조용히 와서 자기 운동만 하고 가는 분들이 많아요. 굳이 친해지지 않아도 괜찮습니다! 재밌는 건, 활발히 어울리지 않더라도 <strong>같은 공간에서 함께 땀 흘린다는 그 소속감만으로 운동을 더 오래 이어가게 된다</strong>는 연구가 있다는 거예요. 어울림은 딱 편한 만큼만, 효과는 그대로 가져가세요!
+          <span class="obj-ref">* Davis et al., Sense of Community in HIFT (2022)</span>
+        </div></div>
+      </div>
+
+      <div class="obj-item fu" onclick="toggleObj(this)">
+        <div class="obj-q">
+          <span class="obj-quote"><span class="qm">"</span>너무 비싸요<span class="qm">"</span></span>
+          <span class="obj-toggle">+</span>
+        </div>
+        <div class="obj-a"><div class="obj-a-inner">
+          끊어놓고 한 달에 두어 번 가는 헬스장이 오히려 한 번 갈 때마다 더 비싼 셈이에요. F45는 기구 쓰는 값을 내는 곳이 아닙니다. <strong>짜인 프로그램, 챙겨주는 코치, 빠지면 알아봐주는 사람들</strong> — 계속하게 만드는 환경 전체에 투자하는 거예요. 한 번 와보고 판단하셔도 늦지 않습니다!
+        </div></div>
+      </div>
+
+      <div class="obj-item fu" onclick="toggleObj(this)">
+        <div class="obj-q">
+          <span class="obj-quote"><span class="qm">"</span>항상 중도에 포기하게 돼요<span class="qm">"</span></span>
+          <span class="obj-toggle">+</span>
+        </div>
+        <div class="obj-a"><div class="obj-a-inner">
+          의지가 약해서가 아니에요. 혼자 하면 "오늘 하루쯤은" 하고 빠지기 쉬운 게 당연합니다. 하지만 F45엔 <strong>나를 기억하는 코치와, 안 보이면 궁금해하는 사람들</strong>이 있어요. 그 작은 책임감 하나가 끝까지 가게 만듭니다!
+        </div></div>
+      </div>
+
+    </div>
+
+    <div class="obj-cta fu">
+      <a href="javascript:void(0)" class="obj-cta-btn" onclick="openLeadModal()">그래도 직접 경험해볼게요 →</a>
+    </div>
+  </div>
+</section>
+
+<div class="stripe-div"></div>
+
 <!-- FAQ -->
 <section class="faq-section">
   <div class="mw">
@@ -1339,6 +1477,11 @@ function submitLead(){
     if(head) head.style.display = 'none';
     document.getElementById('leadDoneView').classList.add('active');
   }, 600);
+}
+
+/* ════ 망설임 아코디언 토글 ════ */
+function toggleObj(el){
+  el.classList.toggle('open');
 }
 
 /* ════ 리드 모달 열기/닫기 ════ */
