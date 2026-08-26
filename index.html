@@ -37,7 +37,6 @@ src="https://www.facebook.com/tr?id=26744340661896755&ev=PageView&noscript=1"
   --blue:#211551;--red:#D6001C;--white:#FFFFFF;
   --bg:#f4f4f7;--spatial:#E3E4E6;--gray:#5a5a6a;
   --light-blue:#eaedff;
-  /* 본사 공식 폰트: Barlow Condensed (영문 헤딩) / Pretendard (한글) */
   --fn: "Barlow Condensed", "Arial Black", sans-serif;
   --fk: "Pretendard", sans-serif;
 }
@@ -49,9 +48,6 @@ img{max-width:100%;display:block}
 
 .brand-stripe{width:100%;height:6px;background:repeating-linear-gradient(90deg,var(--blue) 0,var(--blue) 50%,var(--red) 50%,var(--red) 100%);background-size:120px 6px}
 
-/* ════════════════════════════════
-   HERO
-   ════════════════════════════════ */
 .hero{
   position:relative;min-height:100svh;
   background:var(--blue);
@@ -99,7 +95,6 @@ img{max-width:100%;display:block}
   padding:clamp(20px,5vw,44px) clamp(20px,5vw,56px);
 }
 
-/* 👇 영문: Stroke 제거 및 크기 대폭 확대 */
 .hero-tagline{
   font-family:var(--fn);
   font-size:clamp(38px,10vw,88px);
@@ -114,7 +109,6 @@ img{max-width:100%;display:block}
   display:flex;flex-direction:column;gap:clamp(2px,0.5vw,4px);
   margin-bottom:clamp(14px,3.5vw,24px);
 }
-/* 👇 영문: Stroke 제거 및 굵기 강조 */
 .en-line{
   font-family:var(--fn);
   font-size:clamp(34px,9vw,76px);
@@ -127,7 +121,6 @@ img{max-width:100%;display:block}
 .en-line.r{color:var(--red)}
 .en-line.b{color:rgba(255,255,255,0.7)}
 
-/* 👇 한글: 굵기 900 및 크기 확대, 자간 타이트하게 조정 */
 .hero-ko{
   font-family:var(--fk);
   font-size:clamp(42px,11vw,100px);
@@ -165,7 +158,6 @@ img{max-width:100%;display:block}
 .scroll-bar{display:inline-block;width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,0.5),transparent);animation:scrollPulse 2s ease-in-out infinite}
 @keyframes scrollPulse{0%,100%{opacity:0.4}50%{opacity:1}}
 
-/* MARQUEE */
 .big-mq-wrap{background:var(--blue);overflow:hidden;padding:clamp(14px,3.5vw,22px) 0;border-top:2px solid var(--red);border-bottom:2px solid var(--red)}
 .big-mq-track{display:flex;white-space:nowrap;animation:mqScroll 11s linear infinite}
 .mq-word{font-family:var(--fn);font-size:clamp(28px,7vw,56px);font-weight:900;letter-spacing:0.06em;text-transform:uppercase;padding:0 clamp(20px,4vw,40px);line-height:1;color:var(--white);display:inline-flex;align-items:center;gap:clamp(16px,3vw,32px)}
@@ -174,7 +166,6 @@ img{max-width:100%;display:block}
 .mq-sep{font-family:var(--fn);font-size:clamp(32px,8vw,64px);color:var(--red);padding:0 clamp(6px,1.5vw,14px);line-height:1;opacity:0.35;display:inline-block;font-weight:900}
 @keyframes mqScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* PRICING */
 #initial-cta{background:var(--blue);padding:clamp(40px,9vw,80px) clamp(20px,5vw,48px)}
 .cta-wrap{max-width:540px;margin:0 auto}
 .cta-eyebrow{
@@ -248,7 +239,6 @@ img{max-width:100%;display:block}
 }
 .section-header{margin-bottom:clamp(28px,6vw,48px)}
 
-/* STATS */
 .stats-section{background:var(--bg);padding:clamp(48px,10vw,80px) clamp(20px,5vw,48px)}
 .stats-title-wrap{text-align:center;margin-bottom:clamp(28px,7vw,48px)}
 .stats-eyebrow{font-family:var(--fn);font-size:clamp(11px,2.5vw,13px);font-weight:900;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:12px}
@@ -268,7 +258,6 @@ img{max-width:100%;display:block}
 .stat-num em{color:var(--red);font-style:normal}
 .stat-label{font-family:var(--fn);font-size:clamp(10px,2.2vw,13px);font-weight:900;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray);margin-top:6px;display:block}
 
-/* COUNTRY MARQUEE - 3줄 슬림 */
 .country-sec{background:var(--blue);padding:clamp(6px,1.5vw,10px) 0;overflow:hidden;display:flex;flex-direction:column;gap:0;border-top:2px solid var(--red);border-bottom:2px solid var(--red)}
 .country-row{overflow:hidden;padding:clamp(4px,1vw,7px) 0}
 .country-track{display:flex;white-space:nowrap}
@@ -281,7 +270,6 @@ img{max-width:100%;display:block}
 @keyframes mqLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes mqRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 
-/* GLOBAL SECTION */
 .global-section{
   position:relative;
   background:var(--blue);
@@ -320,7 +308,6 @@ img{max-width:100%;display:block}
   line-height:1.7;max-width:540px;margin:0 auto;
 }
 
-/* WHY F45 */
 .why-section{background:var(--bg);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
 .why-list{display:flex;flex-direction:column;gap:clamp(16px,3.5vw,24px);margin-top:clamp(28px,6vw,44px)}
 .why-card{
@@ -372,7 +359,6 @@ img{max-width:100%;display:block}
   display:block;margin-top:12px;letter-spacing:0.02em;
 }
 
-/* ROUTINE */
 .routine-section{background:var(--white);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
 .routine-grid{display:grid;gap:clamp(16px,3.5vw,24px);margin-top:clamp(28px,6vw,44px)}
 .routine-card{
@@ -435,9 +421,6 @@ img{max-width:100%;display:block}
   color:rgba(255,255,255,0.68);line-height:1.6;font-weight:500;
 }
 
-/* ════════════════════════════════
-   TIMETABLE — 이미지 스타일 (모바일 표)
-   ════════════════════════════════ */
 .tt-section{background:var(--white);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
 .tt-notice{
   font-size:clamp(14px,3.8vw,17px);font-weight:700;
@@ -454,7 +437,6 @@ img{max-width:100%;display:block}
 .dot-r{background:var(--red)}
 .dot-h{background:linear-gradient(135deg,var(--red) 50%,var(--blue) 50%)}
 
-/* 시간표 컨테이너 */
 .tt-table-wrap{
   background:var(--white);
   border-radius:clamp(16px,3.5vw,24px);
@@ -462,7 +444,6 @@ img{max-width:100%;display:block}
   border:1.5px solid var(--spatial);
 }
 
-/* 테이블 헤더 */
 .tt-header{
   background:var(--blue);
   color:var(--white);
@@ -487,7 +468,6 @@ img{max-width:100%;display:block}
   font-weight:600;
 }
 
-/* 테이블 바디 */
 .tt-body{background:var(--white)}
 .tt-row{
   display:grid;
@@ -523,8 +503,6 @@ img{max-width:100%;display:block}
   font-weight:700;
 }
 
-/* FAQ */
-/* OBJECTIONS (망설임 깨기 아코디언) */
 .obj-section{background:var(--white);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
 .obj-list{margin-top:clamp(28px,6vw,44px);display:flex;flex-direction:column;gap:12px}
 .obj-item{
@@ -611,7 +589,6 @@ img{max-width:100%;display:block}
   font-size:clamp(15px,4vw,17px);font-weight:900;
 }
 
-/* LOCATION */
 .loc-section{background:var(--blue);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
 .loc-section .eyebrow-tag{color:rgba(255,255,255,0.3)}
 .loc-section .section-title{color:var(--white)}
@@ -623,7 +600,6 @@ img{max-width:100%;display:block}
 .parking{font-size:clamp(14px,3.5vw,16px);font-weight:700;color:var(--blue);background:var(--light-blue);padding:12px 18px;border-radius:12px;display:inline-block}
 .parking-fine{font-size:clamp(12px,3vw,13px);font-weight:500;color:var(--gray);margin-top:8px;display:block}
 
-/* POLICY */
 .policy-section{background:var(--spatial);padding:clamp(40px,8vw,72px) clamp(20px,5vw,48px)}
 .policy-box{background:var(--white);border-radius:22px;padding:clamp(28px,7vw,44px);border:1px solid rgba(33,21,81,0.08);margin-top:clamp(24px,5vw,36px)}
 .policy-title{font-size:clamp(15px,4vw,19px);font-weight:900;color:var(--blue);margin-bottom:18px;text-transform:uppercase}
@@ -631,7 +607,6 @@ img{max-width:100%;display:block}
 .policy-list li{font-size:clamp(14px,3.8vw,17px);color:var(--gray);line-height:1.65;padding-left:20px;position:relative;font-weight:500}
 .policy-list li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:50%;background:var(--red)}
 
-/* CONTACT */
 .contact-section{background:var(--bg);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
 .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,3vw,20px);margin-top:clamp(28px,6vw,44px)}
 @media(max-width:640px){.contact-grid{grid-template-columns:1fr;max-width:400px}}
@@ -653,13 +628,11 @@ img{max-width:100%;display:block}
 .contact-value{font-family:var(--fk);font-size:clamp(16px,4.2vw,22px);font-weight:900;color:var(--blue);letter-spacing:-0.02em;margin-bottom:6px}
 .contact-sub{font-size:clamp(13px,3.2vw,15px);color:var(--gray);font-weight:500}
 
-/* FOOTER */
 footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);text-align:center}
 .footer-logo{width:clamp(80px,16vw,120px);height:auto;mix-blend-mode:screen;filter:brightness(5) saturate(0);margin:0 auto clamp(12px,3vw,18px)}
 .footer-tagline{font-family:var(--fn);font-size:clamp(10px,2.4vw,12px);font-weight:800;letter-spacing:0.26em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:14px}
 .footer-copy{font-size:clamp(12px,2.8vw,14px);color:rgba(255,255,255,0.18)}
 
-/* STICKY CTA */
 .sticky-cta{
   position:fixed;bottom:-120px;left:0;width:100%;
   background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);
@@ -689,7 +662,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 }
 .sticky-btn:active{background:var(--red)}
 
-/* FADE UP */
 .fu{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
 .fu.vis{opacity:1;transform:translateY(0)}
 
@@ -697,9 +669,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
   .hero-pill{display:none}
 }
 
-/* ════════════════════════════════
-   LEAD MODAL (버튼 클릭 시 등장)
-   ════════════════════════════════ */
 .lead-overlay{
   position:fixed;inset:0;
   background:rgba(10,8,30,0.78);backdrop-filter:blur(6px);
@@ -813,7 +782,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
   text-align:center;font-size:13px;color:rgba(255,255,255,0.5);
   margin-top:18px;line-height:1.6;
 }
-/* 제출 완료 화면 */
 .lead-done{
   display:none;text-align:center;
   padding:clamp(30px,8vw,50px) clamp(20px,5vw,32px);
@@ -847,7 +815,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 
 <div class="brand-stripe"></div>
 
-<!-- ════ HERO ════ -->
 <section class="hero">
   <video class="hero-video" autoplay muted loop playsinline>
     <source src="f45-seongsu-video.mp4" type="video/mp4">
@@ -887,12 +854,10 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
   <div class="hero-scroll"><span class="scroll-bar"></span></div>
 </section>
 
-<!-- MARQUEE -->
 <div class="big-mq-wrap">
   <div class="big-mq-track" id="bigMq"></div>
 </div>
 
-<!-- PRICING -->
 <div id="initial-cta">
   <div class="mw cta-wrap fu">
     <span class="cta-eyebrow">Limited Offer · 체험 프로그램</span>
@@ -909,7 +874,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 
 <div class="dual-stripe"><div class="s1"></div><div class="s2"></div></div>
 
-<!-- STATS -->
 <section class="stats-section">
   <div class="mw fu">
     <div class="stats-title-wrap">
@@ -924,14 +888,12 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
   </div>
 </section>
 
-<!-- COUNTRY MARQUEE -->
 <div class="country-sec">
   <div class="country-row"><div class="country-track s1" id="cMq1"></div></div>
   <div class="country-row"><div class="country-track s2" id="cMq2"></div></div>
   <div class="country-row"><div class="country-track s3" id="cMq3"></div></div>
 </div>
 
-<!-- GLOBAL -->
 <section class="global-section fu">
   <div class="global-bg" style="background-image:url('global-network.jpg')"></div>
   <div class="global-overlay"></div>
@@ -944,7 +906,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 
 <div class="stripe-div"></div>
 
-<!-- WHY F45 -->
 <section class="why-section">
   <div class="mw">
     <div class="section-header fu">
@@ -1000,7 +961,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 
 <div class="stripe-div"></div>
 
-<!-- ROUTINE -->
 <section class="routine-section">
   <div class="mw">
     <div class="section-header fu">
@@ -1045,7 +1005,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 
 <div class="stripe-div"></div>
 
-<!-- TIMETABLE -->
 <section class="tt-section">
   <div class="mw">
     <div class="section-header fu">
@@ -1061,7 +1020,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
     </div>
 
     <div class="tt-table-wrap fu">
-      <!-- 헤더 -->
       <div class="tt-header">
         <div class="tt-header-cell">시간</div>
         <div class="tt-header-cell">월 / 수<span class="sub">Cardio</span></div>
@@ -1070,7 +1028,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
         <div class="tt-header-cell">토 · 공휴일<span class="sub">Hybrid</span></div>
       </div>
       
-      <!-- 바디 -->
       <div class="tt-body">
         <div class="tt-row">
           <div class="tt-time">AM 06:30</div>
@@ -1142,7 +1099,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 
 <div class="stripe-div"></div>
 
-<!-- CONTACT -->
 <section class="contact-section">
   <div class="mw">
     <div class="section-header fu">
@@ -1178,7 +1134,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 
 <div class="stripe-div"></div>
 
-<!-- OBJECTIONS (망설임 깨기) -->
 <section class="obj-section">
   <div class="mw">
     <div class="section-header fu">
@@ -1259,7 +1214,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 
 <div class="stripe-div"></div>
 
-<!-- FAQ -->
 <section class="faq-section">
   <div class="mw">
     <div class="section-header fu">
@@ -1279,7 +1233,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 
 <div class="stripe-div"></div>
 
-<!-- LOCATION -->
 <section class="loc-section">
   <div class="mw">
     <div class="section-header fu">
@@ -1302,7 +1255,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 
 <div class="stripe-div"></div>
 
-<!-- POLICY -->
 <section class="policy-section">
   <div class="mw">
     <div class="section-header fu">
@@ -1320,7 +1272,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
   </div>
 </section>
 
-<!-- FOOTER -->
 <div class="brand-stripe"></div>
 <footer>
   <img class="footer-logo" src="f45-logo.png" alt="F45 Seongsu">
@@ -1328,7 +1279,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
   <p class="footer-copy">F45 Training Seongsu · Seoul, South Korea</p>
 </footer>
 
-<!-- STICKY CTA -->
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-info">
     <span class="sticky-name">F45 성수 7일 체험권</span>
@@ -1338,7 +1288,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 </div>
 
 <script>
-/* BIG MARQUEE - F45 Korea style */
 (function(){
   var words = ["TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING"];
   var el = document.getElementById("bigMq");
@@ -1351,7 +1300,6 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
   el.innerHTML = h;
 })();
 
-/* COUNTRY MARQUEE - 3줄 랜덤 국가 */
 (function(){
   var all = [
     "South Korea","United States","Australia","United Kingdom","Germany","France",
@@ -1385,14 +1333,12 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
   build("cMq3", false);
 })();
 
-/* STICKY */
 var ic=document.getElementById("initial-cta");
 var sc=document.getElementById("stickyCta");
 window.addEventListener("scroll",function(){
   sc.classList.toggle("show",ic.getBoundingClientRect().bottom<0);
 },{passive:true});
 
-/* FADE UP */
 var obs=new IntersectionObserver(function(entries){
   entries.forEach(function(e){
     if(e.isIntersecting){e.target.classList.add("vis");obs.unobserve(e.target);}
@@ -1402,18 +1348,12 @@ document.querySelectorAll(".fu").forEach(function(el){obs.observe(el);});
 </script>
 
 <script>
-/* ════ LEAD FORM SUBMIT → Google Form ════ */
-var GFORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSeI-UjYSjiHqtyfGzj1Bm9H8iszZc-VmpRPCuzpBhniuk7cwg/formResponse";
-var GFORM_ENTRY = {
-  name:    "entry.766328459",
-  phone:   "entry.2113669947",
-  email:   "entry.425321043",
-  purpose: "entry.301140040",
-  time:    "entry.10476566"
-};
+/* ════ LEAD FORM SUBMIT → Supabase Edge Function (직접 insert, 성공/실패 확인) ════ */
+var SUPABASE_URL = "https://mvgbwsbvngdnxdndwimb.supabase.co";
+var SUPABASE_ANON_KEY = "sb_publishable_ZRHS4-UR7Q07Fmtc_P-19g_fVlIc85X";
 
 function submitLead(){
-  if(window.__leadSubmitted) return;  // 중복 제출 방지
+  if(window.__leadSubmitting) return;
 
   var name  = document.getElementById('lf-name').value.trim();
   var phone = document.getElementById('lf-phone').value.trim();
@@ -1423,60 +1363,59 @@ function submitLead(){
   var purpose = pEl ? pEl.value : "";
   var time    = tEl ? tEl.value : "";
 
-  // 필수값 검증
   if(!name){ alert('이름을 입력해 주세요.'); document.getElementById('lf-name').focus(); return; }
   if(!phone){ alert('연락처를 입력해 주세요.'); document.getElementById('lf-phone').focus(); return; }
   if(!email || email.indexOf('@')<0){ alert('이메일을 정확히 입력해 주세요.'); document.getElementById('lf-email').focus(); return; }
 
-  window.__leadSubmitted = true;
+  window.__leadSubmitting = true;
   var btn = document.getElementById('lf-submit');
   btn.disabled = true; btn.textContent = '전송 중...';
 
-  // Google Form으로 백그라운드 전송 (hidden iframe + form POST)
-  var data = {};
-  data[GFORM_ENTRY.name]    = name;
-  data[GFORM_ENTRY.phone]   = phone;
-  data[GFORM_ENTRY.email]   = email;
-  if(purpose) data[GFORM_ENTRY.purpose] = purpose;
-  if(time)    data[GFORM_ENTRY.time]    = time;
+  fetch(SUPABASE_URL + '/functions/v1/landing-lead', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': SUPABASE_ANON_KEY,
+      'Authorization': 'Bearer ' + SUPABASE_ANON_KEY
+    },
+    body: JSON.stringify({ name: name, phone: phone, email: email, purpose: purpose, time: time })
+  })
+  .then(function(res){
+    return res.json().then(function(data){ return { ok: res.ok, data: data }; });
+  })
+  .then(function(result){
+    window.__leadSubmitting = false;
 
-  var iframe = document.createElement('iframe');
-  iframe.name = 'gform_target';
-  iframe.style.display = 'none';
-  document.body.appendChild(iframe);
+    if(!result.ok || !result.data || !result.data.success){
+      btn.disabled = false; btn.textContent = '체험 신청하기';
+      var errMsg = (result.data && result.data.error) ? result.data.error : '알 수 없는 오류';
+      alert('신청 중 문제가 발생했어요. 다시 한 번 시도해 주시거나,\n전화(010-8379-1450)로 문의해 주세요.\n\n('+errMsg+')');
+      return;
+    }
 
-  var form = document.createElement('form');
-  form.action = GFORM_ACTION;
-  form.method = 'POST';
-  form.target = 'gform_target';
-  form.style.display = 'none';
-  for(var k in data){
-    var inp = document.createElement('input');
-    inp.type = 'hidden'; inp.name = k; inp.value = data[k];
-    form.appendChild(inp);
-  }
-  document.body.appendChild(form);
-  form.submit();
+    /* 성공했을 때만 Meta Pixel Lead 이벤트 발생 (기존 버그: 실패해도 무조건 쐈음) */
+    if(typeof fbq !== 'undefined'){
+      var eid = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+      fbq('track','Lead',{
+        content_name:'Trial Lead Form',
+        content_category: purpose || 'unspecified',
+        custom_time: time || 'unspecified',
+        value: 40000,
+        currency: 'KRW'
+      },{eventID: eid});
+    }
 
-  // Meta Pixel Lead 이벤트 (event_id로 중복 집계 방지 + 분석용 파라미터)
-  if(typeof fbq !== 'undefined'){
-    var eid = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
-    fbq('track','Lead',{
-      content_name:'Trial Lead Form',
-      content_category: purpose || 'unspecified',
-      custom_time: time || 'unspecified',
-      value: 40000,
-      currency: 'KRW'
-    },{eventID: eid});
-  }
-
-  // 완료 화면 표시 (모달 안에서 전환)
-  setTimeout(function(){
+    /* 성공했을 때만 완료 화면 표시 */
     document.getElementById('leadFormView').style.display = 'none';
     var head = document.querySelector('#leadModal .lead-head');
     if(head) head.style.display = 'none';
     document.getElementById('leadDoneView').classList.add('active');
-  }, 600);
+  })
+  .catch(function(err){
+    window.__leadSubmitting = false;
+    btn.disabled = false; btn.textContent = '체험 신청하기';
+    alert('네트워크 문제로 신청이 접수되지 않았어요.\n와이파이 대신 데이터로 다시 시도해 보시거나,\n전화(010-8379-1450)로 문의해 주세요.');
+  });
 }
 
 /* ════ 망설임 아코디언 토글 ════ */
@@ -1488,9 +1427,7 @@ function toggleObj(el){
 function openLeadModal(){
   document.getElementById('leadModal').classList.add('active');
   document.body.style.overflow='hidden';
-  // 신청 버튼 클릭 = 명확한 관심 신호
   if(typeof fbq !== 'undefined') fbq('track','InitiateCheckout',{content_name:'Lead Modal Open'});
-  // 모달 열릴 때 이름 입력란에 포커스 (모바일 키보드 자동 노출 방지 위해 약간 지연)
   setTimeout(function(){
     var n=document.getElementById('lf-name'); if(n) n.focus();
   },300);
@@ -1505,7 +1442,6 @@ document.addEventListener('keydown',function(e){
 
 /* ════ 깔때기 추적: 첫 입력 시작 ════ */
 (function(){
-  // 첫 입력 시작 시 커스텀 이벤트 1회 (작성 시작 = 강한 관심 신호)
   var started = false;
   ['lf-name','lf-phone','lf-email'].forEach(function(id){
     var el = document.getElementById(id);
@@ -1518,7 +1454,6 @@ document.addEventListener('keydown',function(e){
   });
 })();
 </script>
-<!-- ════ LEAD MODAL ════ -->
 <div class="lead-overlay" id="leadModal" onclick="if(event.target===this)closeLeadModal()">
   <div class="lead-modal-box">
     <button class="lead-modal-close" onclick="closeLeadModal()" aria-label="닫기">×</button>
@@ -1528,7 +1463,6 @@ document.addEventListener('keydown',function(e){
       <p class="lead-desc">정보를 남겨주시면 담당 코치가 <strong>24시간 이내</strong> 연락드려 일정을 안내해 드립니다.<br>첫 방문 고객 대상 · 체험료는 현장 결제</p>
     </div>
 
-    <!-- 입력 폼 -->
     <div id="leadFormView">
       <div class="lead-field">
         <label class="lead-label" for="lf-name">이름<span class="req">*</span></label>
@@ -1581,7 +1515,6 @@ document.addEventListener('keydown',function(e){
       <p class="lead-privacy">제출 시 체험 상담 목적의 개인정보 수집·이용에 동의하는 것으로 간주됩니다.</p>
     </div>
 
-    <!-- 제출 완료 화면 -->
     <div class="lead-done" id="leadDoneView">
       <div class="check">✓</div>
       <h3>신청이 완료되었습니다!</h3>
