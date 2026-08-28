@@ -634,33 +634,44 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 .footer-copy{font-size:clamp(12px,2.8vw,14px);color:rgba(255,255,255,0.18)}
 
 .sticky-cta{
-  position:fixed;bottom:-120px;left:0;width:100%;
+  position:fixed;bottom:-160px;left:0;width:100%;
   background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);
   -webkit-backdrop-filter:blur(16px);
-  padding:clamp(12px,3vw,16px) clamp(16px,4vw,32px);
-  padding-bottom:max(clamp(12px,3vw,16px),env(safe-area-inset-bottom));
-  display:flex;justify-content:space-between;align-items:center;
+  padding:clamp(10px,2.5vw,14px) clamp(14px,3.5vw,28px);
+  padding-bottom:max(clamp(10px,2.5vw,14px),env(safe-area-inset-bottom));
+  display:flex;flex-direction:column;gap:6px;
   z-index:1000;
   transition:bottom 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
   box-shadow:0 -8px 32px rgba(33,21,81,0.1);
   border-top:2px solid var(--spatial);
 }
 .sticky-cta.show{bottom:0}
-.sticky-info{display:flex;flex-direction:column;gap:3px}
-.sticky-name{font-size:clamp(12px,3.2vw,15px);font-weight:700;color:var(--gray)}
-.sticky-price{
-  font-family:var(--fn);
-  font-size:clamp(24px,7vw,34px);
-  font-weight:900;color:var(--red);letter-spacing:-0.04em;line-height:1;
+.sticky-row{display:flex;gap:7px;align-items:center}
+.sticky-input{
+  flex:1;min-width:0;
+  font-family:var(--fk);font-size:15px;font-weight:600;
+  color:var(--blue);
+  padding:clamp(11px,3vw,13px) clamp(12px,3vw,14px);
+  border:1.5px solid var(--spatial);border-radius:10px;
+  background:#fafafb;-webkit-appearance:none;appearance:none;
 }
-.sticky-btn{
-  background:var(--blue);color:var(--white);
-  padding:clamp(14px,4vw,18px) clamp(24px,5.5vw,34px);
-  border-radius:50px;font-weight:900;
-  font-size:clamp(15px,4.2vw,19px);
-  white-space:nowrap;transition:background 0.2s;flex-shrink:0;
+.sticky-input::placeholder{color:#a8a8b3;font-weight:400}
+.sticky-input:focus{outline:none;border-color:var(--blue);background:var(--white)}
+.sticky-submit{
+  background:var(--red);color:var(--white);border:none;cursor:pointer;
+  padding:clamp(11px,3vw,13px) clamp(16px,4.5vw,22px);
+  border-radius:10px;font-weight:900;
+  font-family:var(--fk);font-size:clamp(14px,3.8vw,16px);
+  white-space:nowrap;flex-shrink:0;transition:transform 0.15s,background 0.15s;
 }
-.sticky-btn:active{background:var(--red)}
+.sticky-submit:active{transform:scale(0.97);background:#b30017}
+.sticky-submit:disabled{background:var(--gray);cursor:not-allowed}
+.sticky-note{font-size:11px;color:var(--gray);text-align:center;font-weight:500}
+.sticky-done{
+  display:none;text-align:center;padding:6px 0;
+  font-size:15px;font-weight:800;color:var(--blue);
+}
+.sticky-done.active{display:block}
 
 .fu{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
 .fu.vis{opacity:1;transform:translateY(0)}
@@ -1280,11 +1291,15 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
 </footer>
 
 <div class="sticky-cta" id="stickyCta">
-  <div class="sticky-info">
-    <span class="sticky-name">F45 성수 7일 체험권</span>
-    <span class="sticky-price">40,000원</span>
+  <div id="stickyFormView">
+    <div class="sticky-note">F45 성수 7일 체험 40,000원 · 이름과 번호만 남겨주세요</div>
+    <div class="sticky-row">
+      <input class="sticky-input" type="text" id="sf-name" placeholder="이름" autocomplete="name">
+      <input class="sticky-input" type="tel" id="sf-phone" placeholder="연락처" autocomplete="tel" inputmode="tel">
+      <button class="sticky-submit" id="sf-submit" onclick="submitStickyLead()">신청</button>
+    </div>
   </div>
-  <a href="javascript:void(0)" class="sticky-btn" onclick="openLeadModal()">체험 신청하기</a>
+  <div class="sticky-done" id="stickyDoneView">✓ 신청완료! 24시간 내 연락드릴게요</div>
 </div>
 
 <script>
@@ -1365,7 +1380,7 @@ function submitLead(){
 
   if(!name){ alert('이름을 입력해 주세요.'); document.getElementById('lf-name').focus(); return; }
   if(!phone){ alert('연락처를 입력해 주세요.'); document.getElementById('lf-phone').focus(); return; }
-  if(!email || email.indexOf('@')<0){ alert('이메일을 정확히 입력해 주세요.'); document.getElementById('lf-email').focus(); return; }
+  if(email && email.indexOf('@')<0){ alert('이메일 형식이 올바르지 않아요. (선택사항이니 비워두셔도 돼요)'); document.getElementById('lf-email').focus(); return; }
 
   window.__leadSubmitting = true;
   var btn = document.getElementById('lf-submit');
@@ -1434,6 +1449,65 @@ function submitLead(){
 }
 
 /* ════ 망설임 아코디언 토글 ════ */
+/* ════ 하단 고정 미니폼 제출 (이름+번호만, 모달 안 열고 바로 제출) ════ */
+function submitStickyLead(){
+  if(window.__stickySubmitting) return;
+
+  var name  = document.getElementById('sf-name').value.trim();
+  var phone = document.getElementById('sf-phone').value.trim();
+
+  if(!name){ alert('이름을 입력해 주세요.'); document.getElementById('sf-name').focus(); return; }
+  if(!phone){ alert('연락처를 입력해 주세요.'); document.getElementById('sf-phone').focus(); return; }
+
+  window.__stickySubmitting = true;
+  var btn = document.getElementById('sf-submit');
+  btn.disabled = true; btn.textContent = '전송중';
+
+  fetch(SUPABASE_URL + '/functions/v1/landing-lead-edge-function', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': SUPABASE_ANON_KEY,
+      'Authorization': 'Bearer ' + SUPABASE_ANON_KEY
+    },
+    body: JSON.stringify({ name: name, phone: phone, email: '', purpose: '', time: '' })
+  })
+  .then(function(res){
+    return res.text().then(function(text){
+      var data = null;
+      try{ data = JSON.parse(text); }catch(e){ data = null; }
+      return { ok: res.ok, status: res.status, data: data };
+    });
+  })
+  .then(function(result){
+    window.__stickySubmitting = false;
+
+    if(result.data === null){
+      btn.disabled = false; btn.textContent = '신청';
+      alert('신청 서버 설정에 문제가 있어요 (상태코드 '+result.status+'). 전화(010-8379-1450)로 문의해 주세요.');
+      return;
+    }
+    if(!result.ok || !result.data.success){
+      btn.disabled = false; btn.textContent = '신청';
+      alert('신청 중 문제가 발생했어요. 다시 시도해 주시거나 전화(010-8379-1450)로 문의해 주세요.\n('+(result.data.error||'알 수 없는 오류')+')');
+      return;
+    }
+
+    if(typeof fbq !== 'undefined'){
+      var eid = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+      fbq('track','Lead',{content_name:'Sticky Mini Form', value: 40000, currency:'KRW'},{eventID: eid});
+    }
+
+    document.getElementById('stickyFormView').style.display = 'none';
+    document.getElementById('stickyDoneView').classList.add('active');
+  })
+  .catch(function(err){
+    window.__stickySubmitting = false;
+    btn.disabled = false; btn.textContent = '신청';
+    alert('네트워크 문제로 신청이 접수되지 않았어요. 다시 시도해 주시거나 전화(010-8379-1450)로 문의해 주세요.');
+  });
+}
+
 function toggleObj(el){
   el.classList.toggle('open');
 }
@@ -1488,7 +1562,7 @@ document.addEventListener('keydown',function(e){
         <input class="lead-input" type="tel" id="lf-phone" placeholder="010-0000-0000" autocomplete="tel" inputmode="tel">
       </div>
       <div class="lead-field">
-        <label class="lead-label" for="lf-email">이메일<span class="req">*</span></label>
+        <label class="lead-label" for="lf-email">이메일<span class="opt">선택</span></label>
         <input class="lead-input" type="email" id="lf-email" placeholder="example@email.com" autocomplete="email" inputmode="email">
       </div>
       <div class="lead-field">
