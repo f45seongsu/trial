@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | F45 Seongsu</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 680px;
+      margin: 30px auto;
+      background: #ffffff;
+      padding: 36px 28px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #111;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 12px;
+    }
+    h2 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-top: 24px;
+      margin-bottom: 8px;
+      color: #222;
+    }
+    p, li {
+      font-size: 14px;
+      color: #555;
+      margin: 4px 0;
+    }
+    ul {
+      padding-left: 20px;
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
+    hr {
+      border: none;
+      border-top: 1px dashed #ddd;
+      margin: 36px 0;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #888;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 한국어 섹션 -->
+    <h1>개인정보 처리방침 (체험권 예약)</h1>
+    
+    <p>F45 Training Seongsu(이하 '센터')는 이용자의 개인정보를 중요시하며, 「개인정보 보호법」 등 관련 법령을 준수하고 있습니다.</p>
+
+    <h2>1. 수집하는 개인정보 항목</h2>
+    <p>체험권 신청 접수 및 예약 상담 진행을 위해 아래의 정보를 수집합니다.</p>
+    <ul>
+      <li>수집 항목: 성명(이름), 휴대전화번호</li>
+    </ul>
+
+    <h2>2. 개인정보 수집 및 이용 목적</h2>
+    <ul>
+      <li>F45 성수 7일 무제한 체험권 예약 접수 및 일정 조율 상담</li>
+      <li>방문 일정 안내 문자 발송 및 센터 이용 관련 공지 전달</li>
+    </ul>
+
+    <h2>3. 개인정보 보유 및 이용 기간</h2>
+    <p>수집된 개인정보는 원칙적으로 이용 목적이 달성된 후(신청일로부터 3개월) 지체 없이 파기합니다.</p>
+
+    <h2>4. 동의 거부 권리 및 불이익</h2>
+    <p>귀하는 개인정보 수집 및 이용 동의를 거부할 권리가 있습니다. 단, 필수 정보 수집에 동의하지 않으실 경우 체험권 예약 안내 서비스가 제한될 수 있습니다.</p>
+
+    <hr>
+
+    <!-- 영문 섹션 -->
+    <h1>Privacy Policy (Trial Pass Booking)</h1>
+
+    <p>F45 Training Seongsu ("the Studio") respects your privacy and complies with applicable data protection laws.</p>
+
+    <h2>1. Information We Collect</h2>
+    <p>We collect the following personal information to process your trial pass registration and coordinate schedule consultations:</p>
+    <ul>
+      <li>Collected Items: Full Name, Mobile Phone Number</li>
+    </ul>
+
+    <h2>2. Purpose of Collection and Use</h2>
+    <ul>
+      <li>Processing registrations and schedule inquiries for the F45 Seongsu 7-Day Trial Pass</li>
+      <li>Sending booking confirmations, visit instructions, and essential studio updates via SMS/Call</li>
+    </ul>
+
+    <h2>3. Retention and Deletion Period</h2>
+    <p>In principle, personal information is promptly deleted once the operational purpose has been fulfilled (retained for up to 3 months from submission).</p>
+
+    <h2>4. Right to Refuse Consent</h2>
+    <p>You have the right to decline consent to this data collection. However, refusing to provide required details (Name, Phone Number) will prevent us from completing your trial pass registration and scheduling consultation.</p>
+
+    <div class="footer">
+      <p>Effective Date: September 2, 2026</p>
+      <p>Inquiries: F45 Training Seongsu (Instagram @f45_seongsu)</p>
+    </div>
+  </div>
+</body>
+</html>
