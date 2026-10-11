@@ -629,6 +629,7 @@ img{max-width:100%;display:block}
 .contact-sub{font-size:clamp(13px,3.2vw,15px);color:var(--gray);font-weight:500}
 
 footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);text-align:center}
+footer{padding-bottom:calc(clamp(36px,8vw,60px) + 110px)}
 .footer-logo{width:clamp(80px,16vw,120px);height:auto;mix-blend-mode:screen;filter:brightness(5) saturate(0);margin:0 auto clamp(12px,3vw,18px)}
 .footer-tagline{font-family:var(--fn);font-size:clamp(10px,2.4vw,12px);font-weight:800;letter-spacing:0.26em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:14px}
 .footer-copy{font-size:clamp(12px,2.8vw,14px);color:rgba(255,255,255,0.18)}
@@ -820,6 +821,18 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
   .lead-modal-box{border-radius:0;min-height:100vh;padding:54px 22px 32px}
 }
 
+.lead-chip span small{font-size:11px;font-weight:600;opacity:0.75;margin-left:2px}
+.lead-chips-3{display:grid;grid-template-columns:repeat(3,1fr)}
+.lead-chips-3 .lead-chip span{text-align:center;padding:12px 6px}
+.lead-privacy a{color:var(--blue);text-decoration:underline}
+.lead-now{margin-top:26px;display:flex;flex-direction:column;gap:10px}
+.lead-now-t{font-size:13px !important;font-weight:700 !important;color:var(--gray)}
+.lead-now-btn{display:block;padding:15px;border-radius:12px;font-size:16px;font-weight:800;text-align:center}
+.lead-now-btn.kakao{background:#FEE500;color:#191919}
+.lead-now-btn.sms{background:var(--blue);color:var(--white)}
+.lead-now-btn.tel{background:var(--bg);color:var(--blue)}
+.lead-now.kakao-first .lead-now-btn.kakao{box-shadow:0 0 0 3px var(--blue)}
+.sticky-done a{color:var(--red);text-decoration:underline}
 </style>
 </head>
 <body>
@@ -1237,7 +1250,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
       <div class="faq-item fu"><div class="faq-q"><span class="faq-qmark">Q.</span>샤워 시설 및 어메니티가 준비되어 있나요?</div><div class="faq-a">네, 샤워실이 완비되어 있으며 샴푸, 바디워시, 수건 등이 모두 청결하게 준비되어 있습니다.</div></div>
       <div class="faq-item fu"><div class="faq-q"><span class="faq-qmark">Q.</span>준비물은 무엇인가요?</div><div class="faq-a">실내용 운동화, 운동복, 물통을 준비해 주세요. 운동복은 별도로 지급하지 않습니다.</div></div>
       <div class="faq-item fu"><div class="faq-q"><span class="faq-qmark">Q.</span>타 지점에서 체험권을 사용한 이력이 있는데 가능한가요?</div><div class="faq-a">F45 성수 지점에서 체험권 사용 이력이 없다면 가능합니다. 타 지점 이력은 무관합니다.</div></div>
-      <div class="faq-item feat fu" id="naver-booking"><div class="faq-q"><span class="faq-qmark">Q.</span>체험권은 어떻게 신청하나요?</div><div class="faq-a">아래 버튼을 눌러 이름·연락처·이메일을 남겨주시면, 담당 코치가 24시간 이내 연락드려 일정과 준비물을 안내해 드립니다. 체험료는 첫 방문 시 현장에서 결제됩니다.<br><a href="javascript:void(0)" class="naver-btn" onclick="openLeadModal()">체험 신청하러 가기</a></div></div>
+      <div class="faq-item feat fu" id="naver-booking"><div class="faq-q"><span class="faq-qmark">Q.</span>체험권은 어떻게 신청하나요?</div><div class="faq-a">아래 버튼을 눌러 이름과 연락처만 남겨주시면, 담당 코치가 24시간 이내 원하시는 방법(문자·전화·카톡)으로 연락드려 일정과 준비물을 안내해 드립니다. 체험료는 첫 방문 시 현장에서 결제됩니다.<br><a href="javascript:void(0)" class="naver-btn" onclick="openLeadModal()">체험 신청하러 가기</a></div></div>
     </div>
   </div>
 </section>
@@ -1294,12 +1307,65 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
   <div id="stickyFormView">
     <div class="sticky-note">F45 성수 7일 체험 40,000원 · 이름과 번호만 남겨주세요</div>
     <div class="sticky-row">
-      <input class="sticky-input" type="text" id="sf-name" placeholder="이름" autocomplete="name">
-      <input class="sticky-input" type="tel" id="sf-phone" placeholder="연락처" autocomplete="tel" inputmode="tel">
+      <input class="sticky-input" type="text" id="sf-name" placeholder="이름" autocomplete="name" maxlength="20">
+      <input class="sticky-input" type="tel" id="sf-phone" placeholder="010-0000-0000" autocomplete="tel" inputmode="numeric" maxlength="13">
       <button class="sticky-submit" id="sf-submit" onclick="submitStickyLead()">신청</button>
     </div>
   </div>
-  <div class="sticky-done" id="stickyDoneView">✓ 신청완료! 24시간 내 연락드릴게요</div>
+  <div class="sticky-done" id="stickyDoneView">✓ 신청완료! 24시간 내 연락드릴게요 · <a href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" onclick="trackContact('kakao')">카톡으로 바로 상담 →</a></div>
+</div>
+
+<div class="lead-overlay" id="leadModal" onclick="if(event.target===this)closeLeadModal()">
+  <div class="lead-modal-box">
+    <button class="lead-modal-close" onclick="closeLeadModal()" aria-label="닫기">×</button>
+    <div class="lead-head">
+      <span class="lead-eyebrow">7-Day Trial · 40,000원</span>
+      <h2 class="lead-title">7일 무제한 체험<br><em>지금 신청</em>하세요</h2>
+      <p class="lead-desc">이름과 번호만 남겨주세요. 담당 코치가 <strong>24시간 안에</strong> 연락드려 일정을 잡아드려요.<br>F45 성수 첫 방문 고객 대상 · 체험료는 첫 방문 때 현장 결제</p>
+    </div>
+
+    <div id="leadFormView">
+      <div class="lead-field">
+        <label class="lead-label" for="lf-name">이름<span class="req">*</span></label>
+        <input class="lead-input" type="text" id="lf-name" placeholder="홍길동" autocomplete="name" maxlength="20" enterkeyhint="next">
+      </div>
+      <div class="lead-field">
+        <label class="lead-label" for="lf-phone">연락처<span class="req">*</span></label>
+        <input class="lead-input" type="tel" id="lf-phone" placeholder="010-0000-0000" autocomplete="tel" inputmode="numeric" maxlength="13" enterkeyhint="done">
+      </div>
+      <div class="lead-field">
+        <label class="lead-label">어떻게 연락드릴까요?</label>
+        <div class="lead-chips lead-chips-3">
+          <label class="lead-chip"><input type="radio" name="contact" value="문자" checked><span>💬 문자</span></label>
+          <label class="lead-chip"><input type="radio" name="contact" value="전화"><span>📞 전화</span></label>
+          <label class="lead-chip"><input type="radio" name="contact" value="카톡"><span>🟡 카톡</span></label>
+        </div>
+      </div>
+      <div class="lead-field">
+        <label class="lead-label">편한 운동 시간<span class="opt">선택</span></label>
+        <div class="lead-chips">
+          <label class="lead-chip"><input type="radio" name="ltime" value="평일 아침"><span>평일 아침 <small>06:30~08:30</small></span></label>
+          <label class="lead-chip"><input type="radio" name="ltime" value="평일 점심"><span>평일 점심 <small>12:00</small></span></label>
+          <label class="lead-chip"><input type="radio" name="ltime" value="평일 저녁"><span>평일 저녁 <small>18:30~20:30</small></span></label>
+          <label class="lead-chip"><input type="radio" name="ltime" value="토요일"><span>토요일 <small>09:00·10:30</small></span></label>
+        </div>
+      </div>
+      <button class="lead-submit" id="lf-submit" onclick="submitLead()">체험 신청하기</button>
+      <p class="lead-privacy">신청하면 체험 안내 연락을 위해 이름·연락처를 받는 데 동의하게 됩니다. <a href="meta.html" target="_blank" rel="noopener">개인정보처리방침</a></p>
+    </div>
+
+    <div class="lead-done" id="leadDoneView">
+      <div class="check">✓</div>
+      <h3>신청 완료!</h3>
+      <p id="leadDoneMsg">담당 코치가 <strong>24시간 안에</strong><br>연락드릴게요.</p>
+      <div class="lead-now">
+        <p class="lead-now-t">기다리기 싫다면 지금 바로 말 걸어주세요</p>
+        <a class="lead-now-btn kakao" href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" onclick="trackContact('kakao')">🟡 카카오톡으로 바로 상담</a>
+        <a class="lead-now-btn sms" id="leadSmsBtn" href="sms:010-8379-1450" onclick="trackContact('sms')">💬 문자로 바로 보내기</a>
+        <a class="lead-now-btn tel" href="tel:010-8379-1450" onclick="trackContact('tel')">📞 010-8379-1450 전화</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -1323,7 +1389,7 @@ footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);
     "Qatar","Saudi Arabia","Indonesia","India","Philippines","Vietnam",
     "Turkey","Mexico","Chile","Colombia","Switzerland","Denmark","Norway",
     "Belgium","Portugal","Greece","Poland","Czech Republic","Hungary","Romania",
-    "Kuwait","Bahrain","Egypt","South Africa","Taiwan","Hong Kong","Mongolia"
+    "Kuwait","Bahrain","Egypt","Taiwan","Hong Kong","Mongolia"
   ];
   function shuffle(arr){
     var a=arr.slice();
@@ -1363,106 +1429,27 @@ document.querySelectorAll(".fu").forEach(function(el){obs.observe(el);});
 </script>
 
 <script>
-/* ════ LEAD FORM SUBMIT → Supabase Edge Function (직접 insert, 성공/실패 확인) ════ */
+/* ════ 체험 신청 → Supabase Edge Function (people 테이블 저장 + 스튜디오 문자 알림) ════ */
 var SUPABASE_URL = "https://mvgbwsbvngdnxdndwimb.supabase.co";
 var SUPABASE_ANON_KEY = "sb_publishable_ZRHS4-UR7Q07Fmtc_P-19g_fVlIc85X";
+var STUDIO_TEL = "010-8379-1450";
 
-function submitLead(){
-  if(window.__leadSubmitting) return;
-
-  var name  = document.getElementById('lf-name').value.trim();
-  var phone = document.getElementById('lf-phone').value.trim();
-  var email = document.getElementById('lf-email').value.trim();
-  var pEl = document.querySelector('input[name="purpose"]:checked');
-  var tEl = document.querySelector('input[name="ltime"]:checked');
-  var purpose = pEl ? pEl.value : "";
-  var time    = tEl ? tEl.value : "";
-
-  if(!name){ alert('이름을 입력해 주세요.'); document.getElementById('lf-name').focus(); return; }
-  if(!phone){ alert('연락처를 입력해 주세요.'); document.getElementById('lf-phone').focus(); return; }
-  if(email && email.indexOf('@')<0){ alert('이메일 형식이 올바르지 않아요. (선택사항이니 비워두셔도 돼요)'); document.getElementById('lf-email').focus(); return; }
-
-  window.__leadSubmitting = true;
-  var btn = document.getElementById('lf-submit');
-  btn.disabled = true; btn.textContent = '전송 중...';
-
-  fetch(SUPABASE_URL + '/functions/v1/landing-lead-edge-function', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'apikey': SUPABASE_ANON_KEY,
-      'Authorization': 'Bearer ' + SUPABASE_ANON_KEY
-    },
-    body: JSON.stringify({ name: name, phone: phone, email: email, purpose: purpose, time: time })
-  })
-  .then(function(res){
-    return res.text().then(function(text){
-      var data = null;
-      try{ data = JSON.parse(text); }catch(e){ data = null; }
-      return { ok: res.ok, status: res.status, data: data, raw: text };
-    });
-  })
-  .then(function(result){
-    window.__leadSubmitting = false;
-
-    if(result.data === null){
-      /* JSON이 아닌 응답 = 함수 이름이 틀렸거나 배포 자체가 안 된 상태 (진짜 네트워크 문제 아님) */
-      btn.disabled = false; btn.textContent = '체험 신청하기';
-      console.error('landing-lead 응답이 JSON이 아님. status='+result.status, result.raw);
-      alert('신청 서버 설정에 문제가 있어요 (상태코드 '+result.status+').\n관리자에게 알려주시고,\n급하시면 전화(010-8379-1450)로 문의해 주세요.');
-      return;
-    }
-
-    if(!result.ok || !result.data.success){
-      btn.disabled = false; btn.textContent = '체험 신청하기';
-      var errMsg = result.data.error || '알 수 없는 오류';
-      console.error('landing-lead 실패:', errMsg);
-      alert('신청 중 문제가 발생했어요. 다시 한 번 시도해 주시거나,\n전화(010-8379-1450)로 문의해 주세요.\n\n('+errMsg+')');
-      return;
-    }
-
-    /* 성공했을 때만 Meta Pixel Lead 이벤트 발생 (기존 버그: 실패해도 무조건 쐈음) */
-    if(typeof fbq !== 'undefined'){
-      var eid = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
-      fbq('track','Lead',{
-        content_name:'Trial Lead Form',
-        content_category: purpose || 'unspecified',
-        custom_time: time || 'unspecified',
-        value: 40000,
-        currency: 'KRW'
-      },{eventID: eid});
-    }
-
-    /* 성공했을 때만 완료 화면 표시 */
-    document.getElementById('leadFormView').style.display = 'none';
-    var head = document.querySelector('#leadModal .lead-head');
-    if(head) head.style.display = 'none';
-    document.getElementById('leadDoneView').classList.add('active');
-  })
-  .catch(function(err){
-    /* fetch 자체가 실패 = 진짜 오프라인/DNS/연결 문제일 때만 여기로 옴 */
-    window.__leadSubmitting = false;
-    btn.disabled = false; btn.textContent = '체험 신청하기';
-    console.error('landing-lead fetch 자체 실패:', err);
-    alert('네트워크 문제로 신청이 접수되지 않았어요.\n와이파이 대신 데이터로 다시 시도해 보시거나,\n전화(010-8379-1450)로 문의해 주세요.');
-  });
+/* 숫자만 → 010-1234-5678 */
+function fmtPhone(v){
+  var d = String(v||'').replace(/[^0-9]/g,'').slice(0,11);
+  if(d.length < 4) return d;
+  if(d.length < 8) return d.slice(0,3)+'-'+d.slice(3);
+  if(d.length === 10 && !/^010/.test(d)) return d.slice(0,3)+'-'+d.slice(3,6)+'-'+d.slice(6);
+  return d.slice(0,3)+'-'+d.slice(3,7)+'-'+d.slice(7);
 }
+function phoneOk(v){ return /^01[016789][0-9]{7,8}$/.test(String(v||'').replace(/[^0-9]/g,'')); }
+['lf-phone','sf-phone'].forEach(function(id){
+  var el = document.getElementById(id);
+  if(el) el.addEventListener('input', function(){ el.value = fmtPhone(el.value); });
+});
 
-/* ════ 망설임 아코디언 토글 ════ */
-/* ════ 하단 고정 미니폼 제출 (이름+번호만, 모달 안 열고 바로 제출) ════ */
-function submitStickyLead(){
-  if(window.__stickySubmitting) return;
-
-  var name  = document.getElementById('sf-name').value.trim();
-  var phone = document.getElementById('sf-phone').value.trim();
-
-  if(!name){ alert('이름을 입력해 주세요.'); document.getElementById('sf-name').focus(); return; }
-  if(!phone){ alert('연락처를 입력해 주세요.'); document.getElementById('sf-phone').focus(); return; }
-
-  window.__stickySubmitting = true;
-  var btn = document.getElementById('sf-submit');
-  btn.disabled = true; btn.textContent = '전송중';
-
+/* 공용 전송 — 성공하면 onOk(), 실패하면 안내 후 onFail() */
+function sendLead(payload, onOk, onFail){
   fetch(SUPABASE_URL + '/functions/v1/landing-lead-edge-function', {
     method: 'POST',
     headers: {
@@ -1470,7 +1457,7 @@ function submitStickyLead(){
       'apikey': SUPABASE_ANON_KEY,
       'Authorization': 'Bearer ' + SUPABASE_ANON_KEY
     },
-    body: JSON.stringify({ name: name, phone: phone, email: '', purpose: '', time: '' })
+    body: JSON.stringify(payload)
   })
   .then(function(res){
     return res.text().then(function(text){
@@ -1479,34 +1466,104 @@ function submitStickyLead(){
       return { ok: res.ok, status: res.status, data: data };
     });
   })
-  .then(function(result){
-    window.__stickySubmitting = false;
-
-    if(result.data === null){
-      btn.disabled = false; btn.textContent = '신청';
-      alert('신청 서버 설정에 문제가 있어요 (상태코드 '+result.status+'). 전화(010-8379-1450)로 문의해 주세요.');
-      return;
-    }
-    if(!result.ok || !result.data.success){
-      btn.disabled = false; btn.textContent = '신청';
-      alert('신청 중 문제가 발생했어요. 다시 시도해 주시거나 전화(010-8379-1450)로 문의해 주세요.\n('+(result.data.error||'알 수 없는 오류')+')');
-      return;
-    }
-
-    if(typeof fbq !== 'undefined'){
-      var eid = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
-      fbq('track','Lead',{content_name:'Sticky Mini Form', value: 40000, currency:'KRW'},{eventID: eid});
-    }
-
-    document.getElementById('stickyFormView').style.display = 'none';
-    document.getElementById('stickyDoneView').classList.add('active');
+  .then(function(r){
+    if(r.data && r.ok && r.data.success){ onOk(r.data); return; }
+    var why = r.data ? (r.data.error || '알 수 없는 오류') : ('서버 응답 '+r.status);
+    console.error('체험 신청 실패:', why);
+    onFail();
+    alert('신청이 접수되지 않았어요. 다시 한 번 눌러주시거나\n전화·문자(' + STUDIO_TEL + ')로 연락 주세요.\n\n(' + why + ')');
   })
   .catch(function(err){
-    window.__stickySubmitting = false;
-    btn.disabled = false; btn.textContent = '신청';
-    alert('네트워크 문제로 신청이 접수되지 않았어요. 다시 시도해 주시거나 전화(010-8379-1450)로 문의해 주세요.');
+    console.error('체험 신청 네트워크 실패:', err);
+    onFail();
+    alert('인터넷 연결 문제로 신청이 접수되지 않았어요.\n잠시 후 다시 눌러주시거나\n전화·문자(' + STUDIO_TEL + ')로 연락 주세요.');
   });
 }
+
+/* 신청 끝나면 두 폼(모달·하단 바) 모두 완료 상태로 + 바로 연락 버튼에 이름 넣기 */
+function markDone(name, contact){
+  window.__leadDone = true;
+  var sms = document.getElementById('leadSmsBtn');
+  var body = 'F45 성수 7일 체험 신청했어요! 이름: ' + name;
+  if(sms) sms.href = 'sms:' + STUDIO_TEL + (/iPhone|iPad|iPod/.test(navigator.userAgent) ? '&' : '?') + 'body=' + encodeURIComponent(body);
+  var msg = document.getElementById('leadDoneMsg');
+  if(msg){
+    msg.innerHTML = contact === '카톡'
+      ? '아래 <strong>카카오톡 버튼</strong>을 눌러 말 걸어주시면<br>바로 답장드릴게요.'
+      : '담당 코치가 <strong>24시간 안에 ' + (contact === '전화' ? '전화' : '문자') + '로</strong><br>연락드릴게요.';
+  }
+  var now = document.querySelector('.lead-now');
+  if(now) now.classList.toggle('kakao-first', contact === '카톡');
+  document.getElementById('leadFormView').style.display = 'none';
+  var head = document.querySelector('#leadModal .lead-head');
+  if(head) head.style.display = 'none';
+  document.getElementById('leadDoneView').classList.add('active');
+  document.getElementById('stickyFormView').style.display = 'none';
+  document.getElementById('stickyDoneView').classList.add('active');
+}
+
+function pixelLead(label, extra){
+  if(typeof fbq === 'undefined') return;
+  var eid = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+  var p = { content_name: label, value: 40000, currency: 'KRW' };
+  for(var k in extra) p[k] = extra[k];
+  fbq('track','Lead', p, {eventID: eid});
+}
+function trackContact(kind){
+  if(typeof fbq !== 'undefined') fbq('track','Contact',{content_name:'After Lead '+kind});
+}
+
+function submitLead(){
+  if(window.__leadSubmitting) return;
+  var nEl = document.getElementById('lf-name'), pEl = document.getElementById('lf-phone');
+  var name  = nEl.value.trim();
+  var phone = pEl.value.trim();
+  var cEl = document.querySelector('input[name="contact"]:checked');
+  var tEl = document.querySelector('input[name="ltime"]:checked');
+  var contact = cEl ? cEl.value : '';
+  var time    = tEl ? tEl.value : '';
+
+  if(!name){ alert('이름을 입력해 주세요.'); nEl.focus(); return; }
+  if(!phoneOk(phone)){ alert('휴대폰 번호를 확인해 주세요.\n예) 010-1234-5678'); pEl.focus(); return; }
+
+  window.__leadSubmitting = true;
+  var btn = document.getElementById('lf-submit');
+  btn.disabled = true; btn.textContent = '보내는 중...';
+  sendLead({ name: name, phone: phone, contact: contact, time: time }, function(){
+    window.__leadSubmitting = false;
+    pixelLead('Trial Lead Form', { custom_time: time || 'unspecified', content_category: contact || 'unspecified' });
+    markDone(name, contact);
+  }, function(){
+    window.__leadSubmitting = false;
+    btn.disabled = false; btn.textContent = '체험 신청하기';
+  });
+}
+
+/* ════ 하단 고정 미니폼 (이름+번호만, 모달 안 열고 바로 신청) ════ */
+function submitStickyLead(){
+  if(window.__stickySubmitting) return;
+  var nEl = document.getElementById('sf-name'), pEl = document.getElementById('sf-phone');
+  var name  = nEl.value.trim();
+  var phone = pEl.value.trim();
+
+  if(!name){ alert('이름을 입력해 주세요.'); nEl.focus(); return; }
+  if(!phoneOk(phone)){ alert('휴대폰 번호를 확인해 주세요.\n예) 010-1234-5678'); pEl.focus(); return; }
+
+  window.__stickySubmitting = true;
+  var btn = document.getElementById('sf-submit');
+  btn.disabled = true; btn.textContent = '전송중';
+  sendLead({ name: name, phone: phone, contact: '문자', time: '' }, function(){
+    window.__stickySubmitting = false;
+    pixelLead('Sticky Mini Form', {});
+    markDone(name, '문자');
+  }, function(){
+    window.__stickySubmitting = false;
+    btn.disabled = false; btn.textContent = '신청';
+  });
+}
+document.getElementById('sf-phone').addEventListener('keydown', function(e){ if(e.key === 'Enter') submitStickyLead(); });
+document.getElementById('lf-phone').addEventListener('keydown', function(e){ if(e.key === 'Enter') submitLead(); });
+document.getElementById('lf-name').addEventListener('keydown', function(e){ if(e.key === 'Enter') document.getElementById('lf-phone').focus(); });
 
 function toggleObj(el){
   el.classList.toggle('open');
@@ -1516,6 +1573,7 @@ function toggleObj(el){
 function openLeadModal(){
   document.getElementById('leadModal').classList.add('active');
   document.body.style.overflow='hidden';
+  if(window.__leadDone) return;
   if(typeof fbq !== 'undefined') fbq('track','InitiateCheckout',{content_name:'Lead Modal Open'});
   setTimeout(function(){
     var n=document.getElementById('lf-name'); if(n) n.focus();
@@ -1532,7 +1590,7 @@ document.addEventListener('keydown',function(e){
 /* ════ 깔때기 추적: 첫 입력 시작 ════ */
 (function(){
   var started = false;
-  ['lf-name','lf-phone','lf-email'].forEach(function(id){
+  ['lf-name','lf-phone','sf-name','sf-phone'].forEach(function(id){
     var el = document.getElementById(id);
     if(el) el.addEventListener('focus', function(){
       if(!started && typeof fbq !== 'undefined'){
@@ -1543,75 +1601,6 @@ document.addEventListener('keydown',function(e){
   });
 })();
 </script>
-<div class="lead-overlay" id="leadModal" onclick="if(event.target===this)closeLeadModal()">
-  <div class="lead-modal-box">
-    <button class="lead-modal-close" onclick="closeLeadModal()" aria-label="닫기">×</button>
-    <div class="lead-head">
-      <span class="lead-eyebrow">7-Day Trial · 무료 상담</span>
-      <h2 class="lead-title">7일 무제한 체험<br><em>지금 신청</em>하세요</h2>
-      <p class="lead-desc">정보를 남겨주시면 담당 코치가 <strong>24시간 이내</strong> 연락드려 일정을 안내해 드립니다.<br>첫 방문 고객 대상 · 체험료는 현장 결제</p>
-    </div>
-
-    <div id="leadFormView">
-      <div class="lead-field">
-        <label class="lead-label" for="lf-name">이름<span class="req">*</span></label>
-        <input class="lead-input" type="text" id="lf-name" placeholder="홍길동" autocomplete="name">
-      </div>
-      <div class="lead-field">
-        <label class="lead-label" for="lf-phone">연락처<span class="req">*</span></label>
-        <input class="lead-input" type="tel" id="lf-phone" placeholder="010-0000-0000" autocomplete="tel" inputmode="tel">
-      </div>
-      <div class="lead-field">
-        <label class="lead-label" for="lf-email">이메일<span class="opt">선택</span></label>
-        <input class="lead-input" type="email" id="lf-email" placeholder="example@email.com" autocomplete="email" inputmode="email">
-      </div>
-      <div class="lead-field">
-        <label class="lead-label">운동 목적<span class="opt">선택</span></label>
-        <div class="lead-chips" id="lf-purpose">
-          <label class="lead-chip"><input type="radio" name="purpose" value="다이어트"><span>다이어트</span></label>
-          <label class="lead-chip"><input type="radio" name="purpose" value="근력 증가"><span>근력 증가</span></label>
-          <label class="lead-chip"><input type="radio" name="purpose" value="체력 향상"><span>체력 향상</span></label>
-          <label class="lead-chip"><input type="radio" name="purpose" value="러닝·하이록스"><span>러닝·하이록스</span></label>
-          <label class="lead-chip"><input type="radio" name="purpose" value="기타"><span>기타</span></label>
-        </div>
-      </div>
-      <div class="lead-field">
-        <label class="lead-label">희망 운동 시간<span class="opt">선택</span></label>
-        <div class="lead-time-group">
-          <span class="lead-time-label">오전</span>
-          <div class="lead-chips">
-            <label class="lead-chip"><input type="radio" name="ltime" value="오전 07:00"><span>07:00</span></label>
-            <label class="lead-chip"><input type="radio" name="ltime" value="오전 08:00"><span>08:00</span></label>
-            <label class="lead-chip"><input type="radio" name="ltime" value="오전 09:00"><span>09:00</span></label>
-          </div>
-        </div>
-        <div class="lead-time-group">
-          <span class="lead-time-label">점심</span>
-          <div class="lead-chips">
-            <label class="lead-chip"><input type="radio" name="ltime" value="점심 12:00"><span>12:00</span></label>
-          </div>
-        </div>
-        <div class="lead-time-group">
-          <span class="lead-time-label">저녁</span>
-          <div class="lead-chips">
-            <label class="lead-chip"><input type="radio" name="ltime" value="저녁 18:30"><span>18:30</span></label>
-            <label class="lead-chip"><input type="radio" name="ltime" value="저녁 19:30"><span>19:30</span></label>
-            <label class="lead-chip"><input type="radio" name="ltime" value="저녁 20:30"><span>20:30</span></label>
-          </div>
-        </div>
-      </div>
-      <button class="lead-submit" id="lf-submit" onclick="submitLead()">체험 신청하기</button>
-      <p class="lead-privacy">제출 시 체험 상담 목적의 개인정보 수집·이용에 동의하는 것으로 간주됩니다.</p>
-    </div>
-
-    <div class="lead-done" id="leadDoneView">
-      <div class="check">✓</div>
-      <h3>신청이 완료되었습니다!</h3>
-      <p>24시간 이내 담당 코치가<br>연락드릴 예정입니다.</p>
-      <div class="sub">📞 010-8379-1450 · F45 성수</div>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>
