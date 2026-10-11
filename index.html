@@ -224,6 +224,12 @@ img{max-width:100%;display:block}
 }
 .btn-book:active{transform:scale(0.98);background:#1a0f40}
 
+.trial-lead{font-size:clamp(19px,5vw,24px);font-weight:900;color:var(--blue);line-height:1.35;letter-spacing:-0.03em;margin-bottom:18px}
+.trial-lead em{font-style:normal;color:var(--red)}
+.trial-list{list-style:none;margin:0 0 28px;display:flex;flex-direction:column;gap:12px}
+.trial-list li{position:relative;padding-left:30px;font-size:clamp(13px,3.5vw,15px);font-weight:500;color:var(--gray);line-height:1.45}
+.trial-list li::before{content:"✓";position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;background:var(--red);color:var(--white);font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.trial-list b{display:block;font-size:clamp(15px,4vw,17px);font-weight:800;color:var(--blue)}
 .dual-stripe{display:flex;flex-direction:column}
 .dual-stripe .s1{height:5px;background:var(--blue)}
 .dual-stripe .s2{height:3px;background:var(--red)}
@@ -884,13 +890,21 @@ footer{padding-bottom:calc(clamp(36px,8vw,60px) + 110px)}
 
 <div id="initial-cta">
   <div class="mw cta-wrap fu">
-    <span class="cta-eyebrow">Limited Offer · 체험 프로그램</span>
+    <span class="cta-eyebrow">7-Day Trial · 체험 프로그램</span>
     <h2 class="cta-title">F45 성수 <em>7일</em> 체험권</h2>
     <p class="cta-loc">성수역 4번 출구 바로 앞</p>
     <div class="price-box">
       <span class="price-num"><sup>₩</sup>40,000</span>
       <span class="price-unit">/ 7일 무제한 체험</span>
       <div class="price-note">일주일간 횟수 제한 없이 무제한 운동</div>
+      <p class="trial-lead">4만 원으로 7일 동안 충분히 해보고,<br><em>그다음에 결정하세요.</em></p>
+      <ul class="trial-list">
+        <li><b>매일 와도 돼요</b>7일 동안 횟수 제한 없이 원하는 만큼</li>
+        <li><b>3가지 수업을 다 경험</b>유산소 · 근력 · 하이브리드, 요일마다 달라요</li>
+        <li><b>코치 2명이 옆에서</b>처음이어도 무게·동작을 내 몸에 맞게</li>
+        <li><b>몸만 오세요</b>샤워실·수건·어메니티 준비, 주차 1시간 무료</li>
+        <li><b>해보고 마음에 들 때만 등록</b>체험권 사용 전이면 전액 환불</li>
+      </ul>
       <a href="javascript:void(0)" class="btn-book" onclick="openLeadModal()">7일 체험권 신청하기 →</a>
     </div>
   </div>
