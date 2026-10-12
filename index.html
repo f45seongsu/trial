@@ -1463,7 +1463,30 @@ function phoneOk(v){ return /^01[016789][0-9]{7,8}$/.test(String(v||'').replace(
 });
 
 /* 공용 전송 — 성공하면 onOk(), 실패하면 안내 후 onFail() */
+/* 광고 추적: 들어올 때 utm·fbclid 기억 → 신청할 때 서버로 같이 보냄 (서버가 Meta 전환 API로 같은 eventID 전송 = 중복 없이 보강) */
+(function(){
+  try{
+    var q = new URLSearchParams(location.search), keep = {};
+    ['utm_source','utm_medium','utm_campaign','utm_content','fbclid'].forEach(function(k){ if(q.get(k)) keep[k] = q.get(k).slice(0,120); });
+    if(Object.keys(keep).length){ keep.ts = Date.now(); sessionStorage.setItem('f45_src', JSON.stringify(keep)); }
+  }catch(e){}
+})();
+function leadTrack(){
+  var src = {}, ck = {};
+  try{ src = JSON.parse(sessionStorage.getItem('f45_src') || '{}'); }catch(e){}
+  document.cookie.split(';').forEach(function(c){ var i = c.indexOf('='); if(i > 0) ck[c.slice(0,i).trim()] = c.slice(i+1); });
+  window.__leadEid = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+  return {
+    event_id: window.__leadEid,
+    fbp: ck._fbp || '',
+    fbc: ck._fbc || (src.fbclid ? 'fb.1.' + (src.ts || Date.now()) + '.' + src.fbclid : ''),
+    utm: { source: src.utm_source || '', medium: src.utm_medium || '', campaign: src.utm_campaign || '', content: src.utm_content || '' },
+    page: location.href.split('#')[0].slice(0,300)
+  };
+}
+
 function sendLead(payload, onOk, onFail){
+  payload = Object.assign({}, payload, leadTrack());
   fetch(SUPABASE_URL + '/functions/v1/landing-lead-edge-function', {
     method: 'POST',
     headers: {
@@ -1518,7 +1541,7 @@ function markDone(name, contact){
 
 function pixelLead(label, extra){
   if(typeof fbq === 'undefined') return;
-  var eid = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+  var eid = window.__leadEid || ('lead_' + Date.now() + '_' + Math.random().toString(36).slice(2,8));   // 서버 전송과 같은 ID
   var p = { content_name: label, value: 40000, currency: 'KRW' };
   for(var k in extra) p[k] = extra[k];
   fbq('track','Lead', p, {eventID: eid});
