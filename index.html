@@ -1487,6 +1487,7 @@ function leadTrack(){
 
 function sendLead(payload, onOk, onFail){
   payload = Object.assign({}, payload, leadTrack());
+  LT('submit');
   fetch(SUPABASE_URL + '/functions/v1/landing-lead-edge-function', {
     method: 'POST',
     headers: {
@@ -1504,14 +1505,16 @@ function sendLead(payload, onOk, onFail){
     });
   })
   .then(function(r){
-    if(r.data && r.ok && r.data.success){ onOk(r.data); return; }
+    if(r.data && r.ok && r.data.success){ LT('ok'); onOk(r.data); return; }
     var why = r.data ? (r.data.error || '알 수 없는 오류') : ('서버 응답 '+r.status);
+    LT('fail', why);
     console.error('체험 신청 실패:', why);
     onFail();
     alert('신청이 접수되지 않았어요. 다시 한 번 눌러주시거나\n전화·문자(' + STUDIO_TEL + ')로 연락 주세요.\n\n(' + why + ')');
   })
   .catch(function(err){
     console.error('체험 신청 네트워크 실패:', err);
+    LT('fail', '인터넷');
     onFail();
     alert('인터넷 연결 문제로 신청이 접수되지 않았어요.\n잠시 후 다시 눌러주시거나\n전화·문자(' + STUDIO_TEL + ')로 연락 주세요.');
   });
@@ -1560,8 +1563,8 @@ function submitLead(){
   var contact = cEl ? cEl.value : '';
   var time    = tEl ? tEl.value : '';
 
-  if(!name){ alert('이름을 입력해 주세요.'); nEl.focus(); return; }
-  if(!phoneOk(phone)){ alert('휴대폰 번호를 확인해 주세요.\n예) 010-1234-5678'); pEl.focus(); return; }
+  if(!name){ LT('invalid','이름 · 창'); alert('이름을 입력해 주세요.'); nEl.focus(); return; }
+  if(!phoneOk(phone)){ LT('invalid','번호 · 창'); alert('휴대폰 번호를 확인해 주세요.\n예) 010-1234-5678'); pEl.focus(); return; }
 
   window.__leadSubmitting = true;
   var btn = document.getElementById('lf-submit');
@@ -1583,8 +1586,8 @@ function submitStickyLead(){
   var name  = nEl.value.trim();
   var phone = pEl.value.trim();
 
-  if(!name){ alert('이름을 입력해 주세요.'); nEl.focus(); return; }
-  if(!phoneOk(phone)){ alert('휴대폰 번호를 확인해 주세요.\n예) 010-1234-5678'); pEl.focus(); return; }
+  if(!name){ LT('invalid','이름 · 하단 바'); alert('이름을 입력해 주세요.'); nEl.focus(); return; }
+  if(!phoneOk(phone)){ LT('invalid','번호 · 하단 바'); alert('휴대폰 번호를 확인해 주세요.\n예) 010-1234-5678'); pEl.focus(); return; }
 
   window.__stickySubmitting = true;
   var btn = document.getElementById('sf-submit');
@@ -1617,7 +1620,9 @@ function openLeadModal(){
   },300);
 }
 function closeLeadModal(){
-  document.getElementById('leadModal').classList.remove('active');
+  var m = document.getElementById('leadModal');
+  if(m.classList.contains('active') && !window.__leadDone) LT('close');
+  m.classList.remove('active');
   document.body.style.overflow='';
 }
 document.addEventListener('keydown',function(e){
@@ -1635,6 +1640,80 @@ document.addEventListener('keydown',function(e){
         fbq('trackCustom','LeadFormStart');
       }
     });
+  });
+})();
+
+/* ════ 깔때기 기록 (개인정보 없음): 어디까지 보고 어디서 나가는지 → Supabase landing_events ════
+   들어옴 · 25/50/75/90% 내림 · 구역 봄(가격·시간표…) · 15/30/60초 · 신청 창 열기 · 쓰기 시작 · 신청 누름 · 완료/실패 · 카톡·전화 · 창 닫기 */
+var __lt = (function(){
+  var sid = '', src = '', sent = {};
+  try{ sid = sessionStorage.getItem('f45_sid') || ''; }catch(e){}
+  if(!sid){ sid = Date.now().toString(36) + Math.random().toString(36).slice(2,8); try{ sessionStorage.setItem('f45_sid', sid); }catch(e){} }
+  try{
+    var q = JSON.parse(sessionStorage.getItem('f45_src') || '{}');
+    src = [q.utm_source, q.utm_campaign, q.utm_content].filter(Boolean).join(' / ') || (q.fbclid ? 'fb광고(utm 없음)' : '');
+  }catch(e){}
+  if(!src){ try{ src = document.referrer ? new URL(document.referrer).hostname : '직접'; }catch(e){ src = '직접'; } }
+  return { sid: sid, src: src.slice(0,120), sent: sent, mobile: /Mobi|Android|iPhone|iPad/.test(navigator.userAgent) };
+})();
+function LT(ev, v, once){
+  var key = ev + '|' + (v || '');
+  if(once && __lt.sent[key]) return;
+  __lt.sent[key] = 1;
+  try{
+    fetch(SUPABASE_URL + '/rest/v1/landing_events', {
+      method: 'POST', keepalive: true,
+      headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY,
+                 'Authorization': 'Bearer ' + SUPABASE_ANON_KEY, 'Prefer': 'return=minimal' },
+      body: JSON.stringify({ sid: __lt.sid, ev: ev, v: v == null ? null : String(v).slice(0,60), src: __lt.src,
+                             mobile: __lt.mobile, page: location.pathname.slice(0,40) })
+    }).catch(function(){});
+  }catch(e){}
+}
+(function(){
+  LT('view', null, true);
+  // 얼마나 내렸나
+  var marks = [25, 50, 75, 90], ticking = false;
+  function onScroll(){
+    ticking = false;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = h > 0 ? (window.scrollY / h) * 100 : 100;
+    marks.forEach(function(m){ if(pct >= m) LT('scroll', m, true); });
+  }
+  window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  // 어느 구역까지 봤나 (화면에 40% 이상 보이면)
+  var zones = [['#initial-cta','가격'], ['.stats-section','숫자'], ['.why-section','왜 F45'], ['.routine-section','운동 구성'],
+               ['.tt-section','시간표'], ['.contact-section','연락처'], ['.obj-section','걱정 풀기'], ['.faq-section','FAQ'], ['.loc-section','위치']];
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(ents){
+      ents.forEach(function(en){ if(en.isIntersecting){ LT('see', en.target.getAttribute('data-lt'), true); io.unobserve(en.target); } });
+    }, { threshold: 0.4 });
+    zones.forEach(function(z){ var el = document.querySelector(z[0]); if(el){ el.setAttribute('data-lt', z[1]); io.observe(el); } });
+  }
+  // 머문 시간 (화면을 보고 있을 때만 셈)
+  var shown = 0, last = Date.now();
+  setInterval(function(){
+    var now = Date.now();
+    if(!document.hidden) shown += now - last;
+    last = now;
+    [15, 30, 60, 120].forEach(function(t){ if(shown >= t * 1000) LT('time', t, true); });
+  }, 1000);
+  // 신청 창 열기 (어느 버튼으로) · 카톡·전화·인스타
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a,button');
+    if(!a) return;
+    var oc = a.getAttribute('onclick') || '', href = a.getAttribute('href') || '';
+    if(oc.indexOf('openLeadModal') >= 0) LT('open', (a.textContent || '').trim().slice(0,30));
+    else if(href.indexOf('tel:') === 0) LT('contact', '전화');
+    else if(href.indexOf('kakao') >= 0) LT('contact', '카톡');
+    else if(href.indexOf('instagram') >= 0) LT('contact', '인스타');
+    else if(href.indexOf('sms:') === 0) LT('contact', '문자');
+    else if(href.indexOf('naver') >= 0) LT('contact', '네이버');
+  }, true);
+  // 이름·번호 실제로 쓰기 시작 (창 열 때 자동 커서는 안 셈)
+  [['lf-name','창'], ['lf-phone','창'], ['sf-name','하단 바'], ['sf-phone','하단 바']].forEach(function(x){
+    var el = document.getElementById(x[0]);
+    if(el) el.addEventListener('input', function(){ LT('start', x[1], true); });
   });
 })();
 </script>
