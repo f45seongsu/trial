@@ -80,6 +80,18 @@ section{padding:60px 0}
 .checks li::before{content:"";position:absolute;left:0;top:3px;width:22px;height:22px;border-radius:50%;background:var(--red)
   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/14px no-repeat}
 
+/* F45 소개 */
+.about{background:var(--soft)}
+.about-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.about-facts div{background:#fff;border-radius:8px;padding:14px 10px}
+.about-facts b{display:block;white-space:nowrap;font-size:clamp(17px,4.7vw,24px);font-weight:900;color:var(--navy);letter-spacing:-0.02em}
+.about-facts span{font-size:14px;color:var(--sub)}
+.app-link{display:inline-block;margin-top:22px;font-size:16px;font-weight:800;color:var(--navy);border-bottom:2px solid var(--navy)}
+.stores{display:flex;gap:8px;margin-top:14px}
+.stores a{flex:1;text-align:center;background:var(--navy);color:#fff;font-size:15px;font-weight:800;padding:13px 6px;border-radius:8px}
+.steps{margin:4px 0 0 20px}
+.steps li{margin-bottom:4px}
+
 /* 코칭: 사진 꽉 + 글 */
 .coach-txt{padding-top:30px}
 .coach-txt p+p{margin-top:12px}
@@ -394,6 +406,22 @@ footer a{text-decoration:underline}
       <li>체험권 사용 전에는 전액 환불</li>
     </ul>
   </div>
+  <div class="wrap"><a href="#app" class="app-link" onclick="openApp()">상담 없이 앱으로 바로 예약하기 →</a></div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap two">
+    <div>
+      <h2>F45는<br>어떤 운동인가요</h2>
+      <p class="sub">F45는 호주 시드니에서 시작한 팀 트레이닝 브랜드입니다. 지금은 전 세계 60여 개국, 1,600여 곳의 스튜디오에서 본사가 만든 같은 프로그램으로 수업하고 있습니다.</p>
+      <p class="sub" style="margin-top:12px">한 수업은 45분이고, 여러 명이 코치와 함께 스테이션을 돌며 유산소와 근력 운동을 합니다. 일상에 필요한 움직임 위주의 기능성 운동이라 운동을 처음 시작하는 분도 많이 다닙니다.</p>
+    </div>
+    <div class="about-facts">
+      <div><b>45분</b><span>한 수업 시간</span></div>
+      <div><b>60여 개국</b><span>전 세계 운영</span></div>
+      <div><b>1,600여 곳</b><span>F45 스튜디오</span></div>
+    </div>
+  </div>
 </section>
 
 <section id="coach" style="padding-top:0">
@@ -454,6 +482,13 @@ footer a{text-decoration:underline}
       <div class="a">수업이 시작되면 각자 자신의 운동에 집중합니다. 조용히 운동에만 집중하고 가는 회원도 많습니다. 함께 운동하는 환경이 꾸준한 운동 습관을 만드는 데 도움이 된다는 연구 결과도 있습니다.<span class="ref">Heinrich et al., Health Behavior Research (2022)</span></div></details>
     <details><summary>체험은 어떻게 신청하나요?</summary>
       <div class="a">이름과 연락처를 남겨 주시면 24시간 안에 선택하신 방법(문자·전화·카톡)으로 일정과 준비물을 안내해 드립니다. 체험료는 첫 방문 때 현장에서 결제하시면 됩니다.</div></details>
+    <details id="app"><summary>상담 없이 바로 예약할 수 있나요?</summary>
+      <div class="a">네, F45 앱에서 직접 가입하고 예약하실 수 있습니다.
+        <ol class="steps"><li>'F45 Korea - New' 앱을 설치합니다</li><li>영어로 'Seongsu'를 검색해 F45 성수를 고르고 가입합니다</li><li>원하는 수업을 예약하고 시간에 맞춰 오시면 됩니다</li></ol>
+        <div class="stores">
+          <a href="https://apps.apple.com/kr/app/f45-korea-new/id6751717648" target="_blank" rel="noopener">App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=ie.zappy.fennec.fskorea&amp;hl=ko" target="_blank" rel="noopener">Google Play</a>
+        </div></div></details>
     <details><summary>준비물은 무엇인가요?</summary>
       <div class="a">실내용 운동화, 운동복, 물통을 챙겨 주세요. 운동복은 따로 제공하지 않습니다.</div></details>
     <details><summary>샤워 시설이 있나요?</summary>
@@ -576,6 +611,8 @@ footer a{text-decoration:underline}
   window.addEventListener('scroll', upd, { passive: true });
   upd();
 })();
+/* '앱으로 바로 예약하기' → 자주 묻는 질문의 앱 칸을 펼침 */
+function openApp(){ var d = document.getElementById('app'); if(d) d.open = true; }
 /* 접었다 펴기: 하나 열면 다른 건 닫기 */
 document.querySelectorAll('.qa details').forEach(function(d){
   d.addEventListener('toggle', function(){
@@ -824,7 +861,7 @@ function LT(ev, v, once){
   }
   window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   // 어느 구역까지 봤나 (화면에 40% 이상 보이면)
-  var zones = [['#offer','가격'], ['#coach','코칭'], ['#class','수업'], ['#tt','시간표'], ['#faq','FAQ'], ['#loc','위치'], ['#final','마지막 신청']];
+  var zones = [['#offer','가격'], ['#about','F45 소개'], ['#coach','코칭'], ['#class','수업'], ['#tt','시간표'], ['#faq','FAQ'], ['#loc','위치'], ['#final','마지막 신청']];
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(ents){
       ents.forEach(function(en){ if(en.isIntersecting){ LT('see', en.target.getAttribute('data-lt'), true); io.unobserve(en.target); } });
@@ -845,6 +882,9 @@ function LT(ev, v, once){
     if(!a) return;
     var oc = a.getAttribute('onclick') || '', href = a.getAttribute('href') || '';
     if(oc.indexOf('openLeadModal') >= 0) LT('open', (a.textContent || '').trim().slice(0,30));
+    else if(href.indexOf('apps.apple.com') >= 0) LT('contact', '앱 설치(아이폰)');
+    else if(href.indexOf('play.google.com') >= 0) LT('contact', '앱 설치(안드로이드)');
+    else if(href === '#app') LT('open_app');
     else if(href.indexOf('tel:') === 0) LT('contact', '전화');
     else if(href.indexOf('kakao') >= 0) LT('contact', '카톡');
     else if(href.indexOf('instagram') >= 0) LT('contact', '인스타');
