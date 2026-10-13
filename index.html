@@ -154,6 +154,32 @@ img{max-width:100%;display:block}
 }
 .hero-cta:active{transform:scale(0.97)}
 
+/* ════ 첫 화면 v2: 수업 영상이 보이게 + 광고와 이어지는 한 줄 + 가격·신청 바로 ════ */
+.hero2 .hero-video{opacity:1;mix-blend-mode:normal;background:#211551 center/cover url('hero-poster.jpg')}
+.hero2 .hero-overlay{background:linear-gradient(180deg,rgba(20,13,52,0.55) 0%,rgba(20,13,52,0.05) 22%,rgba(20,13,52,0.35) 45%,rgba(20,13,52,0.92) 72%,rgba(20,13,52,0.98) 100%)}
+.hero2 .hero-topbar{justify-content:space-between}
+.hero2 .hero-logo{width:clamp(84px,18vw,130px);mix-blend-mode:normal;filter:brightness(0) invert(1) drop-shadow(0 1px 6px rgba(0,0,0,0.5))}
+.h2-pill{font-size:12px;font-weight:800;color:#fff;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.25);padding:6px 12px;border-radius:40px;white-space:nowrap}
+.h2-main{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 clamp(20px,5vw,56px) clamp(22px,5vw,40px);max-width:640px}
+.h2-eyebrow{font-size:clamp(12px,3.2vw,14px);font-weight:800;color:rgba(255,255,255,0.75);margin-bottom:10px}
+.h2-title{font-family:var(--fk);font-size:clamp(32px,8.6vw,64px);font-weight:900;line-height:1.18;letter-spacing:-0.04em;color:#fff;margin:0}
+.h2-title em{font-style:normal;color:#ff3b4e}
+.h2-sub{margin-top:12px;font-size:clamp(15px,4vw,19px);font-weight:600;line-height:1.55;color:rgba(255,255,255,0.85)}
+.h2-offer{margin-top:18px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:16px;padding:12px 16px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.h2-offer-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;color:#fff}
+.h2-offer-top b{font-size:clamp(16px,4.3vw,20px);font-weight:900}
+.h2-offer-top span{font-family:var(--fn);font-size:clamp(28px,7.5vw,40px);font-weight:900;line-height:1}
+.h2-offer-top sup{font-size:0.5em;margin-right:2px}
+.h2-offer-note{margin-top:4px;font-size:clamp(12px,3.3vw,14px);font-weight:600;color:rgba(255,255,255,0.72)}
+.h2-cta{margin-top:14px;display:block;text-align:center;background:var(--red);color:#fff;font-size:clamp(17px,4.6vw,20px);font-weight:900;
+  padding:17px 20px;border-radius:14px;box-shadow:0 8px 28px rgba(214,0,28,0.45);transition:transform 0.2s}
+.h2-cta:active,.h2-ask:active{transform:scale(0.98)}
+.h2-ask{margin-top:10px;display:block;text-align:center;background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.3);
+  font-size:clamp(15px,4vw,17px);font-weight:800;padding:13px 16px;border-radius:14px}
+.h2-trust{margin-top:12px;text-align:center;font-size:12px;font-weight:600;color:rgba(255,255,255,0.6)}
+@media(min-width:900px){.h2-main{margin-left:clamp(40px,8vw,120px)}}
+
 .hero-scroll{text-align:center;padding:14px 0;position:relative;z-index:2;flex-shrink:0}
 .scroll-bar{display:inline-block;width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,0.5),transparent);animation:scrollPulse 2s ease-in-out infinite}
 @keyframes scrollPulse{0%,100%{opacity:0.4}50%{opacity:1}}
@@ -845,43 +871,31 @@ footer{padding-bottom:calc(clamp(36px,8vw,60px) + 110px)}
 
 <div class="brand-stripe"></div>
 
-<section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline>
+<section class="hero hero2">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg">
     <source src="f45-seongsu-video.mp4" type="video/mp4">
   </video>
-  <div class="hero-photo-fallback"></div>
   <div class="hero-overlay"></div>
 
   <div class="hero-topbar">
     <img class="hero-logo" src="f45-logo.png" alt="F45 Seongsu">
-    <span class="hero-pill">성수역 4번 출구 바로 앞</span>
+    <span class="h2-pill">📍 성수역 4번 출구 바로 앞</span>
   </div>
 
-  <div class="hero-main">
-    <div class="hero-tagline">TEAM TRAINING<br>LIFE CHANGING</div>
-    
-    <div class="hero-en">
-      <span class="en-line w">STRENGTH</span>
-      <span class="en-line r">CARDIO</span>
-      <span class="en-line b">RECOVERY</span>
-    </div>
-    
-    <span class="hero-ko">인생을 바꾸는<br>가장 짧은 시간,<br><em>45분</em></span>
-    
-    <p class="hero-sub">
-      <strong>전 세계 66개국 동일 프로그램</strong><br>
-      기능성 그룹 트레이닝 F45
-    </p>
-  </div>
+  <div class="h2-main">
+    <span class="h2-eyebrow">F45 성수 · 코치와 함께하는 45분 그룹 운동</span>
+    <h1 class="h2-title" id="heroTitle">헬스장에서 혼자<br>운동하기 <em>어려우셨죠?</em></h1>
+    <p class="h2-sub" id="heroSub">뭘 할지 고민 없이, 코치 2명이 옆에서 동작을 잡아줘요.<br>처음이어도 45분이면 끝나요.</p>
 
-  <div class="hero-bottom">
-    <div class="hero-addr">
-      <strong>F45 성수</strong>
-      성수역 4번 출구 바로 앞 · 에스빌딩 B1
+    <div class="h2-offer">
+      <div class="h2-offer-top"><b>7일 무제한 체험</b><span><sup>₩</sup>40,000</span></div>
+      <div class="h2-offer-note">해보고 마음에 들 때만 등록 · 사용 전이면 전액 환불</div>
     </div>
-    <a href="javascript:void(0)" class="hero-cta" onclick="openLeadModal()">7일 체험권 신청하기</a>
+
+    <a href="javascript:void(0)" class="h2-cta" onclick="openLeadModal()">7일 체험 신청하기 →</a>
+    <a href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" class="h2-ask" onclick="trackContact('kakao')">💬 신청 전에 카톡으로 먼저 물어보기</a>
+    <div class="h2-trust">처음이어도 OK · 샤워실·수건 준비 · 주차 1시간 무료</div>
   </div>
-  <div class="hero-scroll"><span class="scroll-bar"></span></div>
 </section>
 
 <div class="big-mq-wrap">
@@ -1335,7 +1349,7 @@ footer{padding-bottom:calc(clamp(36px,8vw,60px) + 110px)}
     <div class="lead-head">
       <span class="lead-eyebrow">7-Day Trial · 40,000원</span>
       <h2 class="lead-title">7일 무제한 체험<br><em>지금 신청</em>하세요</h2>
-      <p class="lead-desc">이름과 번호만 남겨주세요. 담당 코치가 <strong>24시간 안에</strong> 연락드려 일정을 잡아드려요.<br>F45 성수 첫 방문 고객 대상 · 체험료는 첫 방문 때 현장 결제</p>
+      <p class="lead-desc">이름과 번호만 남겨주세요. <strong>24시간 안에</strong> 고르신 방법으로만 연락드려요 <strong>(기본은 문자, 전화 안 해요)</strong>.<br>F45 성수 첫 방문 고객 대상 · 체험료는 첫 방문 때 현장 결제</p>
     </div>
 
     <div id="leadFormView">
@@ -1470,6 +1484,24 @@ function phoneOk(v){ return /^01[016789][0-9]{7,8}$/.test(String(v||'').replace(
     ['utm_source','utm_medium','utm_campaign','utm_content','fbclid'].forEach(function(k){ if(q.get(k)) keep[k] = q.get(k).slice(0,120); });
     if(Object.keys(keep).length){ keep.ts = Date.now(); sessionStorage.setItem('f45_src', JSON.stringify(keep)); }
   }catch(e){}
+})();
+/* 첫 화면 문구를 들어온 광고와 맞춤 (utm_content·utm_campaign에 든 말로 고름) */
+(function(){
+  var q = {}; try{ q = JSON.parse(sessionStorage.getItem('f45_src') || '{}'); }catch(e){}
+  var key = ((q.utm_content || '') + ' ' + (q.utm_campaign || '')).toLowerCase();
+  var V = [
+    { m: /내향|introvert/, t: '말 안 걸어도 괜찮아요<br><em>같이 움직이면</em> 충분해요',
+      s: '각자 자기 자리에서, 코치 구령에 맞춰 45분.<br>혼자면 금방 멈추던 운동이 끝까지 가요.' },
+    { m: /공감|45분/, t: '헬스장에서 혼자<br>운동하기 <em>어려우셨죠?</em>',
+      s: '뭘 할지 고민 없이, 코치 2명이 옆에서 동작을 잡아줘요.<br>처음이어도 45분이면 끝나요.' }
+  ];
+  for(var i = 0; i < V.length; i++){
+    if(V[i].m.test(key)){
+      document.getElementById('heroTitle').innerHTML = V[i].t;
+      document.getElementById('heroSub').innerHTML = V[i].s;
+      break;
+    }
+  }
 })();
 function leadTrack(){
   var src = {}, ck = {};
