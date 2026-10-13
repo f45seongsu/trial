@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>F45 성수 | Team Training. Life Changing.</title>
+<title>F45 성수 | 7일 무제한 체험</title>
 
 <!-- OG 메타 태그 -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://f45seongsu.github.io/trial/">
 <meta property="og:title" content="F45 성수 | 1주일 무제한 체험권">
-<meta property="og:description" content="단 45분, 인생 운동을 만나보세요. 4만원으로 시작하는 일주일의 변화!">
+<meta property="og:description" content="성수역 4번 출구 앞, 코치 2명과 함께하는 45분 팀 트레이닝. 7일 무제한 체험 40,000원.">
 <meta property="og:image" content="https://f45seongsu.github.io/trial/og-image.jpg">
 
 <!-- Meta Pixel Code -->
@@ -29,642 +29,127 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=26744340661896755&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.jpg">
 <style>
 :root{
-  --blue:#211551;--red:#D6001C;--white:#FFFFFF;
-  --bg:#f4f4f7;--spatial:#E3E4E6;--gray:#5a5a6a;
-  --light-blue:#eaedff;
-  --fn: "Barlow Condensed", "Arial Black", sans-serif;
-  --fk: "Pretendard", sans-serif;
+  --navy:#0e0048;--red:#D6001C;--ink:#16141f;--sub:#5d5b66;--line:#e6e5ea;--soft:#f5f5f3;--white:#fff;
+  /* 신청 창·하단 바(예전 스타일)가 쓰는 이름 */
+  --blue:#0e0048;--bg:#f4f4f7;--gray:#6b6a75;
+  --fk:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;--fn:var(--fk);
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--fk);background:var(--bg);color:var(--blue);overflow-x:hidden;-webkit-font-smoothing:antialiased;word-break:keep-all}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--fk);background:var(--white);color:var(--ink);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;word-break:keep-all;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.label{font-size:13px;font-weight:700;color:var(--red);letter-spacing:0.02em}
+h2{font-size:clamp(22px,5.6vw,30px);font-weight:800;line-height:1.35;letter-spacing:-0.02em;color:var(--navy);margin:8px 0 14px}
+.lead{font-size:16px;color:var(--sub);line-height:1.7}
+section{padding:64px 0}
+.btn{display:block;text-align:center;background:var(--red);color:#fff;font-size:17px;font-weight:800;
+  padding:16px 20px;border-radius:10px;transition:background .15s}
+.btn:active{background:#b30017}
+.tlink{display:inline-block;margin-top:14px;font-size:15px;font-weight:700;color:var(--navy);border-bottom:1.5px solid var(--navy);padding-bottom:1px}
 
-.brand-stripe{width:100%;height:6px;background:repeating-linear-gradient(90deg,var(--blue) 0,var(--blue) 50%,var(--red) 50%,var(--red) 100%);background-size:120px 6px}
+/* 머리 */
+.top{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:1080px;margin:0 auto}
+.top img{width:92px}
+.top span{font-size:13px;font-weight:600;color:var(--sub)}
 
-.hero{
-  position:relative;min-height:100svh;
-  background:var(--blue);
-  display:flex;flex-direction:column;overflow:hidden;
-}
-.hero-video{
-  position:absolute;inset:0;
-  width:100%;height:100%;object-fit:cover;
-  opacity:0.4;mix-blend-mode:luminosity;
-}
-.hero-photo-fallback{
-  position:absolute;inset:0;
-  background: center 30%/cover no-repeat;
-  opacity:0.4;mix-blend-mode:luminosity;
-}
-.hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(165deg,
-    rgba(33,21,81,0.78) 0%,
-    rgba(33,21,81,0.38) 45%,
-    rgba(33,21,81,0.92) 100%);
-}
+/* 첫 화면: 사진이 주인공, 글은 사진 아래 흰 바탕에 */
+.hero-photo{width:100%;aspect-ratio:4/3;object-fit:cover;background:#ddd}
+.hero-text{padding:22px 20px 8px}
+.hero-text h1{font-size:clamp(26px,7vw,40px);font-weight:800;line-height:1.3;letter-spacing:-0.03em;color:var(--navy);margin:6px 0 10px}
+.hero-text p{font-size:16px;color:var(--sub)}
+.offer{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:20px 0 12px;padding-top:16px;border-top:1px solid var(--line)}
+.offer b{font-size:16px;font-weight:700}
+.offer strong{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-0.02em}
+.hero-ask{display:block;text-align:center;margin-top:12px;font-size:14px;font-weight:600;color:var(--sub)}
+.hero-ask u{text-underline-offset:3px}
 
-.hero-topbar{
-  position:relative;z-index:3;
-  display:flex;align-items:center;justify-content:center;
-  padding:clamp(18px,4.5vw,32px) clamp(20px,5vw,48px) 0;
-  flex-shrink:0;
-}
-.hero-logo{
-  width:clamp(100px,20vw,160px);height:auto;
-  mix-blend-mode:screen;filter:brightness(5) saturate(0);
-}
-.hero-pill{
-  position:absolute;right:clamp(20px,5vw,48px);
-  font-family:var(--fn);font-size:clamp(9px,2.2vw,11px);font-weight:900;
-  letter-spacing:0.18em;text-transform:uppercase;
-  color:rgba(255,255,255,0.45);
-  padding:6px 14px;border:1px solid rgba(255,255,255,0.2);border-radius:40px;
-}
+/* 체험권 */
+.incl{list-style:none;margin-top:8px;border-top:1px solid var(--line)}
+.incl li{padding:15px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:112px 1fr;gap:12px}
+.incl b{font-weight:700;color:var(--navy)}
+.incl span{color:var(--sub)}
 
-.hero-main{
-  position:relative;z-index:2;flex:1;
-  display:flex;flex-direction:column;justify-content:center;
-  padding:clamp(20px,5vw,44px) clamp(20px,5vw,56px);
-}
+/* 코칭: 사진 + 글 */
+.coach{background:var(--soft)}
+.split{display:grid;gap:28px}
+.split img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
 
-.hero-tagline{
-  font-family:var(--fn);
-  font-size:clamp(38px,10vw,88px);
-  font-weight:900;line-height:1.0;
-  letter-spacing:0.02em;text-transform:uppercase;
-  color:rgba(255,255,255,0.4);
-  margin-bottom:clamp(16px,4vw,28px);
-  -webkit-text-stroke: 0;
-}
+/* 프로그램: 가로로 넘기는 사진 3장 */
+.prog{display:grid;grid-auto-flow:column;grid-auto-columns:72%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+  margin:22px -20px 0;padding:0 20px 6px;scrollbar-width:none}
+.prog::-webkit-scrollbar{display:none}
+.prog figure{scroll-snap-align:start}
+.prog img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
+.prog figcaption{margin-top:10px}
+.prog figcaption b{display:block;font-size:17px;font-weight:800;color:var(--navy)}
+.prog figcaption small{display:block;font-size:13px;font-weight:700;color:var(--red);margin-bottom:2px}
+.prog figcaption span{font-size:14px;color:var(--sub)}
 
-.hero-en{
-  display:flex;flex-direction:column;gap:clamp(2px,0.5vw,4px);
-  margin-bottom:clamp(14px,3.5vw,24px);
-}
-.en-line{
-  font-family:var(--fn);
-  font-size:clamp(34px,9vw,76px);
-  font-weight:900;line-height:0.95;
-  letter-spacing:-0.03em;text-transform:uppercase;
-  display:block;
-  -webkit-text-stroke: 0;
-}
-.en-line.w{color:rgba(255,255,255,0.7)}
-.en-line.r{color:var(--red)}
-.en-line.b{color:rgba(255,255,255,0.7)}
+/* 단체 사진 (글 없이) */
+.team{padding:0}
+.team img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.team p{max-width:1080px;margin:0 auto;padding:10px 20px 0;font-size:13px;color:var(--sub)}
 
-.hero-ko{
-  font-family:var(--fk);
-  font-size:clamp(42px,11vw,100px);
-  font-weight:900;line-height:1.05;
-  letter-spacing:-0.05em;
-  color:var(--white);display:block;
-}
-.hero-ko em{font-style:normal;color:var(--red); font-weight:900;}
+/* 망설여지는 분들께 · FAQ — 접었다 펴기 */
+.qa details{border-bottom:1px solid var(--line)}
+.qa details:first-of-type{border-top:1px solid var(--line)}
+.qa summary{list-style:none;cursor:pointer;padding:18px 32px 18px 0;font-size:16px;font-weight:700;color:var(--ink);position:relative}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";position:absolute;right:4px;top:15px;font-size:22px;font-weight:400;color:var(--sub)}
+.qa details[open] summary::after{content:"−"}
+.qa .a{padding:0 0 20px;color:var(--sub);font-size:15px;line-height:1.75}
+.qa .a strong{color:var(--ink);font-weight:700}
+.qa .ref{display:block;margin-top:8px;font-size:12px;color:#9a99a3}
+.faq{background:var(--soft)}
 
-.hero-sub{
-  margin-top:clamp(16px,4vw,28px);
-  font-size:clamp(16px,4.2vw,21px);font-weight:600;
-  color:rgba(255,255,255,0.55);line-height:1.65;
-}
-.hero-sub strong{color:rgba(255,255,255,0.9);font-weight:900}
+/* 시간표 */
+.tt{width:100%;border-collapse:collapse;margin-top:18px;font-size:15px;text-align:center}
+.tt th,.tt td{padding:12px 4px;border-bottom:1px solid var(--line)}
+.tt th{font-size:13px;font-weight:700;color:var(--navy)}
+.tt th small{display:block;font-weight:600;color:var(--sub);font-size:12px}
+.tt td:first-child{text-align:left;font-weight:700;color:var(--ink);white-space:nowrap}
+.tt .on::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--navy)}
+.tt .off{color:#c9c8ce}
+.tt-note{margin-top:12px;font-size:14px;color:var(--sub)}
 
-.hero-bottom{
-  position:relative;z-index:2;
-  padding:clamp(16px,4vw,28px) clamp(20px,5vw,56px);
-  display:flex;align-items:center;justify-content:space-between;
-  gap:16px;flex-wrap:wrap;flex-shrink:0;
-}
-.hero-addr{font-size:clamp(13px,3.3vw,15px);font-weight:600;color:rgba(255,255,255,0.42);line-height:1.55}
-.hero-addr strong{color:rgba(255,255,255,0.8);font-weight:900;display:block;font-size:clamp(15px,3.8vw,17px);margin-bottom:2px}
-.hero-cta{
-  background:var(--red);color:var(--white);
-  font-family:var(--fk);font-size:clamp(15px,4.2vw,19px);font-weight:900;
-  padding:clamp(15px,4vw,19px) clamp(26px,6vw,38px);border-radius:60px;
-  white-space:nowrap;flex-shrink:0;
-  box-shadow:0 8px 28px rgba(214,0,28,0.45);transition:transform 0.2s;
-}
-.hero-cta:active{transform:scale(0.97)}
+/* 오시는 길 */
+.loc img{width:100%;border-radius:4px;border:1px solid var(--line)}
+.rows{margin-top:18px;border-top:1px solid var(--line)}
+.rows div,.rows a{display:grid;grid-template-columns:88px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.rows dt,.rows .k{font-weight:700;color:var(--navy)}
+.rows .v{color:var(--ink)}
+.rows .v small{display:block;color:var(--sub);font-size:13px}
 
-/* ════ 첫 화면 v2: 수업 영상이 보이게 + 광고와 이어지는 한 줄 + 가격·신청 바로 ════ */
-.hero2 .hero-video{opacity:1;mix-blend-mode:normal;background:#211551 center/cover url('hero-poster.jpg')}
-.hero2 .hero-overlay{background:linear-gradient(180deg,rgba(20,13,52,0.55) 0%,rgba(20,13,52,0.05) 22%,rgba(20,13,52,0.35) 45%,rgba(20,13,52,0.92) 72%,rgba(20,13,52,0.98) 100%)}
-.hero2 .hero-topbar{justify-content:space-between}
-.hero2 .hero-logo{width:clamp(84px,18vw,130px);mix-blend-mode:normal;filter:brightness(0) invert(1) drop-shadow(0 1px 6px rgba(0,0,0,0.5))}
-.h2-pill{font-size:12px;font-weight:800;color:#fff;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.25);padding:6px 12px;border-radius:40px;white-space:nowrap}
-.h2-main{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:flex-end;
-  padding:0 clamp(20px,5vw,56px) clamp(22px,5vw,40px);max-width:640px}
-.h2-eyebrow{font-size:clamp(12px,3.2vw,14px);font-weight:800;color:rgba(255,255,255,0.75);margin-bottom:10px}
-.h2-title{font-family:var(--fk);font-size:clamp(32px,8.6vw,64px);font-weight:900;line-height:1.18;letter-spacing:-0.04em;color:#fff;margin:0}
-.h2-title em{font-style:normal;color:#ff3b4e}
-.h2-sub{margin-top:12px;font-size:clamp(15px,4vw,19px);font-weight:600;line-height:1.55;color:rgba(255,255,255,0.85)}
-.h2-offer{margin-top:18px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);border-radius:16px;padding:12px 16px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.h2-offer-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;color:#fff}
-.h2-offer-top b{font-size:clamp(16px,4.3vw,20px);font-weight:900}
-.h2-offer-top span{font-family:var(--fn);font-size:clamp(28px,7.5vw,40px);font-weight:900;line-height:1}
-.h2-offer-top sup{font-size:0.5em;margin-right:2px}
-.h2-offer-note{margin-top:4px;font-size:clamp(12px,3.3vw,14px);font-weight:600;color:rgba(255,255,255,0.72)}
-.h2-cta{margin-top:14px;display:block;text-align:center;background:var(--red);color:#fff;font-size:clamp(17px,4.6vw,20px);font-weight:900;
-  padding:17px 20px;border-radius:14px;box-shadow:0 8px 28px rgba(214,0,28,0.45);transition:transform 0.2s}
-.h2-cta:active,.h2-ask:active{transform:scale(0.98)}
-.h2-ask{margin-top:10px;display:block;text-align:center;background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.3);
-  font-size:clamp(15px,4vw,17px);font-weight:800;padding:13px 16px;border-radius:14px}
-.h2-trust{margin-top:12px;text-align:center;font-size:12px;font-weight:600;color:rgba(255,255,255,0.6)}
-@media(min-width:900px){.h2-main{margin-left:clamp(40px,8vw,120px)}}
+/* 마지막 신청 */
+.final{background:var(--navy);color:#fff;text-align:center;padding:64px 0 72px}
+.final img{width:120px;margin:0 auto 22px}
+.final h2{color:#fff;margin-bottom:8px}
+.final p{color:rgba(255,255,255,0.78);margin-bottom:24px}
+.final .btn{max-width:360px;margin:0 auto}
+.final .tlink{color:#fff;border-color:rgba(255,255,255,0.7)}
+footer{padding:28px 20px 110px;text-align:center;font-size:12px;color:var(--sub)}
+footer a{text-decoration:underline}
 
-.hero-scroll{text-align:center;padding:14px 0;position:relative;z-index:2;flex-shrink:0}
-.scroll-bar{display:inline-block;width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,0.5),transparent);animation:scrollPulse 2s ease-in-out infinite}
-@keyframes scrollPulse{0%,100%{opacity:0.4}50%{opacity:1}}
-
-.big-mq-wrap{background:var(--blue);overflow:hidden;padding:clamp(14px,3.5vw,22px) 0;border-top:2px solid var(--red);border-bottom:2px solid var(--red)}
-.big-mq-track{display:flex;white-space:nowrap;animation:mqScroll 11s linear infinite}
-.mq-word{font-family:var(--fn);font-size:clamp(28px,7vw,56px);font-weight:900;letter-spacing:0.06em;text-transform:uppercase;padding:0 clamp(20px,4vw,40px);line-height:1;color:var(--white);display:inline-flex;align-items:center;gap:clamp(16px,3vw,32px)}
-.mq-word.fill{color:var(--white)}
-.mq-star{color:var(--red);font-size:0.7em;flex-shrink:0}
-.mq-sep{font-family:var(--fn);font-size:clamp(32px,8vw,64px);color:var(--red);padding:0 clamp(6px,1.5vw,14px);line-height:1;opacity:0.35;display:inline-block;font-weight:900}
-@keyframes mqScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-#initial-cta{background:var(--blue);padding:clamp(40px,9vw,80px) clamp(20px,5vw,48px)}
-.cta-wrap{max-width:540px;margin:0 auto}
-.cta-eyebrow{
-  font-family:var(--fn);font-size:clamp(13px,3.5vw,16px);font-weight:900;
-  letter-spacing:0.2em;text-transform:uppercase;color:var(--red);
-  display:block;margin-bottom:14px;
+@media(min-width:860px){
+  section{padding:96px 0}
+  .top{padding:18px 32px;max-width:1180px}
+  .top img{width:110px}
+  .hero{display:grid;grid-template-columns:1.25fr 1fr;align-items:center;max-width:1180px;margin:0 auto;gap:48px;padding:0 32px 40px}
+  .hero-photo{aspect-ratio:3/2;border-radius:4px}
+  .hero-text{padding:0}
+  .split{grid-template-columns:1fr 1fr;align-items:center;gap:56px}
+  .prog{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible;margin:28px 0 0;padding:0}
+  .team img{aspect-ratio:21/9}
+  .two{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:start}
 }
-.cta-title{
-  font-family:var(--fk);
-  font-size:clamp(32px,9vw,68px);
-  font-weight:900;line-height:1.0;letter-spacing:-0.05em;
-  color:var(--white);margin-bottom:6px;
-}
-.cta-title em{font-style:normal;color:var(--red); font-weight:900;}
-.cta-loc{font-size:clamp(13px,3.3vw,15px);font-weight:600;color:rgba(255,255,255,0.35);margin-bottom:28px}
-.price-box{
-  background:var(--white);border-radius:20px;
-  padding:clamp(28px,7vw,48px) clamp(24px,6vw,40px);
-  border-top:5px solid var(--red);
-  position:relative;overflow:hidden;
-}
-.price-box::after{
-  content:"5";position:absolute;right:-16px;top:-10px;
-  font-family:var(--fn);font-size:220px;font-weight:900;
-  color:rgba(33,21,81,0.04);line-height:1;pointer-events:none;
-  letter-spacing:-0.06em;
-}
-.price-num{
-  font-family:var(--fn);
-  font-size:clamp(72px,22vw,140px);
-  font-weight:900;color:var(--red);
-  line-height:0.9;letter-spacing:-0.06em;
-  margin-bottom:4px;display:block;
-}
-.price-num sup{font-size:0.32em;vertical-align:super;letter-spacing:0}
-.price-unit{
-  font-family:var(--fk);
-  font-size:clamp(20px,5vw,32px);
-  font-weight:900;color:var(--blue);
-  letter-spacing:-0.02em;margin-bottom:16px;display:block;
-}
-.price-note{
-  display:inline-block;
-  font-size:clamp(14px,3.8vw,17px);font-weight:900;
-  color:var(--blue);background:var(--light-blue);
-  padding:10px 18px;border-radius:10px;margin-bottom:28px;
-}
-.btn-book{
-  display:block;background:var(--blue);color:var(--white);
-  text-align:center;padding:clamp(18px,5.5vw,24px);
-  border-radius:60px;
-  font-family:var(--fk);font-size:clamp(18px,5.5vw,24px);font-weight:900;
-  letter-spacing:-0.01em;
-  box-shadow:0 12px 32px rgba(33,21,81,0.28);
-  transition:transform 0.2s,background 0.2s;
-}
-.btn-book:active{transform:scale(0.98);background:#1a0f40}
-
-.trial-lead{font-size:clamp(19px,5vw,24px);font-weight:900;color:var(--blue);line-height:1.35;letter-spacing:-0.03em;margin-bottom:18px}
-.trial-lead em{font-style:normal;color:var(--red)}
-.trial-list{list-style:none;margin:0 0 28px;display:flex;flex-direction:column;gap:12px}
-.trial-list li{position:relative;padding-left:30px;font-size:clamp(13px,3.5vw,15px);font-weight:500;color:var(--gray);line-height:1.45}
-.trial-list li::before{content:"✓";position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;background:var(--red);color:var(--white);font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center}
-.trial-list b{display:block;font-size:clamp(15px,4vw,17px);font-weight:800;color:var(--blue)}
-.dual-stripe{display:flex;flex-direction:column}
-.dual-stripe .s1{height:5px;background:var(--blue)}
-.dual-stripe .s2{height:3px;background:var(--red)}
-.stripe-div{width:100%;height:5px;background:repeating-linear-gradient(90deg,var(--blue) 0,var(--blue) 50%,var(--red) 50%,var(--red) 100%);background-size:80px 5px}
-
-.mw{max-width:1100px;margin:0 auto}
-.eyebrow-tag{font-family:var(--fn);font-size:clamp(11px,2.5vw,13px);font-weight:900;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:12px}
-.section-title{
-  font-family:var(--fk);
-  font-size:clamp(36px,9.5vw,68px);
-  font-weight:900;line-height:1.0;letter-spacing:-0.05em;
-  color:var(--blue);text-transform:uppercase;
-}
-.section-header{margin-bottom:clamp(28px,6vw,48px)}
-
-.stats-section{background:var(--bg);padding:clamp(48px,10vw,80px) clamp(20px,5vw,48px)}
-.stats-title-wrap{text-align:center;margin-bottom:clamp(28px,7vw,48px)}
-.stats-eyebrow{font-family:var(--fn);font-size:clamp(11px,2.5vw,13px);font-weight:900;letter-spacing:0.24em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:12px}
-.stats-h{font-family:var(--fk);font-size:clamp(32px,8vw,60px);font-weight:900;line-height:1.08;letter-spacing:-0.05em;color:var(--blue);text-transform:uppercase}
-.stats-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  border:1.5px solid var(--spatial);border-radius:20px;overflow:hidden;
-  background:var(--white);max-width:680px;margin:0 auto;
-}
-.stat-cell{padding:clamp(24px,6vw,40px) 12px;text-align:center;border-right:1.5px solid var(--spatial)}
-.stat-cell:last-child{border-right:none}
-.stat-num{
-  font-family:var(--fn);
-  font-size:clamp(40px,11.5vw,72px);font-weight:900;
-  color:var(--blue);letter-spacing:-0.05em;line-height:1;display:block;
-}
-.stat-num em{color:var(--red);font-style:normal}
-.stat-label{font-family:var(--fn);font-size:clamp(10px,2.2vw,13px);font-weight:900;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray);margin-top:6px;display:block}
-
-.country-sec{background:var(--blue);padding:clamp(6px,1.5vw,10px) 0;overflow:hidden;display:flex;flex-direction:column;gap:0;border-top:2px solid var(--red);border-bottom:2px solid var(--red)}
-.country-row{overflow:hidden;padding:clamp(4px,1vw,7px) 0}
-.country-track{display:flex;white-space:nowrap}
-.country-track.s1{animation:mqLeft 14s linear infinite}
-.country-track.s2{animation:mqRight 10s linear infinite}
-.country-track.s3{animation:mqLeft 18s linear infinite}
-.country-item{font-family:var(--fn);font-size:clamp(16px,3.8vw,28px);font-weight:900;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5);padding:0 clamp(14px,3vw,28px);display:inline-flex;align-items:center;gap:clamp(10px,2vw,20px)}
-.country-item.hl{color:var(--red)}
-.country-star{color:var(--red);font-size:0.6em;opacity:0.7;flex-shrink:0}
-@keyframes mqLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes mqRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-
-.global-section{
-  position:relative;
-  background:var(--blue);
-  padding:clamp(56px,12vw,120px) clamp(20px,5vw,56px);
-  overflow:hidden;
-}
-.global-bg{
-  position:absolute;inset:0;
-  background: center/cover no-repeat;
-  opacity:0.15;mix-blend-mode:luminosity;
-}
-.global-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to bottom,
-    rgba(33,21,81,0.88) 0%,
-    rgba(33,21,81,0.75) 50%,
-    rgba(33,21,81,0.92) 100%);
-}
-.global-content{position:relative;z-index:2;text-align:center}
-.global-eyebrow{
-  font-family:var(--fn);font-size:clamp(10px,2.5vw,12px);
-  font-weight:900;letter-spacing:0.24em;text-transform:uppercase;
-  color:var(--red);display:block;margin-bottom:14px;
-}
-.global-h{
-  font-family:var(--fk);
-  font-size:clamp(32px,9vw,72px);
-  font-weight:900;line-height:1.05;letter-spacing:-0.04em;
-  color:var(--white);text-transform:uppercase;
-  margin-bottom:clamp(16px,4vw,28px);
-}
-.global-desc{
-  font-family:var(--fk);
-  font-size:clamp(15px,4.2vw,21px);
-  font-weight:600;color:rgba(255,255,255,0.62);
-  line-height:1.7;max-width:540px;margin:0 auto;
-}
-
-.why-section{background:var(--bg);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
-.why-list{display:flex;flex-direction:column;gap:clamp(16px,3.5vw,24px);margin-top:clamp(28px,6vw,44px)}
-.why-card{
-  position:relative;border-radius:clamp(18px,3.5vw,24px);overflow:hidden;
-  min-height:clamp(300px,75vw,460px);
-  display:flex;align-items:flex-end;
-}
-.why-bg{
-  position:absolute;inset:0;
-  background-size:cover;background-position:center;
-  transform:scale(1.1);
-  transition:transform 1.4s cubic-bezier(0.25,0.46,0.45,0.94);
-}
-.why-card.vis .why-bg{transform:scale(1)}
-.why-card:hover .why-bg{transform:scale(1.04)}
-.why-ov{
-  position:absolute;inset:0;
-  background:linear-gradient(to top,
-    rgba(33,21,81,0.92) 0%,
-    rgba(33,21,81,0.45) 50%,
-    rgba(33,21,81,0.05) 100%);
-}
-.why-content{
-  position:relative;z-index:2;
-  padding:clamp(28px,7vw,44px);width:100%;
-}
-.why-num{
-  font-family:var(--fn);
-  font-size:clamp(12px,3vw,16px);font-weight:900;
-  letter-spacing:0.2em;text-transform:uppercase;
-  color:rgba(255,255,255,0.28);display:block;margin-bottom:6px;
-}
-.why-title{
-  font-family:var(--fk);
-  font-size:clamp(26px,7.5vw,48px);
-  font-weight:900;color:var(--white);
-  line-height:1.15;letter-spacing:-0.03em;
-  display:block;margin-bottom:14px;
-}
-.why-title em{font-style:normal;color:var(--red)}
-.why-desc{
-  font-size:clamp(15px,4.2vw,19px);
-  color:rgba(255,255,255,0.65);line-height:1.6;font-weight:500;
-}
-.why-ref{
-  font-family:var(--fn);
-  font-size:clamp(10px,2.4vw,12px);font-weight:600;
-  color:rgba(255,255,255,0.28);
-  display:block;margin-top:12px;letter-spacing:0.02em;
-}
-
-.routine-section{background:var(--white);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
-.routine-grid{display:grid;gap:clamp(16px,3.5vw,24px);margin-top:clamp(28px,6vw,44px)}
-.routine-card{
-  position:relative;border-radius:clamp(18px,3.5vw,24px);overflow:hidden;
-  min-height:clamp(240px,62vw,360px);
-  display:flex;align-items:flex-end;
-}
-.routine-bg{
-  position:absolute;inset:0;
-  background-size:cover;background-position:center;
-  transform:scale(1.1);
-  transition:transform 1.4s cubic-bezier(0.25,0.46,0.45,0.94);
-}
-.routine-card.vis .routine-bg{transform:scale(1)}
-.routine-card:hover .routine-bg{transform:scale(1.04)}
-.routine-ov{
-  position:absolute;inset:0;
-  background:linear-gradient(to top,
-    rgba(33,21,81,0.88) 0%,
-    rgba(33,21,81,0.22) 55%,
-    rgba(33,21,81,0.0) 100%);
-}
-.routine-ov.cardio{
-  background:linear-gradient(to top,
-    rgba(33,21,81,0.85) 0%,
-    rgba(33,21,81,0.18) 55%,
-    rgba(33,21,81,0.0) 100%);
-}
-.routine-ov.resistance{
-  background:linear-gradient(to top,
-    rgba(214,0,28,0.82) 0%,
-    rgba(214,0,28,0.15) 55%,
-    rgba(214,0,28,0.0) 100%);
-}
-.routine-ov.hybrid{
-  background:linear-gradient(to top,
-    rgba(33,21,81,0.85) 0%,
-    rgba(214,0,28,0.15) 55%,
-    rgba(214,0,28,0.0) 100%);
-}
-.routine-content{
-  position:relative;z-index:2;
-  padding:clamp(24px,6vw,36px);width:100%;
-}
-.routine-day{
-  font-family:var(--fn);
-  font-size:clamp(11px,2.8vw,14px);font-weight:800;
-  letter-spacing:0.18em;text-transform:uppercase;
-  color:rgba(255,255,255,0.35);display:block;margin-bottom:8px;
-}
-.routine-name{
-  font-family:var(--fk);
-  font-size:clamp(28px,8vw,56px);
-  font-weight:900;color:var(--white);
-  line-height:1.0;letter-spacing:-0.04em;
-  display:block;margin-bottom:10px;
-}
-.routine-desc{
-  font-size:clamp(14px,3.8vw,17px);
-  color:rgba(255,255,255,0.68);line-height:1.6;font-weight:500;
-}
-
-.tt-section{background:var(--white);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
-.tt-notice{
-  font-size:clamp(14px,3.8vw,17px);font-weight:700;
-  color:var(--gray);margin-top:14px;line-height:1.6;
-}
-.tt-notice span{color:var(--red);font-weight:900}
-.tt-legend{display:flex;gap:clamp(16px,4vw,28px);flex-wrap:wrap;margin:clamp(24px,5vw,36px) 0}
-.tt-legend-item{
-  display:flex;align-items:center;gap:10px;
-  font-size:clamp(13px,3.6vw,16px);font-weight:700;color:var(--blue);
-}
-.dot{width:clamp(18px,4.5vw,24px);height:clamp(18px,4.5vw,24px);border-radius:50%;flex-shrink:0}
-.dot-c{background:var(--blue)}
-.dot-r{background:var(--red)}
-.dot-h{background:linear-gradient(135deg,var(--red) 50%,var(--blue) 50%)}
-
-.tt-table-wrap{
-  background:var(--white);
-  border-radius:clamp(16px,3.5vw,24px);
-  overflow:hidden;
-  border:1.5px solid var(--spatial);
-}
-
-.tt-header{
-  background:var(--blue);
-  color:var(--white);
-  display:grid;
-  grid-template-columns:1.2fr repeat(4,1fr);
-  padding:clamp(14px,3.5vw,20px) clamp(12px,3vw,20px);
-  text-align:center;
-  gap:clamp(8px,2vw,12px);
-}
-.tt-header-cell{
-  font-family:var(--fn);
-  font-size:clamp(11px,2.8vw,14px);
-  font-weight:800;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-}
-.tt-header-cell .sub{
-  display:block;
-  font-size:0.75em;
-  opacity:0.6;
-  margin-top:2px;
-  font-weight:600;
-}
-
-.tt-body{background:var(--white)}
-.tt-row{
-  display:grid;
-  grid-template-columns:1.2fr repeat(4,1fr);
-  padding:clamp(12px,3vw,18px) clamp(12px,3vw,20px);
-  gap:clamp(8px,2vw,12px);
-  border-bottom:1px solid var(--bg);
-  align-items:center;
-  text-align:center;
-}
-.tt-row:last-child{border-bottom:none}
-.tt-time{
-  font-family:var(--fn);
-  font-size:clamp(12px,3.2vw,15px);
-  font-weight:800;
-  color:var(--blue);
-  letter-spacing:0.02em;
-  text-align:left;
-}
-.tt-cell{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.tt-icon{
-  width:clamp(20px,5vw,28px);
-  height:clamp(20px,5vw,28px);
-  border-radius:50%;
-}
-.tt-off{
-  color:var(--spatial);
-  font-size:clamp(16px,4vw,20px);
-  font-weight:700;
-}
-
-.obj-section{background:var(--white);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
-.obj-list{margin-top:clamp(28px,6vw,44px);display:flex;flex-direction:column;gap:12px}
-.obj-item{
-  border:1.5px solid var(--spatial);border-radius:16px;
-  overflow:hidden;background:var(--white);
-  transition:border-color 0.2s,box-shadow 0.2s;
-}
-.obj-item.open{border-color:var(--blue);box-shadow:0 10px 30px rgba(33,21,81,0.1)}
-.obj-q{
-  display:flex;align-items:center;gap:14px;cursor:pointer;
-  padding:clamp(20px,5vw,26px) clamp(20px,5vw,28px);
-  user-select:none;
-}
-.obj-quote{
-  flex:1;font-family:var(--fk);
-  font-size:clamp(16px,4.4vw,20px);font-weight:800;
-  color:var(--blue);line-height:1.35;letter-spacing:-0.02em;
-}
-.obj-quote .qm{color:var(--red);margin-right:2px}
-.obj-toggle{
-  flex-shrink:0;width:30px;height:30px;border-radius:50%;
-  background:var(--bg);
-  display:flex;align-items:center;justify-content:center;
-  font-size:20px;font-weight:700;color:var(--blue);
-  transition:transform 0.3s,background 0.2s;
-}
-.obj-item.open .obj-toggle{transform:rotate(45deg);background:var(--blue);color:var(--white)}
-.obj-a{
-  max-height:0;overflow:hidden;
-  transition:max-height 0.35s ease;
-}
-.obj-item.open .obj-a{max-height:400px}
-.obj-a-inner{
-  padding:0 clamp(20px,5vw,28px) clamp(22px,5vw,28px);
-  font-size:clamp(15px,4vw,17px);color:var(--gray);
-  line-height:1.7;font-weight:500;
-}
-.obj-a-inner strong{color:var(--blue);font-weight:800}
-.obj-a-inner .obj-ref{
-  display:block;margin-top:12px;
-  font-family:var(--fn);font-size:clamp(10px,2.4vw,12px);font-weight:600;
-  color:#b0b0bb;letter-spacing:0.02em;
-}
-.obj-cta{
-  text-align:center;margin-top:clamp(28px,6vw,40px);
-}
-.obj-cta-btn{
-  display:inline-block;cursor:pointer;
-  background:var(--red);color:var(--white);
-  font-family:var(--fk);font-size:clamp(16px,4.5vw,20px);font-weight:900;
-  padding:clamp(15px,4vw,19px) clamp(32px,7vw,48px);border-radius:60px;
-  box-shadow:0 10px 28px rgba(214,0,28,0.4);
-  transition:transform 0.15s;
-}
-.obj-cta-btn:active{transform:scale(0.97)}
-
-.faq-section{background:var(--bg);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
-.faq-list{margin-top:clamp(28px,6vw,44px)}
-.faq-item{border-bottom:1px solid var(--spatial);padding:clamp(22px,5.5vw,32px) 0}
-.faq-item:first-child{border-top:1px solid var(--spatial)}
-.faq-q{
-  font-size:clamp(17px,4.8vw,22px);font-weight:800;color:var(--blue);
-  display:flex;align-items:flex-start;gap:12px;
-  line-height:1.3;margin-bottom:12px;
-}
-.faq-qmark{color:var(--red);flex-shrink:0;font-weight:900}
-.faq-a{
-  font-size:clamp(15px,4vw,18px);
-  color:var(--gray);line-height:1.7;
-  padding-left:clamp(24px,5.5vw,32px);font-weight:500;
-}
-.faq-item.feat{
-  background:var(--blue);border-radius:22px;
-  padding:clamp(24px,6vw,36px);border:none;margin-top:10px;
-}
-.faq-item.feat .faq-q{color:var(--white)}
-.faq-item.feat .faq-a{color:rgba(255,255,255,0.72)}
-.faq-item.feat .faq-qmark{color:#ff8fa3}
-.naver-btn{
-  display:inline-block;margin-top:16px;
-  background:#03C75A;color:var(--white);
-  padding:clamp(13px,3.5vw,16px) clamp(24px,6vw,32px);
-  border-radius:40px;
-  font-size:clamp(15px,4vw,17px);font-weight:900;
-}
-
-.loc-section{background:var(--blue);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
-.loc-section .eyebrow-tag{color:rgba(255,255,255,0.3)}
-.loc-section .section-title{color:var(--white)}
-.loc-card{background:var(--white);border-radius:24px;overflow:hidden;margin-top:clamp(28px,6vw,44px);border-top:5px solid var(--red)}
-.loc-map{width:100%;height:clamp(200px,55vw,300px);background:var(--spatial);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--gray);letter-spacing:0.06em;text-transform:uppercase}
-.loc-info{padding:clamp(28px,7vw,44px)}
-.loc-addr{font-size:clamp(20px,5.5vw,28px);font-weight:800;color:var(--blue);line-height:1.3;letter-spacing:-0.02em;margin-bottom:12px}
-.loc-access{font-size:clamp(15px,4vw,18px);font-weight:600;color:var(--gray);line-height:1.6;margin-bottom:18px}
-.parking{font-size:clamp(14px,3.5vw,16px);font-weight:700;color:var(--blue);background:var(--light-blue);padding:12px 18px;border-radius:12px;display:inline-block}
-.parking-fine{font-size:clamp(12px,3vw,13px);font-weight:500;color:var(--gray);margin-top:8px;display:block}
-
-.policy-section{background:var(--spatial);padding:clamp(40px,8vw,72px) clamp(20px,5vw,48px)}
-.policy-box{background:var(--white);border-radius:22px;padding:clamp(28px,7vw,44px);border:1px solid rgba(33,21,81,0.08);margin-top:clamp(24px,5vw,36px)}
-.policy-title{font-size:clamp(15px,4vw,19px);font-weight:900;color:var(--blue);margin-bottom:18px;text-transform:uppercase}
-.policy-list{list-style:none;display:flex;flex-direction:column;gap:12px}
-.policy-list li{font-size:clamp(14px,3.8vw,17px);color:var(--gray);line-height:1.65;padding-left:20px;position:relative;font-weight:500}
-.policy-list li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:50%;background:var(--red)}
-
-.contact-section{background:var(--bg);padding:clamp(56px,10vw,100px) clamp(20px,5vw,48px)}
-.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,3vw,20px);margin-top:clamp(28px,6vw,44px)}
-@media(max-width:640px){.contact-grid{grid-template-columns:1fr;max-width:400px}}
-.contact-card{
-  display:flex;flex-direction:column;align-items:center;text-align:center;
-  background:var(--white);border-radius:clamp(18px,3.5vw,24px);
-  padding:clamp(28px,7vw,44px) clamp(20px,5vw,32px);
-  border:1.5px solid var(--spatial);
-  transition:transform 0.2s,box-shadow 0.2s;
-  color:var(--blue);
-}
-.contact-card:active{transform:scale(0.97)}
-.contact-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(33,21,81,0.1)}
-.contact-card.kakao{border-top:4px solid #FEE500}
-.contact-card.insta{border-top:4px solid #E1306C}
-.contact-card:not(.kakao):not(.insta){border-top:4px solid var(--blue)}
-.contact-icon{font-size:clamp(28px,7vw,40px);margin-bottom:14px;line-height:1}
-.contact-label{font-family:var(--fn);font-size:clamp(10px,2.4vw,12px);font-weight:900;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
-.contact-value{font-family:var(--fk);font-size:clamp(16px,4.2vw,22px);font-weight:900;color:var(--blue);letter-spacing:-0.02em;margin-bottom:6px}
-.contact-sub{font-size:clamp(13px,3.2vw,15px);color:var(--gray);font-weight:500}
-
-footer{background:var(--blue);padding:clamp(36px,8vw,60px) clamp(20px,5vw,48px);text-align:center}
-footer{padding-bottom:calc(clamp(36px,8vw,60px) + 110px)}
-.footer-logo{width:clamp(80px,16vw,120px);height:auto;mix-blend-mode:screen;filter:brightness(5) saturate(0);margin:0 auto clamp(12px,3vw,18px)}
-.footer-tagline{font-family:var(--fn);font-size:clamp(10px,2.4vw,12px);font-weight:800;letter-spacing:0.26em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:14px}
-.footer-copy{font-size:clamp(12px,2.8vw,14px);color:rgba(255,255,255,0.18)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
 .sticky-cta{
   position:fixed;bottom:-160px;left:0;width:100%;
@@ -865,471 +350,175 @@ footer{padding-bottom:calc(clamp(36px,8vw,60px) + 110px)}
 .lead-now-btn.tel{background:var(--bg);color:var(--blue)}
 .lead-now.kakao-first .lead-now-btn.kakao{box-shadow:0 0 0 3px var(--blue)}
 .sticky-done a{color:var(--red);text-decoration:underline}
+
 </style>
 </head>
 <body>
 
-<div class="brand-stripe"></div>
+<header class="top">
+  <img src="img/logo-navy.png" alt="F45 성수" width="640" height="263">
+  <span>성수역 4번 출구 바로 앞</span>
+</header>
 
-<section class="hero hero2">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg">
-    <source src="f45-seongsu-video.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-
-  <div class="hero-topbar">
-    <img class="hero-logo" src="f45-logo.png" alt="F45 Seongsu">
-    <span class="h2-pill">📍 성수역 4번 출구 바로 앞</span>
-  </div>
-
-  <div class="h2-main">
-    <span class="h2-eyebrow">F45 성수 · 코치와 함께하는 45분 그룹 운동</span>
-    <h1 class="h2-title" id="heroTitle">헬스장에서 혼자<br>운동하기 <em>어려우셨죠?</em></h1>
-    <p class="h2-sub" id="heroSub">뭘 할지 고민 없이, 코치 2명이 옆에서 동작을 잡아줘요.<br>처음이어도 45분이면 끝나요.</p>
-
-    <div class="h2-offer">
-      <div class="h2-offer-top"><b>7일 무제한 체험</b><span><sup>₩</sup>40,000</span></div>
-      <div class="h2-offer-note">해보고 마음에 들 때만 등록 · 사용 전이면 전액 환불</div>
-    </div>
-
-    <a href="javascript:void(0)" class="h2-cta" onclick="openLeadModal()">7일 체험 신청하기 →</a>
-    <a href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" class="h2-ask" onclick="trackContact('kakao')">💬 신청 전에 카톡으로 먼저 물어보기</a>
-    <div class="h2-trust">처음이어도 OK · 샤워실·수건 준비 · 주차 1시간 무료</div>
-  </div>
-</section>
-
-<div class="big-mq-wrap">
-  <div class="big-mq-track" id="bigMq"></div>
-</div>
-
-<div id="initial-cta">
-  <div class="mw cta-wrap fu">
-    <span class="cta-eyebrow">7-Day Trial · 체험 프로그램</span>
-    <h2 class="cta-title">F45 성수 <em>7일</em> 체험권</h2>
-    <p class="cta-loc">성수역 4번 출구 바로 앞</p>
-    <div class="price-box">
-      <span class="price-num"><sup>₩</sup>40,000</span>
-      <span class="price-unit">/ 7일 무제한 체험</span>
-      <div class="price-note">일주일간 횟수 제한 없이 무제한 운동</div>
-      <p class="trial-lead">4만 원으로 7일 동안 충분히 해보고,<br><em>그다음에 결정하세요.</em></p>
-      <ul class="trial-list">
-        <li><b>매일 와도 돼요</b>7일 동안 횟수 제한 없이 원하는 만큼</li>
-        <li><b>3가지 수업을 다 경험</b>유산소 · 근력 · 하이브리드, 요일마다 달라요</li>
-        <li><b>코치 2명이 옆에서</b>처음이어도 무게·동작을 내 몸에 맞게</li>
-        <li><b>몸만 오세요</b>샤워실·수건·어메니티 준비, 주차 1시간 무료</li>
-        <li><b>해보고 마음에 들 때만 등록</b>체험권 사용 전이면 전액 환불</li>
-      </ul>
-      <a href="javascript:void(0)" class="btn-book" onclick="openLeadModal()">7일 체험권 신청하기 →</a>
-    </div>
+<div class="hero" id="hero">
+  <picture>
+    <source media="(min-width:860px)" srcset="img/hero-wide.jpg">
+    <img class="hero-photo" src="img/hero.jpg" alt="F45 성수에서 슬레드를 미는 회원" width="1000" height="750" fetchpriority="high">
+  </picture>
+  <div class="hero-text">
+    <span class="label">F45 성수 · 팀 트레이닝</span>
+    <h1>성수에서 시작하는<br>45분 팀 트레이닝</h1>
+    <p>코치 2명이 함께하는 그룹 수업이에요.<br>운동이 처음이어도 괜찮아요.</p>
+    <div class="offer"><b>7일 무제한 체험</b><strong>40,000원</strong></div>
+    <a href="javascript:void(0)" class="btn" onclick="openLeadModal()">체험 신청하기</a>
+    <a href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" class="hero-ask" onclick="trackContact('kakao')">신청 전에 궁금한 게 있다면 <u>카카오톡으로 물어보기</u></a>
   </div>
 </div>
 
-<div class="dual-stripe"><div class="s1"></div><div class="s2"></div></div>
-
-<section class="stats-section">
-  <div class="mw fu">
-    <div class="stats-title-wrap">
-      <span class="stats-eyebrow">Global Presence</span>
-      <h2 class="stats-h">66개국<br>3,000개 스튜디오</h2>
+<section id="offer">
+  <div class="wrap two">
+    <div>
+      <span class="label">7일 체험권</span>
+      <h2>4만 원으로 7일 동안 해보고,<br>그다음에 결정하세요</h2>
     </div>
-    <div class="stats-grid">
-      <div class="stat-cell"><span class="stat-num">66<em>+</em></span><span class="stat-label">Countries</span></div>
-      <div class="stat-cell"><span class="stat-num">3<em>K</em></span><span class="stat-label">Studios</span></div>
-      <div class="stat-cell"><span class="stat-num">45<em>m</em></span><span class="stat-label">Per Session</span></div>
+    <ul class="incl">
+      <li><b>횟수 제한 없음</b><span>7일 동안 원하는 만큼 와도 돼요</span></li>
+      <li><b>세 가지 수업</b><span>유산소 · 근력 · 하이브리드, 요일마다 달라요</span></li>
+      <li><b>코치 2명</b><span>무게와 동작을 내 몸에 맞게 바꿔 드려요</span></li>
+      <li><b>몸만 오세요</b><span>샤워실 · 수건 · 어메니티 준비, 주차 1시간 무료</span></li>
+      <li><b>사용 전 전액 환불</b><span>해보고 마음에 들 때만 등록하면 돼요</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="coach" id="coach">
+  <div class="wrap split">
+    <img src="img/coach.jpg" alt="코치가 회원의 자세를 잡아주는 모습" width="900" height="1125" loading="lazy">
+    <div>
+      <span class="label">코칭</span>
+      <h2>혼자 기구 앞에서<br>고민하지 않아도 돼요</h2>
+      <p class="lead">수업마다 코치 2명이 들어와 동작을 보여주고, 옆에서 자세와 무게를 잡아 드려요. 오늘 뭘 할지는 이미 짜여 있으니 오시면 바로 시작하면 됩니다.</p>
+      <p class="lead" style="margin-top:12px">체력이 제각각이어도 같은 수업을 해요. 각자 자기 스테이션에서, 자기 속도로.</p>
     </div>
   </div>
 </section>
 
-<div class="country-sec">
-  <div class="country-row"><div class="country-track s1" id="cMq1"></div></div>
-  <div class="country-row"><div class="country-track s2" id="cMq2"></div></div>
-  <div class="country-row"><div class="country-track s3" id="cMq3"></div></div>
-</div>
-
-<section class="global-section fu">
-  <div class="global-bg" style="background-image:url('global-network.jpg')"></div>
-  <div class="global-overlay"></div>
-  <div class="global-content">
-    <span class="global-eyebrow">Proven Worldwide</span>
-    <h2 class="global-h">전 세계에서<br>검증된 트레이닝</h2>
-    <p class="global-desc">F45는 호주에서 시작된 글로벌 피트니스로, <br>뉴욕, 런던, 두바이, 시드니까지 전 세계 66개국에서 동일한 프로그램이 진행됩니다.</p>
-  </div>
-</section>
-
-<div class="stripe-div"></div>
-
-<section class="why-section">
-  <div class="mw">
-    <div class="section-header fu">
-      <span class="eyebrow-tag">Why F45 Seongsu</span>
-      <h2 class="section-title">내 몸이<br>달라지는 이유</h2>
-    </div>
-    <div class="why-list">
-
-      <div class="why-card fu">
-        <div class="why-bg" style="background-image:url('why-01-fun.jpg')"></div>
-        <div class="why-ov"></div>
-        <div class="why-content">
-          <span class="why-num">01</span>
-          <span class="why-title">재미</span>
-          <p class="why-desc">매일 바뀌는 27가지 조합. <br>지루할 틈이 없습니다. <br>팀 에너지가 혼자였다면 포기했을 순간을 넘기게 합니다.</p>
-        </div>
-      </div>
-
-      <div class="why-card fu">
-        <div class="why-bg" style="background-image:url('why-02-results.jpg')"></div>
-        <div class="why-ov"></div>
-        <div class="why-content">
-          <span class="why-num">02</span>
-          <span class="why-title">효과</span>
-          <p class="why-desc">45분에 최대 750kcal 소모. <br>시간을 낭비하지 않습니다. <br>운동 후에도 계속 연소되는 EPOC 효과까지.</p>
-          <span class="why-ref">* Buchheit &amp; Laursen, Journal of Sports Sciences (2018)</span>
-        </div>
-      </div>
-
-      <div class="why-card fu">
-        <div class="why-bg" style="background-image:url('why-03-coaching.jpg')"></div>
-        <div class="why-ov"></div>
-        <div class="why-content">
-          <span class="why-num">03</span>
-          <span class="why-title">코칭</span>
-          <p class="why-desc">전문 교육 수료 코치 2명의 1:1 피드백. <br>부상 없이 안전하게. <br>처음이어도, 당신에게 맞게 설계됩니다.</p>
-        </div>
-      </div>
-
-      <div class="why-card fu">
-        <div class="why-bg" style="background-image:url('why-04-science.jpg')"></div>
-        <div class="why-ov"></div>
-        <div class="why-content">
-          <span class="why-num">04</span>
-          <span class="why-title">과학</span>
-          <p class="why-desc">스포츠 과학으로 설계된 프로그램. <br>유산소·근력·회복을 균형 있게 배치. <br>전신 밸런스를 체계적으로 완성합니다.</p>
-        </div>
-      </div>
-
+<section id="class">
+  <div class="wrap">
+    <span class="label">수업</span>
+    <h2>요일마다 다른 45분</h2>
+    <p class="lead">스테이션을 돌며 타이머에 맞춰 운동해요. 매일 구성이 바뀌어서 지루할 틈이 없어요.</p>
+    <div class="prog">
+      <figure><img src="img/cardio.jpg" alt="바이크를 타는 회원과 응원하는 코치" width="700" height="875" loading="lazy">
+        <figcaption><small>월 · 수</small><b>유산소</b><span>심박을 올리는 인터벌 위주</span></figcaption></figure>
+      <figure><img src="img/resistance.jpg" alt="케틀벨 운동을 하는 회원과 코치" width="700" height="875" loading="lazy">
+        <figcaption><small>화 · 목</small><b>근력</b><span>덤벨·케틀벨로 전신 근력</span></figcaption></figure>
+      <figure><img src="img/hybrid.jpg" alt="슬레드를 미는 회원" width="700" height="875" loading="lazy">
+        <figcaption><small>금 · 토</small><b>하이브리드</b><span>유산소와 근력을 함께</span></figcaption></figure>
     </div>
   </div>
 </section>
 
-<div class="stripe-div"></div>
+<section class="team">
+  <img src="img/team.jpg" alt="F45 성수에서 함께 운동한 사람들" width="1200" height="900" loading="lazy">
+  <p>F45 성수</p>
+</section>
 
-<section class="routine-section">
-  <div class="mw">
-    <div class="section-header fu">
-      <span class="eyebrow-tag">Weekly Training</span>
-      <h2 class="section-title">주간<br>트레이닝 루틴</h2>
+<section id="worry" class="qa">
+  <div class="wrap two">
+    <div>
+      <span class="label">망설여진다면</span>
+      <h2>처음 오는 분들이<br>많이 하는 걱정</h2>
     </div>
-    <div class="routine-grid">
-
-      <div class="routine-card fu">
-        <div class="routine-bg" style="background-image:url('routine-cardio.jpg')"></div>
-        <div class="routine-ov cardio"></div>
-        <div class="routine-content">
-          <span class="routine-day">Mon / Wed</span>
-          <span class="routine-name">유산소</span>
-          <p class="routine-desc">심폐 지구력을 극대화하는 고강도 인터벌 트레이닝.<br>750kcal 소모의 비밀.</p>
-        </div>
-      </div>
-
-      <div class="routine-card fu">
-        <div class="routine-bg" style="background-image:url('routine-resistance.jpg')"></div>
-        <div class="routine-ov resistance"></div>
-        <div class="routine-content">
-          <span class="routine-day">Tue / Thu</span>
-          <span class="routine-name">근력</span>
-          <p class="routine-desc">기능성 근력 운동으로 전신 밸런스를 맞춥니다.<br>일상이 편해지는 몸을 만듭니다.</p>
-        </div>
-      </div>
-
-      <div class="routine-card fu">
-        <div class="routine-bg" style="background-image:url('routine-hybrid.jpg')"></div>
-        <div class="routine-ov hybrid"></div>
-        <div class="routine-content">
-          <span class="routine-day">Fri / Sat</span>
-          <span class="routine-name">하이브리드</span>
-          <p class="routine-desc">유산소와 근력을 함께. 한 주의 완성. <br>전신을 고르게 단련합니다.</p>
-        </div>
-      </div>
-
+    <div>
+      <details><summary>체력이 부족한데 따라갈 수 있을까요?</summary>
+        <div class="a">지금 열심히 하는 회원들도 처음엔 같은 걱정을 했어요. <strong>무게도 동작도 내 몸에 맞게 바꿀 수 있고</strong>, 코치가 옆에서 페이스를 잡아 드려요.</div></details>
+      <details><summary>단체 수업은 어색할 것 같아요</summary>
+        <div class="a">수업이 시작되면 각자 자기 스테이션, 자기 횟수에 집중하느라 남을 신경 쓸 틈이 없어요. 조용히 와서 운동만 하고 가는 분도 많아요. 그래도 <strong>같은 공간에서 함께 운동하는 것만으로 더 오래 이어가게 된다</strong>는 연구가 있어요.<span class="ref">Davis et al., Sense of Community in HIFT (2022)</span></div></details>
+      <details><summary>운동할 시간이 많지 않아요</summary>
+        <div class="a">수업은 45분이면 끝나요. 뭘 할지 고민하거나 기구를 기다릴 필요 없이, 오면 프로그램과 코치가 준비되어 있어요.</div></details>
+      <details><summary>늘 중간에 그만두게 돼요</summary>
+        <div class="a">혼자 하면 "오늘 하루쯤은" 하고 빠지기 쉬워요. 여기엔 <strong>나를 기억하는 코치와, 안 보이면 궁금해하는 사람들</strong>이 있어요.</div></details>
     </div>
   </div>
 </section>
 
-<div class="stripe-div"></div>
+<section id="tt">
+  <div class="wrap">
+    <span class="label">시간표</span>
+    <h2>원하는 시간에 오세요</h2>
+    <table class="tt">
+      <thead><tr><th></th><th>월 · 수<small>유산소</small></th><th>화 · 목<small>근력</small></th><th>금<small>하이브리드</small></th><th>토 · 공휴일<small>하이브리드</small></th></tr></thead>
+      <tbody>
+        <tr><td>06:30</td><td class="on"></td><td class="on"></td><td class="on"></td><td class="off">—</td></tr>
+        <tr><td>07:30</td><td class="on"></td><td class="on"></td><td class="on"></td><td class="off">—</td></tr>
+        <tr><td>08:30</td><td class="on"></td><td class="on"></td><td class="on"></td><td class="off">—</td></tr>
+        <tr><td>09:00</td><td class="off">—</td><td class="off">—</td><td class="off">—</td><td class="on"></td></tr>
+        <tr><td>10:30</td><td class="off">—</td><td class="off">—</td><td class="off">—</td><td class="on"></td></tr>
+        <tr><td>12:00</td><td class="on"></td><td class="on"></td><td class="on"></td><td class="off">—</td></tr>
+        <tr><td>18:30</td><td class="on"></td><td class="on"></td><td class="on"></td><td class="off">—</td></tr>
+        <tr><td>19:30</td><td class="on"></td><td class="on"></td><td class="on"></td><td class="off">—</td></tr>
+        <tr><td>20:30</td><td class="on"></td><td class="on"></td><td class="on"></td><td class="off">—</td></tr>
+      </tbody>
+    </table>
+    <p class="tt-note">일요일은 쉬어요.</p>
+  </div>
+</section>
 
-<section class="tt-section">
-  <div class="mw">
-    <div class="section-header fu">
-      <span class="eyebrow-tag">Schedule</span>
-      <h2 class="section-title">F45 성수<br>시간표</h2>
-      <p class="tt-notice">바쁜 일상 속, 원하는 시간에 편하게 운동하세요.<br><span>일요일 휴무</span></p>
+<section id="faq" class="qa faq">
+  <div class="wrap two">
+    <div>
+      <span class="label">자주 묻는 질문</span>
+      <h2>체험 전에<br>알아 두면 좋아요</h2>
     </div>
-    
-    <div class="tt-legend fu">
-      <div class="tt-legend-item"><span class="dot dot-c"></span>유산소 (Cardio)</div>
-      <div class="tt-legend-item"><span class="dot dot-r"></span>근력 (Resistance)</div>
-      <div class="tt-legend-item"><span class="dot dot-h"></span>하이브리드 (Hybrid)</div>
-    </div>
-
-    <div class="tt-table-wrap fu">
-      <div class="tt-header">
-        <div class="tt-header-cell">시간</div>
-        <div class="tt-header-cell">월 / 수<span class="sub">Cardio</span></div>
-        <div class="tt-header-cell">화 / 목<span class="sub">Resistance</span></div>
-        <div class="tt-header-cell">금<span class="sub">Hybrid</span></div>
-        <div class="tt-header-cell">토 · 공휴일<span class="sub">Hybrid</span></div>
-      </div>
-      
-      <div class="tt-body">
-        <div class="tt-row">
-          <div class="tt-time">AM 06:30</div>
-          <div class="tt-cell"><span class="tt-icon dot-c"></span></div>
-          <div class="tt-cell"><span class="tt-icon dot-r"></span></div>
-          <div class="tt-cell"><span class="tt-icon dot-h"></span></div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-        </div>
-        <div class="tt-row">
-          <div class="tt-time">AM 07:30</div>
-          <div class="tt-cell"><span class="tt-icon dot-c"></span></div>
-          <div class="tt-cell"><span class="tt-icon dot-r"></span></div>
-          <div class="tt-cell"><span class="tt-icon dot-h"></span></div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-        </div>
-        <div class="tt-row">
-          <div class="tt-time">AM 08:30</div>
-          <div class="tt-cell"><span class="tt-icon dot-c"></span></div>
-          <div class="tt-cell"><span class="tt-icon dot-r"></span></div>
-          <div class="tt-cell"><span class="tt-icon dot-h"></span></div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-        </div>
-        <div class="tt-row">
-          <div class="tt-time">AM 09:00</div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-          <div class="tt-cell"><span class="tt-icon dot-h"></span></div>
-        </div>
-        <div class="tt-row">
-          <div class="tt-time">AM 10:30</div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-          <div class="tt-cell"><span class="tt-icon dot-h"></span></div>
-        </div>
-        <div class="tt-row">
-          <div class="tt-time">PM 12:00</div>
-          <div class="tt-cell"><span class="tt-icon dot-c"></span></div>
-          <div class="tt-cell"><span class="tt-icon dot-r"></span></div>
-          <div class="tt-cell"><span class="tt-icon dot-h"></span></div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-        </div>
-        <div class="tt-row">
-          <div class="tt-time">PM 18:30</div>
-          <div class="tt-cell"><span class="tt-icon dot-c"></span></div>
-          <div class="tt-cell"><span class="tt-icon dot-r"></span></div>
-          <div class="tt-cell"><span class="tt-icon dot-h"></span></div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-        </div>
-        <div class="tt-row">
-          <div class="tt-time">PM 19:30</div>
-          <div class="tt-cell"><span class="tt-icon dot-c"></span></div>
-          <div class="tt-cell"><span class="tt-icon dot-r"></span></div>
-          <div class="tt-cell"><span class="tt-icon dot-h"></span></div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-        </div>
-        <div class="tt-row">
-          <div class="tt-time">PM 20:30</div>
-          <div class="tt-cell"><span class="tt-icon dot-c"></span></div>
-          <div class="tt-cell"><span class="tt-icon dot-r"></span></div>
-          <div class="tt-cell"><span class="tt-icon dot-h"></span></div>
-          <div class="tt-cell"><span class="tt-off">—</span></div>
-        </div>
-      </div>
+    <div>
+      <details><summary>체험은 어떻게 신청하나요?</summary>
+        <div class="a">이름과 연락처를 남겨 주시면 24시간 안에 고르신 방법(문자·전화·카톡)으로 연락드려 일정과 준비물을 안내해 드려요. 체험료는 첫 방문 때 현장에서 결제해요.</div></details>
+      <details><summary>운동이 완전 처음인데 괜찮을까요?</summary>
+        <div class="a">누구나 할 수 있어요. 코치 2명이 체력과 목적에 맞게 무게와 동작을 바꿔서 안전하게 지도해요.</div></details>
+      <details><summary>준비물은 뭔가요?</summary>
+        <div class="a">실내용 운동화, 운동복, 물통을 챙겨 주세요. 운동복은 따로 드리지 않아요.</div></details>
+      <details><summary>샤워 시설이 있나요?</summary>
+        <div class="a">샤워실이 있고 샴푸, 바디워시, 수건이 준비되어 있어요.</div></details>
+      <details><summary>크로스핏과 뭐가 다른가요?</summary>
+        <div class="a">F45는 경쟁보다 협동을 중요하게 여기는 팀 트레이닝이에요. 기능성 운동으로 부상 없이 일상 체력을 높이는 데 초점을 둬요.</div></details>
+      <details><summary>다른 지점에서 체험권을 쓴 적이 있어요</summary>
+        <div class="a">F45 성수에서 체험권을 쓴 적이 없다면 가능해요. 다른 지점 이력은 상관없어요.</div></details>
+      <details><summary>환불은 어떻게 되나요?</summary>
+        <div class="a">체험권을 구매하고 한 번도 사용하지 않았다면 전액 환불돼요. 환불은 담당 매니저에게 직접 문의해 주세요. 소비자분쟁해결기준을 따릅니다.</div></details>
     </div>
   </div>
 </section>
 
-<div class="stripe-div"></div>
-
-<section class="contact-section">
-  <div class="mw">
-    <div class="section-header fu">
-      <span class="eyebrow-tag">Contact</span>
-      <h2 class="section-title">궁금한 점이<br>있으신가요?</h2>
+<section id="loc" class="loc">
+  <div class="wrap two">
+    <div>
+      <span class="label">오시는 길</span>
+      <h2>성수역 4번 출구<br>바로 앞이에요</h2>
+      <div class="rows">
+        <div><span class="k">주소</span><span class="v">서울 성동구 아차산로 92 에스빌딩 B1</span></div>
+        <div><span class="k">지하철</span><span class="v">2호선 성수역 4번 출구 바로 앞</span></div>
+        <div><span class="k">주차</span><span class="v">1시간 무료<small>이후 15분당 1,000원</small></span></div>
+        <a href="tel:010-8379-1450" onclick="fbq('track','Contact')"><span class="k">전화·문자</span><span class="v">010-8379-1450</span></a>
+        <a href="https://pf.kakao.com/_dnQdxj" target="_blank" rel="noopener" onclick="fbq('track','Contact')"><span class="k">카카오톡</span><span class="v">F45 성수 채널로 문의</span></a>
+        <a href="https://www.instagram.com/f45_SEONGSU" target="_blank" rel="noopener" onclick="fbq('track','Contact')"><span class="k">인스타그램</span><span class="v">@f45_seongsu</span></a>
+      </div>
     </div>
-    <div class="contact-grid fu">
-
-      <a href="tel:010-8379-1450" class="contact-card" onclick="fbq('track','Contact')">
-        <div class="contact-icon">📞</div>
-        <div class="contact-label">전화 / 문자</div>
-        <div class="contact-value">010-8379-1450</div>
-        <div class="contact-sub">전화 또는 문자 문의</div>
-      </a>
-
-      <a href="https://pf.kakao.com/_dnQdxj" target="_blank" rel="noopener" class="contact-card kakao" onclick="fbq('track','Contact')">
-        <div class="contact-icon">💬</div>
-        <div class="contact-label">카카오톡 문의</div>
-        <div class="contact-value">F45 성수</div>
-        <div class="contact-sub">카카오 채널로 바로 상담</div>
-      </a>
-
-      <a href="https://www.instagram.com/f45_SEONGSU" target="_blank" rel="noopener" class="contact-card insta" onclick="fbq('track','Contact')">
-        <div class="contact-icon">📸</div>
-        <div class="contact-label">인스타그램</div>
-        <div class="contact-value">@f45_SEONGSU</div>
-        <div class="contact-sub">DM으로 문의하기</div>
-      </a>
-
-    </div>
+    <img src="map.png" alt="F45 성수 위치 지도" loading="lazy">
   </div>
 </section>
 
-<div class="stripe-div"></div>
-
-<section class="obj-section">
-  <div class="mw">
-    <div class="section-header fu">
-      <span class="eyebrow-tag">Still Hesitating?</span>
-      <h2 class="section-title">F45가 나에게<br>맞을까요?</h2>
-      <p class="tt-notice" style="margin-top:14px">망설이는 분들을 위한 솔직한 답변</p>
-    </div>
-    <div class="obj-list">
-
-      <div class="obj-item fu" onclick="toggleObj(this)">
-        <div class="obj-q">
-          <span class="obj-quote"><span class="qm">"</span>저는 아직 체력이 부족해요<span class="qm">"</span></span>
-          <span class="obj-toggle">+</span>
-        </div>
-        <div class="obj-a"><div class="obj-a-inner">
-          지금 가장 열심히 하는 멤버들도 처음엔 "내가 따라갈 수 있을까" 똑같이 걱정했어요. 하지만 <strong>무게도 동작도 전부 내 몸에 맞게 바꿀 수 있고</strong>, 코치가 옆에서 페이스를 잡아드립니다. 걸을 수 있다면, 충분히 시작할 수 있어요!
-        </div></div>
-      </div>
-
-      <div class="obj-item fu" onclick="toggleObj(this)">
-        <div class="obj-q">
-          <span class="obj-quote"><span class="qm">"</span>운동할 시간이 없어요<span class="qm">"</span></span>
-          <span class="obj-toggle">+</span>
-        </div>
-        <div class="obj-a"><div class="obj-a-inner">
-          <strong>딱 45분이면 끝납니다!</strong> 오늘 뭘 할지 고민할 것도, 기구 앞에서 차례를 기다릴 것도 없어요. 문 열고 들어오면 프로그램도 코치도 이미 준비되어 있고, 타이머만 시작하면 됩니다. 하루 24시간 중 단 3%예요!
-        </div></div>
-      </div>
-
-      <div class="obj-item fu" onclick="toggleObj(this)">
-        <div class="obj-q">
-          <span class="obj-quote"><span class="qm">"</span>단체 수업이 불안해요<span class="qm">"</span></span>
-          <span class="obj-toggle">+</span>
-        </div>
-        <div class="obj-a"><div class="obj-a-inner">
-          처음엔 다들 어색해해요. 그런데 막상 시작되면 각자 자기 스테이션, 자기 횟수, 자기 타이머에만 빠져들어서 남 신경 쓸 틈이 없습니다! <strong>따라가야 한다는 압박도, 나를 비추는 거울도 없어요.</strong> 체력이 제각각인 사람들이 그저 각자의 운동을 할 뿐입니다.
-        </div></div>
-      </div>
-
-      <div class="obj-item fu" onclick="toggleObj(this)">
-        <div class="obj-q">
-          <span class="obj-quote"><span class="qm">"</span>MBTI가 'I'라서 망설여져요<span class="qm">"</span></span>
-          <span class="obj-toggle">+</span>
-        </div>
-        <div class="obj-a"><div class="obj-a-inner">
-          F45 성수에도 조용히 와서 자기 운동만 하고 가는 분들이 많아요. 굳이 친해지지 않아도 괜찮습니다! 재밌는 건, 활발히 어울리지 않더라도 <strong>같은 공간에서 함께 땀 흘린다는 그 소속감만으로 운동을 더 오래 이어가게 된다</strong>는 연구가 있다는 거예요. 어울림은 딱 편한 만큼만, 효과는 그대로 가져가세요!
-          <span class="obj-ref">* Davis et al., Sense of Community in HIFT (2022)</span>
-        </div></div>
-      </div>
-
-      <div class="obj-item fu" onclick="toggleObj(this)">
-        <div class="obj-q">
-          <span class="obj-quote"><span class="qm">"</span>너무 비싸요<span class="qm">"</span></span>
-          <span class="obj-toggle">+</span>
-        </div>
-        <div class="obj-a"><div class="obj-a-inner">
-          끊어놓고 한 달에 두어 번 가는 헬스장이 오히려 한 번 갈 때마다 더 비싼 셈이에요. F45는 기구 쓰는 값을 내는 곳이 아닙니다. <strong>짜인 프로그램, 챙겨주는 코치, 빠지면 알아봐주는 사람들</strong> — 계속하게 만드는 환경 전체에 투자하는 거예요. 한 번 와보고 판단하셔도 늦지 않습니다!
-        </div></div>
-      </div>
-
-      <div class="obj-item fu" onclick="toggleObj(this)">
-        <div class="obj-q">
-          <span class="obj-quote"><span class="qm">"</span>항상 중도에 포기하게 돼요<span class="qm">"</span></span>
-          <span class="obj-toggle">+</span>
-        </div>
-        <div class="obj-a"><div class="obj-a-inner">
-          의지가 약해서가 아니에요. 혼자 하면 "오늘 하루쯤은" 하고 빠지기 쉬운 게 당연합니다. 하지만 F45엔 <strong>나를 기억하는 코치와, 안 보이면 궁금해하는 사람들</strong>이 있어요. 그 작은 책임감 하나가 끝까지 가게 만듭니다!
-        </div></div>
-      </div>
-
-    </div>
-
-    <div class="obj-cta fu">
-      <a href="javascript:void(0)" class="obj-cta-btn" onclick="openLeadModal()">그래도 직접 경험해볼게요 →</a>
-    </div>
+<section class="final" id="final">
+  <div class="wrap">
+    <img src="img/logo-white.png" alt="F45 성수" width="640" height="271">
+    <h2>7일 동안 직접 해보세요</h2>
+    <p>7일 무제한 체험 40,000원 · 사용 전이면 전액 환불</p>
+    <a href="javascript:void(0)" class="btn" onclick="openLeadModal()">체험 신청하기</a>
+    <a href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" class="tlink" onclick="trackContact('kakao')">카카오톡으로 먼저 물어보기</a>
   </div>
 </section>
 
-<div class="stripe-div"></div>
-
-<section class="faq-section">
-  <div class="mw">
-    <div class="section-header fu">
-      <span class="eyebrow-tag">FAQ</span>
-      <h2 class="section-title">자주 묻는<br>질문</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item fu"><div class="faq-q"><span class="faq-qmark">Q.</span>운동이 완전 처음인데 할 수 있나요?</div><div class="faq-a">남녀노소 누구나 할 수 있습니다. 코치 2명이 개인의 체력과 목적에 맞게 무게와 동작을 변형해 안전하게 지도합니다.</div></div>
-      <div class="faq-item fu"><div class="faq-q"><span class="faq-qmark">Q.</span>크로스핏과 어떤 차이가 있나요?</div><div class="faq-a">F45는 팀 트레이닝으로 경쟁보다는 협동을 중요시하며, 기능성 운동을 기반으로 부상 없이 일상생활의 퍼포먼스를 높이는 데 목적이 있습니다.</div></div>
-      <div class="faq-item fu"><div class="faq-q"><span class="faq-qmark">Q.</span>샤워 시설 및 어메니티가 준비되어 있나요?</div><div class="faq-a">네, 샤워실이 완비되어 있으며 샴푸, 바디워시, 수건 등이 모두 청결하게 준비되어 있습니다.</div></div>
-      <div class="faq-item fu"><div class="faq-q"><span class="faq-qmark">Q.</span>준비물은 무엇인가요?</div><div class="faq-a">실내용 운동화, 운동복, 물통을 준비해 주세요. 운동복은 별도로 지급하지 않습니다.</div></div>
-      <div class="faq-item fu"><div class="faq-q"><span class="faq-qmark">Q.</span>타 지점에서 체험권을 사용한 이력이 있는데 가능한가요?</div><div class="faq-a">F45 성수 지점에서 체험권 사용 이력이 없다면 가능합니다. 타 지점 이력은 무관합니다.</div></div>
-      <div class="faq-item feat fu" id="naver-booking"><div class="faq-q"><span class="faq-qmark">Q.</span>체험권은 어떻게 신청하나요?</div><div class="faq-a">아래 버튼을 눌러 이름과 연락처만 남겨주시면, 담당 코치가 24시간 이내 원하시는 방법(문자·전화·카톡)으로 연락드려 일정과 준비물을 안내해 드립니다. 체험료는 첫 방문 시 현장에서 결제됩니다.<br><a href="javascript:void(0)" class="naver-btn" onclick="openLeadModal()">체험 신청하러 가기</a></div></div>
-    </div>
-  </div>
-</section>
-
-<div class="stripe-div"></div>
-
-<section class="loc-section">
-  <div class="mw">
-    <div class="section-header fu">
-      <span class="eyebrow-tag">Location</span>
-      <h2 class="section-title">찾아오시는 길</h2>
-    </div>
-    <div class="loc-card fu">
-<div class="loc-map">
-  <img src="map.png" alt="F45 성수 위치" style="width:100%; height:100%; object-fit:cover;">
-</div>
-      <div class="loc-info">
-        <div class="loc-addr">서울 성동구 아차산로 92<br>에스빌딩 B1</div>
-        <div class="loc-access">지하철 2호선 성수역 4번 출구 바로 앞</div>
-        <span class="parking">주차 1시간 무료 지원</span>
-        <span class="parking-fine">이후 15분당 1,000원 발생</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="stripe-div"></div>
-
-<section class="policy-section">
-  <div class="mw">
-    <div class="section-header fu">
-      <span class="eyebrow-tag">Policy</span>
-      <h2 class="section-title">환불 규정</h2>
-    </div>
-    <div class="policy-box fu">
-      <p class="policy-title">F45 성수 체험권 환불 정책</p>
-      <ul class="policy-list">
-        <li>체험권 구매 후 사용 전(0회)이라면 전액 환불이 가능합니다.</li>
-        <li>환불 요청은 담당 매니저에게 직접 문의해 주세요.</li>
-        <li>본 환불 규정은 소비자분쟁해결기준에 따릅니다.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<div class="brand-stripe"></div>
-<footer>
-  <img class="footer-logo" src="f45-logo.png" alt="F45 Seongsu">
-  <p class="footer-tagline">Team Training · Life Changing</p>
-  <p class="footer-copy">F45 Training Seongsu · Seoul, South Korea</p>
-</footer>
+<footer>F45 Training Seongsu · 서울 성동구 아차산로 92 B1 · <a href="meta.html">개인정보처리방침</a></footer>
 
 <div class="sticky-cta" id="stickyCta">
   <div id="stickyFormView">
@@ -1396,64 +585,26 @@ footer{padding-bottom:calc(clamp(36px,8vw,60px) + 110px)}
   </div>
 </div>
 
+
+
 <script>
+/* 하단 신청 바: 첫 화면을 지나면 보이고, 마지막 신청 칸에선 숨김 */
 (function(){
-  var words = ["TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING","TEAM TRAINING","LIFE CHANGING"];
-  var el = document.getElementById("bigMq");
-  var h = "";
-  for(var p = 0; p < 2; p++){
-    words.forEach(function(w){
-      h += '<span class="mq-word">'+w+' <span class="mq-star">★</span></span>';
-    });
+  var hero = document.getElementById('hero'), fin = document.getElementById('final'), sc = document.getElementById('stickyCta');
+  function upd(){
+    var past = hero.getBoundingClientRect().bottom < 0;
+    var atEnd = fin.getBoundingClientRect().top < window.innerHeight;
+    sc.classList.toggle('show', past && !atEnd);
   }
-  el.innerHTML = h;
+  window.addEventListener('scroll', upd, { passive: true });
+  upd();
 })();
-
-(function(){
-  var all = [
-    "South Korea","United States","Australia","United Kingdom","Germany","France",
-    "Japan","Canada","Singapore","UAE","Brazil","New Zealand","Spain","Italy",
-    "Thailand","Malaysia","Netherlands","Sweden","Ireland","South Africa",
-    "Qatar","Saudi Arabia","Indonesia","India","Philippines","Vietnam",
-    "Turkey","Mexico","Chile","Colombia","Switzerland","Denmark","Norway",
-    "Belgium","Portugal","Greece","Poland","Czech Republic","Hungary","Romania",
-    "Kuwait","Bahrain","Egypt","Taiwan","Hong Kong","Mongolia"
-  ];
-  function shuffle(arr){
-    var a=arr.slice();
-    for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}
-    return a;
-  }
-  function build(id, highlight){
-    var el = document.getElementById(id);
-    if(!el) return;
-    var list = shuffle(all);
-    var h = "";
-    for(var p=0;p<2;p++){
-      list.forEach(function(c, i){
-        var isHl = highlight && (i % 8 === 0);
-        h += '<span class="country-item'+(isHl?' hl':'')+'">'+c+' <span class="country-star">★</span></span>';
-      });
-    }
-    el.innerHTML = h;
-  }
-  build("cMq1", false);
-  build("cMq2", true);
-  build("cMq3", false);
-})();
-
-var ic=document.getElementById("initial-cta");
-var sc=document.getElementById("stickyCta");
-window.addEventListener("scroll",function(){
-  sc.classList.toggle("show",ic.getBoundingClientRect().bottom<0);
-},{passive:true});
-
-var obs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){e.target.classList.add("vis");obs.unobserve(e.target);}
+/* 접었다 펴기: 하나 열면 같은 묶음의 다른 건 닫기 */
+document.querySelectorAll('.qa details').forEach(function(d){
+  d.addEventListener('toggle', function(){
+    if(d.open) d.parentNode.querySelectorAll('details[open]').forEach(function(o){ if(o !== d) o.open = false; });
   });
-},{threshold:0.08,rootMargin:"0px 0px -30px 0px"});
-document.querySelectorAll(".fu").forEach(function(el){obs.observe(el);});
+});
 </script>
 
 <script>
@@ -1484,24 +635,6 @@ function phoneOk(v){ return /^01[016789][0-9]{7,8}$/.test(String(v||'').replace(
     ['utm_source','utm_medium','utm_campaign','utm_content','fbclid'].forEach(function(k){ if(q.get(k)) keep[k] = q.get(k).slice(0,120); });
     if(Object.keys(keep).length){ keep.ts = Date.now(); sessionStorage.setItem('f45_src', JSON.stringify(keep)); }
   }catch(e){}
-})();
-/* 첫 화면 문구를 들어온 광고와 맞춤 (utm_content·utm_campaign에 든 말로 고름) */
-(function(){
-  var q = {}; try{ q = JSON.parse(sessionStorage.getItem('f45_src') || '{}'); }catch(e){}
-  var key = ((q.utm_content || '') + ' ' + (q.utm_campaign || '')).toLowerCase();
-  var V = [
-    { m: /내향|introvert/, t: '말 안 걸어도 괜찮아요<br><em>같이 움직이면</em> 충분해요',
-      s: '각자 자기 자리에서, 코치 구령에 맞춰 45분.<br>혼자면 금방 멈추던 운동이 끝까지 가요.' },
-    { m: /공감|45분/, t: '헬스장에서 혼자<br>운동하기 <em>어려우셨죠?</em>',
-      s: '뭘 할지 고민 없이, 코치 2명이 옆에서 동작을 잡아줘요.<br>처음이어도 45분이면 끝나요.' }
-  ];
-  for(var i = 0; i < V.length; i++){
-    if(V[i].m.test(key)){
-      document.getElementById('heroTitle').innerHTML = V[i].t;
-      document.getElementById('heroSub').innerHTML = V[i].s;
-      break;
-    }
-  }
 })();
 function leadTrack(){
   var src = {}, ck = {};
@@ -1714,8 +847,8 @@ function LT(ev, v, once){
   }
   window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   // 어느 구역까지 봤나 (화면에 40% 이상 보이면)
-  var zones = [['#initial-cta','가격'], ['.stats-section','숫자'], ['.why-section','왜 F45'], ['.routine-section','운동 구성'],
-               ['.tt-section','시간표'], ['.contact-section','연락처'], ['.obj-section','걱정 풀기'], ['.faq-section','FAQ'], ['.loc-section','위치']];
+  var zones = [['#offer','가격'], ['#coach','코칭'], ['#class','수업'], ['#worry','걱정 풀기'], ['#tt','시간표'],
+               ['#faq','FAQ'], ['#loc','위치'], ['#final','마지막 신청']];
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(ents){
       ents.forEach(function(en){ if(en.isIntersecting){ LT('see', en.target.getAttribute('data-lt'), true); io.unobserve(en.target); } });
