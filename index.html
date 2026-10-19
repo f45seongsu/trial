@@ -147,7 +147,8 @@ section{padding:60px 0}
 .final img{width:130px;margin:0 auto 24px}
 .final p{font-size:17px;color:rgba(255,255,255,0.9);margin-bottom:24px}
 .final .btn{background:#fff;color:var(--red);max-width:380px;margin:0 auto}
-.final .ask{display:inline-block;margin-top:16px;font-size:15px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+.final .ask{margin-top:16px;font-size:15px;font-weight:700}
+.final .ask a{text-decoration:underline;text-underline-offset:4px}
 footer{padding:26px 22px 110px;text-align:center;font-size:12px;color:var(--sub)}
 footer a{text-decoration:underline}
 
@@ -363,6 +364,7 @@ footer a{text-decoration:underline}
 .lead-now-t{font-size:13px !important;font-weight:700 !important;color:var(--gray)}
 .lead-now-btn{display:block;padding:15px;border-radius:12px;font-size:16px;font-weight:800;text-align:center}
 .lead-now-btn.kakao{background:#FEE500;color:#191919}
+.lead-now-btn.insta{background:linear-gradient(45deg,#f9a03f,#e1306c,#833ab4);color:#fff}
 .lead-now-btn.sms{background:var(--blue);color:var(--white)}
 .lead-now-btn.tel{background:var(--bg);color:var(--blue)}
 .lead-now.kakao-first .lead-now-btn.kakao{box-shadow:0 0 0 3px var(--blue)}
@@ -391,7 +393,7 @@ footer a{text-decoration:underline}
   </div>
   <div>
     <a href="javascript:void(0)" class="btn" onclick="openLeadModal()">체험 신청하기</a>
-    <a href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" class="ask" onclick="trackContact('kakao')">궁금한 점은 <u>카카오톡으로 문의하기</u></a>
+    <p class="ask">궁금한 점은 <a href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" onclick="trackContact('kakao')"><u>카카오톡</u></a> · <a href="https://ig.me/m/f45_seongsu" target="_blank" rel="noopener" onclick="trackContact('insta')"><u>인스타 DM</u></a>으로 문의하세요</p>
   </div>
 </div></div>
 
@@ -514,7 +516,7 @@ footer a{text-decoration:underline}
       <div class="contact">
         <a href="tel:010-8379-1450" onclick="fbq('track','Contact')">전화</a>
         <a class="kk" href="https://pf.kakao.com/_dnQdxj" target="_blank" rel="noopener" onclick="fbq('track','Contact')">카카오톡</a>
-        <a href="https://www.instagram.com/f45_SEONGSU" target="_blank" rel="noopener" onclick="fbq('track','Contact')">인스타그램</a>
+        <a href="https://ig.me/m/f45_seongsu" target="_blank" rel="noopener" onclick="fbq('track','Contact')">인스타 DM</a>
       </div>
     </div>
     <img class="loc-map" src="map.png" alt="F45 성수 위치 지도" loading="lazy">
@@ -527,7 +529,7 @@ footer a{text-decoration:underline}
     <h2>7일 동안<br>직접 경험해 보세요</h2>
     <p>7일 무제한 체험 40,000원 · 사용 전 전액 환불</p>
     <a href="javascript:void(0)" class="btn" onclick="openLeadModal()">체험 신청하기</a>
-    <a href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" class="ask" onclick="trackContact('kakao')">카카오톡으로 문의하기</a>
+    <p class="ask"><a href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" onclick="trackContact('kakao')">카카오톡</a> · <a href="https://ig.me/m/f45_seongsu" target="_blank" rel="noopener" onclick="trackContact('insta')">인스타 DM</a>으로 문의하기</p>
   </div>
 </section>
 
@@ -591,6 +593,7 @@ footer a{text-decoration:underline}
       <div class="lead-now">
         <p class="lead-now-t">바로 상담을 원하시면 아래로 연락 주세요</p>
         <a class="lead-now-btn kakao" href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" onclick="trackContact('kakao')">🟡 카카오톡으로 바로 상담</a>
+        <a class="lead-now-btn insta" href="https://ig.me/m/f45_seongsu" target="_blank" rel="noopener" onclick="trackContact('insta')">📸 인스타 DM으로 바로 상담</a>
         <a class="lead-now-btn sms" id="leadSmsBtn" href="sms:010-8379-1450" onclick="trackContact('sms')">💬 문자로 바로 보내기</a>
         <a class="lead-now-btn tel" href="tel:010-8379-1450" onclick="trackContact('tel')">📞 010-8379-1450 전화</a>
       </div>
@@ -888,7 +891,7 @@ function LT(ev, v, once){
     else if(href === '#app') LT('open_app');
     else if(href.indexOf('tel:') === 0) LT('contact', '전화');
     else if(href.indexOf('kakao') >= 0) LT('contact', '카톡');
-    else if(href.indexOf('instagram') >= 0) LT('contact', '인스타');
+    else if(href.indexOf('instagram') >= 0 || href.indexOf('ig.me') >= 0) LT('contact', '인스타');
     else if(href.indexOf('sms:') === 0) LT('contact', '문자');
     else if(href.indexOf('naver') >= 0) LT('contact', '네이버');
   }, true);
