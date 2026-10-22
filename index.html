@@ -320,6 +320,12 @@ footer a{text-decoration:underline}
   transition:transform 0.15s,background 0.15s;
 }
 .lead-submit:active{transform:scale(0.98);background:#b30017}
+.lead-alt{margin-top:18px;padding-top:16px;border-top:1px solid #e8e8ee;text-align:center}
+.lead-alt p{font-size:14px;color:var(--gray);font-weight:600;margin-bottom:10px}
+.lead-alt-row{display:flex;gap:10px}
+.lead-alt-btn{flex:1;display:block;padding:13px 6px;border-radius:12px;font-size:15px;font-weight:800;text-align:center}
+.lead-alt-btn.insta{background:linear-gradient(45deg,#f9a03f,#e1306c,#833ab4);color:#fff}
+.lead-alt-btn.sms{background:var(--blue);color:#fff}
 .lead-submit:disabled{background:var(--gray);box-shadow:none;cursor:not-allowed}
 .lead-privacy{
   text-align:center;font-size:12px;color:var(--gray);
@@ -584,6 +590,13 @@ footer a{text-decoration:underline}
       </div>
       <button class="lead-submit" id="lf-submit" onclick="submitLead()">체험 신청하기</button>
       <p class="lead-privacy">신청하면 체험 안내 연락을 위해 이름·연락처를 받는 데 동의하게 됩니다. <a href="meta.html" target="_blank" rel="noopener">개인정보처리방침</a></p>
+      <div class="lead-alt">
+        <p>번호 남기기가 부담되시면 편하게 물어보세요</p>
+        <div class="lead-alt-row">
+          <a class="lead-alt-btn insta" href="https://ig.me/m/f45_seongsu" target="_blank" rel="noopener" onclick="trackContact('insta-form')">📸 인스타 DM</a>
+          <a class="lead-alt-btn sms" id="leadAltSms" href="sms:010-8379-1450" onclick="trackContact('sms-form')">💬 문자로 문의</a>
+        </div>
+      </div>
     </div>
 
     <div class="lead-done" id="leadDoneView">
@@ -736,6 +749,12 @@ function trackContact(kind){
   if(typeof fbq !== 'undefined') fbq('track','Contact',{content_name:'After Lead '+kind});
 }
 
+(function(){
+  var el = document.getElementById('leadAltSms');
+  if(el) el.href = 'sms:' + STUDIO_TEL + (/iPhone|iPad|iPod/.test(navigator.userAgent) ? '&' : '?') + 'body=' +
+    encodeURIComponent('안녕하세요, F45 성수 7일 체험 문의드립니다.');
+})();
+
 function submitLead(){
   if(window.__leadSubmitting) return;
   var nEl = document.getElementById('lf-name'), pEl = document.getElementById('lf-phone');
@@ -769,8 +788,16 @@ function submitStickyLead(){
   var name  = nEl.value.trim();
   var phone = pEl.value.trim();
 
-  if(!name){ LT('invalid','이름 · 하단 바'); alert('이름을 입력해 주세요.'); nEl.focus(); return; }
-  if(!phoneOk(phone)){ LT('invalid','번호 · 하단 바'); alert('휴대폰 번호를 확인해 주세요.\n예) 010-1234-5678'); pEl.focus(); return; }
+  if(!name || !phoneOk(phone)){
+    LT('invalid', (!name ? '이름' : '번호') + ' · 하단 바 → 창');
+    var ln = document.getElementById('lf-name'), lp = document.getElementById('lf-phone');
+    if(name) ln.value = name;
+    if(phone) lp.value = fmtPhone(phone);
+    LT('open', '하단 바');
+    openLeadModal();
+    setTimeout(function(){ (name ? lp : ln).focus(); }, 350);
+    return;
+  }
 
   window.__stickySubmitting = true;
   var btn = document.getElementById('sf-submit');
