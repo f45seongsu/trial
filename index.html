@@ -399,7 +399,7 @@ footer a{text-decoration:underline}
   </div>
   <div>
     <a href="javascript:void(0)" class="btn" onclick="openLeadModal()">체험 신청하기</a>
-    <p class="ask">궁금한 점은 <a href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" onclick="trackContact('kakao')"><u>카카오톡</u></a> · <a href="https://ig.me/m/f45_seongsu" target="_blank" rel="noopener" onclick="trackContact('insta')"><u>인스타 DM</u></a>으로 문의하세요</p>
+    <p class="ask">궁금한 점은 <a href="https://pf.kakao.com/_dnQdxj/chat" onclick="trackContact('kakao')"><u>카카오톡</u></a> · <a href="https://ig.me/m/f45_seongsu" data-dm onclick="trackContact('insta')"><u>인스타 DM</u></a>으로 문의하세요</p>
   </div>
 </div></div>
 
@@ -521,8 +521,8 @@ footer a{text-decoration:underline}
       </div>
       <div class="contact">
         <a href="tel:010-8379-1450" onclick="fbq('track','Contact')">전화</a>
-        <a class="kk" href="https://pf.kakao.com/_dnQdxj" target="_blank" rel="noopener" onclick="fbq('track','Contact')">카카오톡</a>
-        <a href="https://ig.me/m/f45_seongsu" target="_blank" rel="noopener" onclick="fbq('track','Contact')">인스타 DM</a>
+        <a class="kk" href="https://pf.kakao.com/_dnQdxj" onclick="fbq('track','Contact')">카카오톡</a>
+        <a href="https://ig.me/m/f45_seongsu" data-dm onclick="fbq('track','Contact')">인스타 DM</a>
       </div>
     </div>
     <img class="loc-map" src="map.png" alt="F45 성수 위치 지도" loading="lazy">
@@ -535,7 +535,7 @@ footer a{text-decoration:underline}
     <h2>7일 동안<br>직접 경험해 보세요</h2>
     <p>7일 무제한 체험 40,000원 · 사용 전 전액 환불</p>
     <a href="javascript:void(0)" class="btn" onclick="openLeadModal()">체험 신청하기</a>
-    <p class="ask"><a href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" onclick="trackContact('kakao')">카카오톡</a> · <a href="https://ig.me/m/f45_seongsu" target="_blank" rel="noopener" onclick="trackContact('insta')">인스타 DM</a>으로 문의하기</p>
+    <p class="ask"><a href="https://pf.kakao.com/_dnQdxj/chat" onclick="trackContact('kakao')">카카오톡</a> · <a href="https://ig.me/m/f45_seongsu" data-dm onclick="trackContact('insta')">인스타 DM</a>으로 문의하기</p>
   </div>
 </section>
 
@@ -550,7 +550,7 @@ footer a{text-decoration:underline}
       <button class="sticky-submit" id="sf-submit" onclick="submitStickyLead()">신청</button>
     </div>
   </div>
-  <div class="sticky-done" id="stickyDoneView">✓ 신청 완료! 24시간 안에 연락드리겠습니다 · <a href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" onclick="trackContact('kakao')">카톡으로 바로 상담 →</a></div>
+  <div class="sticky-done" id="stickyDoneView">✓ 신청 완료! 24시간 안에 연락드리겠습니다 · <a href="https://pf.kakao.com/_dnQdxj/chat" onclick="trackContact('kakao')">카톡으로 바로 상담 →</a></div>
 </div>
 
 <div class="lead-overlay" id="leadModal" onclick="if(event.target===this)closeLeadModal()">
@@ -593,7 +593,7 @@ footer a{text-decoration:underline}
       <div class="lead-alt">
         <p>번호 남기기가 부담되시면 편하게 물어보세요</p>
         <div class="lead-alt-row">
-          <a class="lead-alt-btn insta" href="https://ig.me/m/f45_seongsu" target="_blank" rel="noopener" onclick="trackContact('insta-form')">📸 인스타 DM</a>
+          <a class="lead-alt-btn insta" href="https://ig.me/m/f45_seongsu" data-dm onclick="trackContact('insta-form')">📸 인스타 DM</a>
           <a class="lead-alt-btn sms" id="leadAltSms" href="sms:010-8379-1450" onclick="trackContact('sms-form')">💬 문자로 문의</a>
         </div>
       </div>
@@ -605,8 +605,8 @@ footer a{text-decoration:underline}
       <p id="leadDoneMsg">담당 코치가 <strong>24시간 안에</strong><br>연락드리겠습니다.</p>
       <div class="lead-now">
         <p class="lead-now-t">바로 상담을 원하시면 아래로 연락 주세요</p>
-        <a class="lead-now-btn kakao" href="https://pf.kakao.com/_dnQdxj/chat" target="_blank" rel="noopener" onclick="trackContact('kakao')">🟡 카카오톡으로 바로 상담</a>
-        <a class="lead-now-btn insta" href="https://ig.me/m/f45_seongsu" target="_blank" rel="noopener" onclick="trackContact('insta')">📸 인스타 DM으로 바로 상담</a>
+        <a class="lead-now-btn kakao" href="https://pf.kakao.com/_dnQdxj/chat" onclick="trackContact('kakao')">🟡 카카오톡으로 바로 상담</a>
+        <a class="lead-now-btn insta" href="https://ig.me/m/f45_seongsu" data-dm onclick="trackContact('insta')">📸 인스타 DM으로 바로 상담</a>
         <a class="lead-now-btn sms" id="leadSmsBtn" href="sms:010-8379-1450" onclick="trackContact('sms')">💬 문자로 바로 보내기</a>
         <a class="lead-now-btn tel" href="tel:010-8379-1450" onclick="trackContact('tel')">📞 010-8379-1450 전화</a>
       </div>
@@ -754,6 +754,27 @@ function trackContact(kind){
   if(el) el.href = 'sms:' + STUDIO_TEL + (/iPhone|iPad|iPod/.test(navigator.userAgent) ? '&' : '?') + 'body=' +
     encodeURIComponent('안녕하세요, F45 성수 7일 체험 문의드립니다.');
 })();
+
+/* 인스타 DM 열기: 인스타 앱 안 브라우저(특히 안드로이드)는 새 창 링크를 빈 화면으로 띄움
+   → 안드로이드는 인스타 앱에 직접 넘기는 intent 링크, 아이폰 인스타 안은 앱 프로필, 그 밖엔 같은 화면에서 ig.me */
+function openDM(){
+  var ua = navigator.userAgent || '', u = 'f45_seongsu';
+  if(/Android/i.test(ua)){
+    location.href = 'intent://ig.me/m/' + u + '#Intent;scheme=https;package=com.instagram.android;S.browser_fallback_url=' +
+      encodeURIComponent('https://www.instagram.com/' + u + '/') + ';end';
+  } else if(/Instagram|FBAN|FBAV/i.test(ua)){
+    location.href = 'instagram://user?username=' + u;
+    setTimeout(function(){ if(!document.hidden) location.href = 'https://www.instagram.com/' + u + '/'; }, 1500);
+  } else {
+    location.href = 'https://ig.me/m/' + u;
+  }
+}
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[data-dm]');
+  if(!a) return;
+  e.preventDefault();
+  setTimeout(openDM, 120);   // 기록(LT·픽셀)이 먼저 나가게 아주 잠깐 기다림
+});
 
 function submitLead(){
   if(window.__leadSubmitting) return;
